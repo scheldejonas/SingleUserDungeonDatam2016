@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package singleuserdungeon;
+package singleuserdungeon.control;
 
 /**
  *
  * @author misk
  */
-public class Location {
+public class Item {
     
 }

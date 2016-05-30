@@ -7,9 +7,9 @@ package singleuserdungeon.interfaces;
 
 
 import java.util.ArrayList;
-import singleuserdungeon.Item;
-import singleuserdungeon.Location;
-import singleuserdungeon.Player;
+import singleuserdungeon.control.Item;
+import singleuserdungeon.control.Location;
+import singleuserdungeon.control.Player;
 
 /**
  *
