@@ -7,15 +7,15 @@ package singleuserdungeon.interfaces;
 
 
 import java.util.ArrayList;
-import singleuserdungeon.control.Item;
-import singleuserdungeon.control.Location;
-import singleuserdungeon.control.Player;
+import singleuserdungeon.model.Item;
+import singleuserdungeon.model.player.Player;
+import singleuserdungeon.model.player.Location;
 
 /**
  *
  * @author misk
  */
-public interface tile
+public interface IRoom
 {
     public void SetVisted();
     

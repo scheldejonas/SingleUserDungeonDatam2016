@@ -9,7 +9,7 @@ package singleuserdungeon.interfaces;
  *
  * @author misk
  */
-public interface location 
+public interface ILocation 
 {
     public String GetName();
     

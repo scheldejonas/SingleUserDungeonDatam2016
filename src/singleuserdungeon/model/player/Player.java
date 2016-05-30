@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package singleuserdungeon.control;
+package singleuserdungeon.model.player;
 
 /**
  *
  * @author misk
  */
-public class Monster {
+public class Player {
     
 }

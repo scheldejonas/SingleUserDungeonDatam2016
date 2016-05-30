@@ -9,8 +9,6 @@ package singleuserdungeon.interfaces;
  *
  * @author misk
  */
-public interface item 
-{
-    
+public interface IMonster {
     
 }
