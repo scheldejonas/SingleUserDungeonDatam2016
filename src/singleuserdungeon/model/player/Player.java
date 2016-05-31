@@ -14,9 +14,8 @@ import singleuserdungeon.interfaces.IPlayer;
 public class Player implements IPlayer {
     private String name;
     private int hitPoints;
-    private int health;
     private int level;
-    private boolean hasHealingPotion;
+    private int numberOfHealingPotions;
     private int weaponDamage;
 
     public Player() {
@@ -42,14 +41,6 @@ public class Player implements IPlayer {
         this.hitPoints = hitPoints;
     }
 
-    public int getHealth() {
-        return health;
-    }
-
-    public void setHealth(int health) {
-        this.health = health;
-    }
-
     public int getLevel() {
         return level;
     }
@@ -58,12 +49,12 @@ public class Player implements IPlayer {
         this.level = level;
     }
 
-    public boolean isHasHealingPotion() {
-        return hasHealingPotion;
+    public int numberOfHealingPotions() {
+        return numberOfHealingPotions;
     }
 
-    public void setHasHealingPotion(boolean hasHealingPotion) {
-        this.hasHealingPotion = hasHealingPotion;
+    public void setNumberOfHealingPotions(int numberOfHealingPotions) {
+        this.numberOfHealingPotions = numberOfHealingPotions;
     }
 
     public int getWeaponDamage() {
