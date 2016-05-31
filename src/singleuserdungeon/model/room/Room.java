@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import singleuserdungeon.interfaces.IRoom;
 import singleuserdungeon.model.Item;
 import singleuserdungeon.model.monster.Monster;
-import singleuserdungeon.model.player.Location;
 
 /**
  *

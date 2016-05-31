@@ -9,7 +9,7 @@ import java.io.File;
 import java.util.ArrayList;
 import singleuserdungeon.interfaces.IXmlParser;
 import singleuserdungeon.model.monster.BaseMonster;
-import singleuserdungeon.model.player.Location;
+import singleuserdungeon.model.room.Location;
 
 import java.util.Hashtable;
 import javax.xml.parsers.DocumentBuilder;

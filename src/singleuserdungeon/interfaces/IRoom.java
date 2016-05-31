@@ -9,7 +9,7 @@ package singleuserdungeon.interfaces;
 import java.util.ArrayList;
 import singleuserdungeon.model.Item;
 import singleuserdungeon.model.monster.Monster;
-import singleuserdungeon.model.player.Location;
+import singleuserdungeon.model.room.Location;
 import singleuserdungeon.model.player.Player;
 import singleuserdungeon.model.room.Room;
 

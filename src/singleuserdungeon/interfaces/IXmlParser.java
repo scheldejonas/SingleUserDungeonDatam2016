@@ -7,7 +7,7 @@ package singleuserdungeon.interfaces;
 
 import singleuserdungeon.model.Item;
 import singleuserdungeon.model.monster.BaseMonster;
-import singleuserdungeon.model.player.Location;
+import singleuserdungeon.model.room.Location;
 
 /**
  *
