@@ -23,8 +23,6 @@ public class SingleUserDungeon
      */
     public static void main(String[] args) {
         
-        SingleUserDungeon SUD = new SingleUserDungeon();
-        
         BaseMonster monster = XmlParser.Instance().GetMonster(0);
         
         //System.out.println(monster.GetName());
