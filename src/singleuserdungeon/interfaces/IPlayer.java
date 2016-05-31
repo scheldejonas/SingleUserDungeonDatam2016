@@ -4,11 +4,28 @@
  * and open the template in the editor.
  */
 package singleuserdungeon.interfaces;
+import singleuserdungeon.model.Item;
+import singleuserdungeon.model.player.Player;
 
 /**
  *
  * @author scheldejonas
  */
 public interface IPlayer {
+    
+    public String getName();
+    public int getHitPoints();
+    public int getLevel();
+    public int getNumberOfHealingPotions();
+    public int getWeaponDamage();
+        
+
+    
+
+
+
+
+
+    
     
 }
