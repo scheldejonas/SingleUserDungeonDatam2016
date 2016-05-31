@@ -5,11 +5,13 @@
  */
 package singleuserdungeon.model.player;
 
+import singleuserdungeon.interfaces.IPlayer;
+
 /**
  *
  * @author misk
  */
-public class Player {
+public class Player implements IPlayer {
     private String name;
     private int hitPoints;
     private int health;

@@ -5,10 +5,12 @@
  */
 package singleuserdungeon.control;
 
+import singleuserdungeon.interfaces.IPlayer;
+
 /**
  *
  * @author scheldejonas
  */
-public class PlayerController {
+public class PlayerController implements IPlayer {
     
 }
