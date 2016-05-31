@@ -17,7 +17,7 @@ public class DungeonController {
     private IDungeon dungeonOne;
 
     public DungeonController() {
-        this.dungeonOne = new DungeonOne("Den of Death","This is the place of the hainted monsters, irresistable items and splash effected weapons. All of it is barried in the deepth of the rooms.");
+        this.dungeonOne = new DungeonOne("Den of Death","This is the place of the tainted monsters, irresistable items and splash effected weapons. All of it is barried in the deepth of the rooms.");
     }
     
     

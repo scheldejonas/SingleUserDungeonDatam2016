@@ -20,7 +20,18 @@ public class Player implements IPlayer {
     private Weapon weapon;
     private String description;
 
-    public Player() {
+    public Player() 
+    {
+    }
+    
+    public Player(String NewName,int NewHitpoints, int NewLevel, int NewNumberOfHealingPotions, Weapon NewWeapon, String NewDescription) 
+    {
+        name = NewName;
+        hitPoints = NewHitpoints;
+        level = NewLevel;
+        numberOfHealingPotions = NewNumberOfHealingPotions;
+        weapon = NewWeapon;
+        description = NewDescription;
     }
     
     @Override

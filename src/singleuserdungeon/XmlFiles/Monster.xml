@@ -7,6 +7,20 @@
             <defense> 2.0f</defense>   
             <xpmod> 1.2</xpmod>      
     </Monster>>
+    <Monster id="1"> //Zero index - Easy input in lists etc.
+            <name>Goblin</name>
+            <health> 3.0f</health>
+            <attack> 1.5f</attack>
+            <defense> 3.0f</defense>   
+            <xpmod> 1.4</xpmod>      
+    </Monster>>
+    <Monster id="0"> //Zero index - Easy input in lists etc.
+                <name>Orger</name>
+                <health> 10.0f</health>
+                <attack> 5.0f</attack>
+                <defense> 0.0f</defense>   
+                <xpmod> 1.1</xpmod>      
+        </Monster>>
 </MonsterList>
 
 
