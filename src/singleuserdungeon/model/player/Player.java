@@ -21,10 +21,6 @@ public class Player implements IPlayer {
 
     public Player() {
     }
-
-    
-    
-    
     
     public String getName() {
         return name;

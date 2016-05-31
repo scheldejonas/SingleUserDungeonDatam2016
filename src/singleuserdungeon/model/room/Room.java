@@ -31,6 +31,24 @@ public class Room implements IRoom {
     private boolean isMonsterHere;
     private Monster monster;
 
+    public Room(Location location, int roomIndexNumber, String roomName, String roomDescription, Room northRoom, Room eastRoom, Room southRoom, Room westRoom, boolean isEndTreasureChest, ArrayList<Item> items, Monster monster) {
+        this.location = location;
+        this.roomIndexNumber = roomIndexNumber;
+        this.roomName = roomName;
+        this.roomDescription = roomDescription;
+        this.northRoom = northRoom;
+        this.eastRoom = eastRoom;
+        this.southRoom = southRoom;
+        this.westRoom = westRoom;
+        this.isEndTreasureChest = isEndTreasureChest;
+        this.items = items;
+        this.monster = monster;
+        this.isVisited = false;
+        if (monster != null) {
+            this.isMonsterHere = true;
+        }
+    }
+
     @Override
     public Location getLocation() {
         return this.location;
