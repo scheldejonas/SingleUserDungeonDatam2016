@@ -9,6 +9,6 @@ package singleuserdungeon.model.monster;
  *
  * @author misk
  */
-public class BaseMonster {
+public class Monster {
     
 }

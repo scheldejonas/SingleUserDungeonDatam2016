@@ -13,14 +13,29 @@ import singleuserdungeon.interfaces.ILocation;
  */
 public class Location implements ILocation {
 
-    @Override
-    public String GetName() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private int indexNumber;
+    private int yCoordinate;
+    private int xCoordinate;
+
+    public Location(int indexNumber, int yCoordinate, int xCoordinate) {
+        this.indexNumber = indexNumber;
+        this.yCoordinate = yCoordinate;
+        this.xCoordinate = xCoordinate;
     }
 
     @Override
-    public String GetDescription() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int getXCoordinate() {
+        return this.xCoordinate;
+    }
+
+    @Override
+    public int getYCoordinate() {
+        return this.yCoordinate;
+    }
+
+    @Override
+    public int getLocationIndexNumber() {
+        return this.indexNumber;
     }
     
 }
