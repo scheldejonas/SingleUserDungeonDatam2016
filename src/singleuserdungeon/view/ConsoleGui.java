@@ -21,8 +21,11 @@ public class ConsoleGui {
     
     private static ConsoleGui instance = null;
     
-    public static ConsoleGui Instance() {
-        if(instance == null) {
+    public static ConsoleGui Instance()
+    {
+        if(instance == null)
+        {
+            
             instance = new ConsoleGui();
         }
         
