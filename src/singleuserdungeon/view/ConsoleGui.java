@@ -10,6 +10,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 import singleuserdungeon.control.DungeonController;
 import singleuserdungeon.control.PlayerController;
+import singleuserdungeon.control.StorageController;
 import singleuserdungeon.model.monster.XmlParser;
 
 /**
@@ -34,6 +35,7 @@ public class ConsoleGui {
     private boolean isGameReset;
     private DungeonController dungeon;
     private PlayerController player;
+    private StorageController savedGame;
     private String statString;
     private boolean isLoadGame;
     private boolean isSaveGame;
@@ -62,10 +64,10 @@ public class ConsoleGui {
             }
             else {
                 dungeon = new DungeonController();
-                isDungeonReady = this.startDungeon(dungeon);
+                isDungeonReady = this.startDungeon();
 
                 player = new PlayerController();
-                isPlayerReady = this.startPlayer(player);
+                isPlayerReady = this.startPlayer();
             }
             
             isGameReset = this.runGame();
@@ -85,11 +87,11 @@ public class ConsoleGui {
         return statString;
     }
 
-    private boolean startDungeon(DungeonController dungeon) {
+    private boolean startDungeon() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    private boolean startPlayer(PlayerController player) {
+    private boolean startPlayer() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -97,21 +99,14 @@ public class ConsoleGui {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    private DungeonController savedDungeon() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private PlayerController savedPlayer() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     private void loadGame() {
-        dungeon = savedDungeon();
-        player = savedPlayer();
+        dungeon = savedGame.getDungeon();
+        player = savedGame.getPlayer();
     }
 
     private void saveGame() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        savedGame.setDungeon(this.dungeon);
+        savedGame.setPlayer(this.player);
     }
 
 }
