@@ -46,7 +46,7 @@ public class XmlParser implements IXmlParser
         try
         {
         //Setting up file - Load and parse the file.
-        File inputFile = new File(name+".xml");
+        File inputFile = new File(System.getProperty("user.dir")+"/src/singleuserdungeon"+"/XmlFiles" + "/"+name+".xml");
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder docBuilder = dbFactory.newDocumentBuilder();
         Document doc = docBuilder.parse(inputFile);
@@ -66,39 +66,41 @@ public class XmlParser implements IXmlParser
     @Override
     public BaseMonster GetMonster(int id) 
     {
-        if(Monsters == null || Monsters.size() <=0)
+        if(Monsters == null || Monsters.size() == 0)
         {
-           Document doc =  LoadXml("Monster");
-           NodeList nList = doc.getElementsByTagName("Monster");
-           
-           for(int i = 0; i < nList.getLength();i++)
-           {
-               Node nNode = nList.item(id);
-               if (nNode.getNodeType() == Node.ELEMENT_NODE)
-               {
-                   Element eElement = (Element) nNode;
-                   
-                   String name = eElement.getElementsByTagName("name").item(0).getTextContent();
-                   float health = Float.parseFloat(eElement.getElementsByTagName("health").item(0).getTextContent());
-                   float attack = Float.parseFloat(eElement.getElementsByTagName("attack").item(0).getTextContent());
-                   float defense = Float.parseFloat(eElement.getElementsByTagName("defense").item(0).getTextContent());
-                   float xpmod = Float.parseFloat(eElement.getElementsByTagName("xpmod").item(0).getTextContent());
-                   
-                   BaseMonster monster = new BaseMonster(name,health,attack,defense,xpmod);
-                   
-                   Monsters.add(monster);
-               }
+         
+            Document doc =  LoadXml("Monster");
+            
+            doc.normalize();
+            NodeList nList = doc.getElementsByTagName("Monster");
+            
                
-           }
-           
+            
+            for(int i = 0; i < nList.getLength();i++)
+            {
+               
+                Node nNode = nList.item(id);
+                if (nNode.getNodeType() == Node.ELEMENT_NODE)
+                {
+                    Element eElement = (Element) nNode;
+                   
+                    String name = eElement.getElementsByTagName("name").item(0).getTextContent();
+                     
+                    float health = Float.parseFloat(eElement.getElementsByTagName("health").item(0).getTextContent());
+                    float attack = Float.parseFloat(eElement.getElementsByTagName("attack").item(0).getTextContent());
+                    float defense = Float.parseFloat(eElement.getElementsByTagName("defense").item(0).getTextContent());
+                    float xpmod = Float.parseFloat(eElement.getElementsByTagName("xpmod").item(0).getTextContent());
+
+                    BaseMonster monster = new BaseMonster(name,health,attack,defense,xpmod);
+                    Monsters.add(monster);
+                }
+            }
            return Monsters.get(id);
-           
         }
         else
         {
             return Monsters.get(id);
         }
-        
     }
 
     @Override
