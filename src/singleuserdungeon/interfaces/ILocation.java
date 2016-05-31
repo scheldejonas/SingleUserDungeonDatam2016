@@ -7,12 +7,12 @@ package singleuserdungeon.interfaces;
 
 /**
  *
- * @author misk
+ * @author scheldejonas
  */
-public interface ILocation 
-{
-    public String GetName();
+public interface ILocation {
     
-    public String GetDescription();
+    public int getXCoordinate();
+    public int getYCoordinate();
+    public int getLocationIndexNumber();
     
 }

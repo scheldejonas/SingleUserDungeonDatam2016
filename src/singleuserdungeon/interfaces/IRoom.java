@@ -8,8 +8,10 @@ package singleuserdungeon.interfaces;
 
 import java.util.ArrayList;
 import singleuserdungeon.model.Item;
-import singleuserdungeon.model.player.Player;
+import singleuserdungeon.model.monster.Monster;
 import singleuserdungeon.model.player.Location;
+import singleuserdungeon.model.player.Player;
+import singleuserdungeon.model.room.Room;
 
 /**
  *
@@ -17,19 +19,19 @@ import singleuserdungeon.model.player.Location;
  */
 public interface IRoom
 {
-    public void SetVisted();
-    
-    public ArrayList<Item> GetItems();
-    
-    public Location GetLocation();
-    
-    public String GetLocationName(Location l);
-    
-    public String GetLocationDescription(Location l);
-    
-    public boolean IsThereAMonster();
-    
-    public void GetMonster(Player p);
-    
+    public Location getLocation();
+    public int getRoomIndexNumber();
+    public String GetRoomName();
+    public String GetRoomDescription();
+    public Room getNorthRoom();
+    public Room getEastRoom();
+    public Room getSouthRoom();
+    public Room getWestRoom();
+    public boolean isEndTreasureChest();
+    public boolean isVisited();
+    public void setVisited(boolean visit);
+    public ArrayList<Item> getItems();
+    public boolean isMonsterHere();
+    public Monster getMonster();
     
 }
