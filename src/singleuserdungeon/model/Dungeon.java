@@ -5,6 +5,7 @@
  */
 package singleuserdungeon.model;
 
+import java.util.ArrayList;
 import singleuserdungeon.interfaces.IDungeon;
 import singleuserdungeon.model.room.Room;
 
@@ -14,14 +15,33 @@ import singleuserdungeon.model.room.Room;
  */
 public class Dungeon implements IDungeon {
 
-    @Override
-    public int getRoomCount() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private ArrayList<Room> rooms;
+    private String dungeonName;
+    private String startDungeonDescription;
+
+    public Dungeon(String dungeonName, String startDungeonDescription) {
+        this.dungeonName = dungeonName;
+        this.startDungeonDescription = startDungeonDescription;
     }
 
     @Override
-    public Room getPlayerCurrentRoom() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public ArrayList<Room> getRooms() {
+        return rooms;
+    }
+
+    @Override
+    public String getDungeonName() {
+        return this.dungeonName;
+    }
+
+    @Override
+    public String getStartDungeonDescription() {
+        return this.startDungeonDescription;
+    }
+
+    @Override
+    public void setRooms(ArrayList<Room> rooms) {
+        this.rooms = rooms;
     }
     
 }

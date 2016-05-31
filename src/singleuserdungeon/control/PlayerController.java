@@ -7,48 +7,20 @@ package singleuserdungeon.control;
 
 import singleuserdungeon.interfaces.IPlayer;
 import singleuserdungeon.model.player.Player;
+import singleuserdungeon.model.player.Weapon;
 
 /**
  *
  * @author scheldejonas
  */
-public class PlayerController implements IPlayer {
+public class PlayerController {
+    
     Player player = new Player();
     
     public void StartUpInitComponents() {
         player.setHitPoints(30);
-        player.setWeaponDamage(6);
         player.setNumberOfHealingPotions(1);
-}
-
-    @Override
-    public String getName() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        player.setWeapon(new Weapon("WoodSword", "Your wooden sword will give you the power to hit an enemy on all surface, but you will need more strength to cut through your enemy's with this", 1, 5, 2));
     }
-
-    @Override
-    public int getHitPoints() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public int getLevel() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public int getNumberOfHealingPotions() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public int getWeaponDamage() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    
-    
-    
-    
     
 }

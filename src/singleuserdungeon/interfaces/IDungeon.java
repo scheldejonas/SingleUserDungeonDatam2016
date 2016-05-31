@@ -5,6 +5,7 @@
  */
 package singleuserdungeon.interfaces;
 
+import java.util.ArrayList;
 import singleuserdungeon.model.room.Room;
 
 /**
@@ -13,7 +14,26 @@ import singleuserdungeon.model.room.Room;
  */
 public interface IDungeon {
     
-    public int getRoomCount();
-    public Room getPlayerCurrentRoom();
+    /**
+     * This is for keeping the rooms in one container and using the controller get all sorts of information out of this list with rooms
+     * @return ArrayList of rooms
+     */
+    public ArrayList<Room> getRooms();
     
+    /**
+     * This is for updating the rooms
+     */
+    public void setRooms(ArrayList<Room> rooms);
+    
+    /**
+     * This is the main name of the game, and should be returned when the game is entered
+     * @return name of the dungeon
+     */
+    public String getDungeonName();
+    
+    /**
+     * This is the main start description of the game, and should be returned when the game is entered. 
+     * @return the text description of the dungeon
+     */
+    public String getStartDungeonDescription();
 }

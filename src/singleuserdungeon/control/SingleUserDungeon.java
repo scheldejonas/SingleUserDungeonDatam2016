@@ -5,7 +5,7 @@
  */
 package singleuserdungeon.control;
 
-import singleuserdungeon.model.XmlParser;
+import singleuserdungeon.model.monster.XmlParser;
 import singleuserdungeon.model.monster.BaseMonster;
 
 /**

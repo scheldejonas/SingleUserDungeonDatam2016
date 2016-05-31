@@ -8,7 +8,8 @@ package singleuserdungeon.model.room;
 import java.util.ArrayList;
 import singleuserdungeon.interfaces.IRoom;
 import singleuserdungeon.model.Item;
-import singleuserdungeon.model.monster.Monster;
+import singleuserdungeon.model.player.Weapon;
+import singleuserdungeon.model.monster.BaseMonster;
 
 /**
  *
@@ -28,9 +29,10 @@ public class Room implements IRoom {
     private boolean isVisited;
     private ArrayList<Item> items;
     private boolean isMonsterHere;
-    private Monster monster;
+    private BaseMonster monster;
+    private Weapon weapon;
 
-    public Room(Location location, int roomIndexNumber, String roomName, String roomDescription, Room northRoom, Room eastRoom, Room southRoom, Room westRoom, boolean isEndTreasureChest, ArrayList<Item> items, Monster monster) {
+    public Room(Location location, int roomIndexNumber, String roomName, String roomDescription, Room northRoom, Room eastRoom, Room southRoom, Room westRoom, boolean isEndTreasureChest, ArrayList<Item> items, BaseMonster monster, Weapon weapon) {
         this.location = location;
         this.roomIndexNumber = roomIndexNumber;
         this.roomName = roomName;
@@ -42,6 +44,7 @@ public class Room implements IRoom {
         this.isEndTreasureChest = isEndTreasureChest;
         this.items = items;
         this.monster = monster;
+        this.weapon = weapon;
         this.isVisited = false;
         if (monster != null) {
             this.isMonsterHere = true;
@@ -114,8 +117,13 @@ public class Room implements IRoom {
     }
 
     @Override
-    public Monster getMonster() {
+    public BaseMonster getMonster() {
         return this.monster;
+    }
+
+    @Override
+    public Weapon getWeapon() {
+        return this.weapon;
     }
     
 }

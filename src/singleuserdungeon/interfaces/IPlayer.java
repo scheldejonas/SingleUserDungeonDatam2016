@@ -5,6 +5,7 @@
  */
 package singleuserdungeon.interfaces;
 import singleuserdungeon.model.Item;
+import singleuserdungeon.model.player.Weapon;
 import singleuserdungeon.model.player.Player;
 
 /**
@@ -14,18 +15,15 @@ import singleuserdungeon.model.player.Player;
 public interface IPlayer {
     
     public String getName();
+    public String getDescription();
     public int getHitPoints();
     public int getLevel();
     public int getNumberOfHealingPotions();
-    public int getWeaponDamage();
-        
-
-    
-
-
-
-
-
-    
+    public void setNumberOfHealingPotions(int numberOfHealingPotions);
+    public Weapon getWeapon();
+    public void setWeapon(Weapon weapon);
+    public void setName(String name);
+    public void setHitPoints(int hitPoints);
+    public void setLevel(int level);
     
 }

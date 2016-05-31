@@ -8,7 +8,8 @@ package singleuserdungeon.interfaces;
 
 import java.util.ArrayList;
 import singleuserdungeon.model.Item;
-import singleuserdungeon.model.monster.Monster;
+import singleuserdungeon.model.player.Weapon;
+import singleuserdungeon.model.monster.BaseMonster;
 import singleuserdungeon.model.room.Location;
 import singleuserdungeon.model.player.Player;
 import singleuserdungeon.model.room.Room;
@@ -31,7 +32,8 @@ public interface IRoom
     public boolean isVisited();
     public void setVisited(boolean visit);
     public ArrayList<Item> getItems();
+    public Weapon getWeapon();
     public boolean isMonsterHere();
-    public Monster getMonster();
+    public BaseMonster getMonster();
     
 }
