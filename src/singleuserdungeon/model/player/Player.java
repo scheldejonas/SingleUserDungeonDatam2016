@@ -49,7 +49,7 @@ public class Player implements IPlayer {
         this.level = level;
     }
 
-    public int numberOfHealingPotions() {
+    public int getNumberOfHealingPotions() {
         return numberOfHealingPotions;
     }
 

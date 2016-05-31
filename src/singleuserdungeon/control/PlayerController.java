@@ -12,7 +12,7 @@ import singleuserdungeon.model.player.Player;
  *
  * @author scheldejonas
  */
-public class PlayerController implements IPlayer {
+public class PlayerController  {
     Player player = new Player();
     
     public void StartUpInitComponents() {
