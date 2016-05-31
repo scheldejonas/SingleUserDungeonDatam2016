@@ -13,13 +13,13 @@ import singleuserdungeon.model.room.Room;
  *
  * @author scheldejonas
  */
-public class Dungeon implements IDungeon {
+public class DungeonOne implements IDungeon {
 
     private ArrayList<Room> rooms;
     private String dungeonName;
     private String startDungeonDescription;
 
-    public Dungeon(String dungeonName, String startDungeonDescription) {
+    public DungeonOne(String dungeonName, String startDungeonDescription) {
         this.dungeonName = dungeonName;
         this.startDungeonDescription = startDungeonDescription;
     }

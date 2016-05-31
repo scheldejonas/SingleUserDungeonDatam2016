@@ -31,7 +31,6 @@ public class XmlParser implements IXmlParser
     private ArrayList<Location> Locations= new ArrayList<>();
     private ArrayList<Item> Items = new ArrayList<>();
     
-    
     public static XmlParser Instance()
     {
         if(instance == null)

@@ -5,8 +5,10 @@
  */
 package singleuserdungeon.control;
 
+import singleuserdungeon.model.DungeonOne;
 import singleuserdungeon.model.monster.XmlParser;
 import singleuserdungeon.model.monster.BaseMonster;
+import singleuserdungeon.view.ConsoleGui;
 
 /**
  *
@@ -19,17 +21,15 @@ public class SingleUserDungeon
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args)
-    {
-        
-        // TODO code application logic here
+    public static void main(String[] args) {
         
         SingleUserDungeon SUD = new SingleUserDungeon();
         
         BaseMonster monster = XmlParser.Instance().GetMonster(0);
         
-        System.out.println(monster.GetName());
+        //System.out.println(monster.GetName());
         
+        ConsoleGui textGame = ConsoleGui.Instance().run();
         
     }
     

@@ -5,10 +5,20 @@
  */
 package singleuserdungeon.control;
 
+import singleuserdungeon.interfaces.IDungeon;
+import singleuserdungeon.model.DungeonOne;
+
 /**
  *
  * @author scheldejonas
  */
 public class DungeonController {
+    
+    private IDungeon dungeonOne;
+
+    public DungeonController() {
+        this.dungeonOne = new DungeonOne("Den of Death","This is the place of the hainted monsters, irresistable items and splash effected weapons. All of it is barried in the deepth of the rooms.");
+    }
+    
     
 }
