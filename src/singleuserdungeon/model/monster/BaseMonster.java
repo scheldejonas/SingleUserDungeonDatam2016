@@ -5,10 +5,52 @@
  */
 package singleuserdungeon.model.monster;
 
+import singleuserdungeon.interfaces.IMonster;
+
 /**
  *
  * @author misk
  */
-public class BaseMonster {
+public class BaseMonster implements IMonster
+{
+
+    private String name;
+    private float health;
+    private float attack;
+    private float defense;
+    private float xpMod;
+    
+    public BaseMonster(String monsterName,float monsterHealth, float monsterAttack, float monsterDefense,float monsterXpMod)
+    {
+        name = monsterName;
+        health = monsterHealth;
+        attack = monsterAttack;
+        defense = monsterDefense;
+        xpMod = monsterXpMod;        
+    }
+
+    @Override
+    public String GetName() 
+    {
+        return name;
+    }
+
+    @Override
+    public float GetHealth()
+    {
+        return health;
+    }
+
+    @Override
+    public float GetAttack() 
+    {
+        return attack;
+    }
+
+    @Override
+    public float GetDefense() 
+    {
+        return defense;
+    }
     
 }

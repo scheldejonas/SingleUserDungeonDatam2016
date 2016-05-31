@@ -9,6 +9,6 @@ package singleuserdungeon.control;
  *
  * @author scheldejonas
  */
-public class MonsterController {
-    
+public final class MonsterController 
+{
 }

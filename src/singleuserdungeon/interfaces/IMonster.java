@@ -9,6 +9,15 @@ package singleuserdungeon.interfaces;
  *
  * @author misk
  */
-public interface IMonster {
+public interface IMonster 
+{
+    public String GetName();
+    
+    public float GetHealth();
+    
+    public float GetAttack();
+    
+    public float GetDefense();   
+    
     
 }

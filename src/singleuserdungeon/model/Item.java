@@ -11,6 +11,8 @@ import singleuserdungeon.interfaces.IItem;
  *
  * @author misk
  */
-public class Item implements IItem {
+public class Item implements IItem
+{
+    XmlParser xml = new XmlParser();
     
 }

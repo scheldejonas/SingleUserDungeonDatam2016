@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MonsterList>
+    <Monster id="0"> //Zero index - Easy input in lists etc.
+            <string name="name">Wild Boar</string>
+            <float name ="health"> 5.0f</float>
+            <float name ="attack"> 2.0f</float>
+            <float name ="defense"> 2.0f</float>   
+            <float name ="xpmod"> 1.2</float>      
+    </Monster>>
+</MonsterList>
+
+
+
