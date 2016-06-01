@@ -17,7 +17,21 @@ import singleuserdungeon.model.monster.XmlParser;
  *
  * @author scheldejonas
  */
-public class ConsoleGui {
+public class ConsoleGui
+{
+    private boolean isResetGame;
+    private boolean isDungeonReady;
+    private boolean isPlayerReady;
+    private boolean isGameReset;
+    private DungeonController dungeon;
+    private PlayerController player;
+    private StorageController savedGame;
+    private String statString;
+    private boolean isLoadGame;
+    private boolean isSaveGame;
+    private Scanner scanner;
+    private String playerAnswer;
+    
     
     private static ConsoleGui instance = null;
     
@@ -32,20 +46,8 @@ public class ConsoleGui {
         return instance;
     }
     
-    private boolean isResetGame;
-    private boolean isDungeonReady;
-    private boolean isPlayerReady;
-    private boolean isGameReset;
-    private DungeonController dungeon;
-    private PlayerController player;
-    private StorageController savedGame;
-    private String statString;
-    private boolean isLoadGame;
-    private boolean isSaveGame;
-    private Scanner scanner;
-    private String playerAnswer;
-    
-    public String run() {
+    public String run() 
+    {
         
         scanner = new Scanner(System.in);
         System.out.println("Would you like to load the previous game?");
@@ -54,18 +56,21 @@ public class ConsoleGui {
             isLoadGame = true;
             playerAnswer = "";
         }
-        else {
+        else
+        {
             isLoadGame = false;
         }
         
         isSaveGame = false;
         
-        do {
+        do
+        {
             
             if (isLoadGame) {
                 this.loadGame();
             }
-            else {
+            else
+            {
                 dungeon = new DungeonController();
                 isDungeonReady = this.startDungeon();
 
@@ -75,11 +80,13 @@ public class ConsoleGui {
             
             isGameReset = this.runGame();
             
-            if (isSaveGame) {
+            if (isSaveGame)
+            {
                 this.saveGame();
             }
             
-        } while (isGameReset || isLoadGame);
+        } 
+        while (isGameReset || isLoadGame);
         
         return this.setStats();
     }
