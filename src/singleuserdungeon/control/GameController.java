@@ -14,11 +14,27 @@ import singleuserdungeon.model.player.Player;
  */
 public class GameController implements IGameController
 {
+    private static GameController instance = null;
+    
+    public static GameController Instance()
+    {
+        if(instance == null)
+        {
+            instance = new GameController();
+        }
+        
+        return instance;
+    }
+    
 
     @Override
-    public void NewGame() {
+    public void NewGame()
+    {
+        
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
+    
 
     @Override
     public void EndGame() {
