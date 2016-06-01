@@ -27,6 +27,8 @@ public class SingleUserDungeon
         
         //System.out.println(monster.GetName());
         
+        GameController Game = GameController.Instance();
+        
         String gameStats = ConsoleGui.Instance().run();
         System.out.println(gameStats);
         

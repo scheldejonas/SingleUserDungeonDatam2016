@@ -16,7 +16,7 @@ public class GuiView extends javax.swing.JFrame {
     /**
      * Creates new form GuiView
      */
-    public GuiView Instance() 
+    public static GuiView Instance() 
     {
         if(instance == null)
         {
@@ -101,6 +101,11 @@ public class GuiView extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+    
+    public void ResetView()
+    {
+        jTextArea1.setText("");
+    }
     
     public void OutputText(String str)
     {

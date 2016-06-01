@@ -7,6 +7,7 @@ package singleuserdungeon.control;
 
 import singleuserdungeon.interfaces.IGameController;
 import singleuserdungeon.model.player.Player;
+import singleuserdungeon.view.*;
 
 /**
  *
@@ -21,6 +22,10 @@ public class GameController implements IGameController
         if(instance == null)
         {
             instance = new GameController();
+            
+            //Starting the view
+            GuiView.Instance().setVisible(true);
+            
         }
         
         return instance;
@@ -30,24 +35,29 @@ public class GameController implements IGameController
     @Override
     public void NewGame()
     {
-        
+        GuiView.Instance().ResetView();
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     
 
     @Override
-    public void EndGame() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void EndGame()
+    {
+        GuiView.Instance().OutputText("The end.");
+        
     }
 
     @Override
     public void ResetGame() {
+        GuiView.Instance().ResetView();
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void NextLevel(Player currentPlayer) {
+    public void NextLevel(Player currentPlayer) 
+    {
+        GuiView.Instance().ResetView();
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

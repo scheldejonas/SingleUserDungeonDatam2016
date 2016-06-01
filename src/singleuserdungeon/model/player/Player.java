@@ -26,12 +26,12 @@ public class Player implements IPlayer {
     
     public Player(String NewName,int NewHitpoints, int NewLevel, int NewNumberOfHealingPotions, Weapon NewWeapon, String NewDescription) 
     {
-        name = NewName;
-        hitPoints = NewHitpoints;
-        level = NewLevel;
-        numberOfHealingPotions = NewNumberOfHealingPotions;
-        weapon = NewWeapon;
-        description = NewDescription;
+        this.name = NewName;
+        this.hitPoints = NewHitpoints;
+        this.level = NewLevel;
+        this.numberOfHealingPotions = NewNumberOfHealingPotions;
+        this.weapon = NewWeapon;
+        this.description = NewDescription;
     }
     
     @Override
