@@ -6,6 +6,8 @@
 package singleuserdungeon.control;
 
 import singleuserdungeon.interfaces.IGameController;
+import singleuserdungeon.control.*;
+import singleuserdungeon.model.*;
 import singleuserdungeon.model.player.Player;
 import singleuserdungeon.view.*;
 
@@ -13,52 +15,53 @@ import singleuserdungeon.view.*;
  *
  * @author misk
  */
-public class GameController implements IGameController
-{
+public class GameController implements IGameController {
+    
     private static GameController instance = null;
     
-    public static GameController Instance()
-    {
-        if(instance == null)
-        {
+    public static GameController instance() {
+        if(instance == null) {
             instance = new GameController();
             
-            //Starting the view
-            GuiView.Instance().setVisible(true);
-            
+            GuiView.instance(); //Newing the game window, so the game restarts, if the somebody news the game from the starter.
         }
         
         return instance;
     }
     
+    private FileHandler fileHandler = new FileHandler();
 
     @Override
-    public void NewGame()
-    {
-        GuiView.Instance().ResetView();
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    
-
-    @Override
-    public void EndGame()
-    {
-        GuiView.Instance().OutputText("The end.");
-        
+    public void quitGame() {
+        GuiView.instance().disposeWindow(); //Saving story to file and closing down the window.
     }
 
     @Override
-    public void ResetGame() {
-        GuiView.Instance().ResetView();
+    public void endGame() {
+        GuiView.instance().outputText("The end.");
+        fileHandler.saveTextToFile(GuiView.instance().getLiveStory());
+    }
+
+    @Override
+    public void resetGame() {
+        GuiView.instance().ResetStory();
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void NextLevel(Player currentPlayer) 
-    {
-        GuiView.Instance().ResetView();
+    public void nextLevel(Player currentPlayer) {
+        GuiView.instance().ResetStory();
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void nextLineCommand(String text) {
+        CommandController.instance().Command(text);
+    }
+
+    @Override
+    public boolean WriteTextToFile(String text) {
+        return fileHandler.saveTextToFile(text);
     }
     
 }

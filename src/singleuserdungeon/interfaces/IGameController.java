@@ -13,12 +13,15 @@ import singleuserdungeon.model.player.Player;
  */
 public interface IGameController
 {
-    public void NewGame();
+    public void quitGame();
     
-    public void EndGame();
+    public void endGame();
     
-    public void ResetGame();
+    public void resetGame();
     
-    public void NextLevel(Player currentPlayer);
+    public void nextLevel(Player currentPlayer);
     
+    public boolean WriteTextToFile(String text);
+    
+    public void nextLineCommand(String text);
 }

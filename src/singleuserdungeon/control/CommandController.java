@@ -13,7 +13,7 @@ public class CommandController
 {
     private static CommandController instance;
     
-    public static CommandController Instance()
+    public static CommandController instance()
     {
         if(instance == null)
         {
@@ -31,27 +31,31 @@ public class CommandController
         
         switch(commandString)
         {
-            case "/pickup":
-                output = "You picked up "; // + Call pickup fucntion - return item name
-                break;
-            
-            case "/gonorth":
-                output = "Going north "; // + Call fucntion - return what happend . ex into a wall/
-                break; 
-            
-            case "/gosouth":
-                output = "Going south "; // + Call fucntion - return what happend . ex into a wall/
-                break;
-                
-            case "/goeast":
-                output = "Going east "; // + Call fucntion - return what happend . ex into a wall/
-                break;
-                
-            case "/gowest":
+            case "west":
                 output = "Going west "; // + Call fucntion - return what happend . ex into a wall/
                 break;
                 
-            case "/attack":
+            case "north":
+                output = "Going north "; // + Call fucntion - return what happend . ex into a wall/
+                break;
+                
+            case "east":
+                output = "Going east "; // + Call fucntion - return what happend . ex into a wall/
+                break;
+                
+            case "south":
+                output = "Going south "; // + Call fucntion - return what happend . ex into a wall/
+                break;
+                
+            case "pickup":
+                output = "You picked up "; // + Call pickup fucntion - return item name
+                break;
+
+            case "use":
+                output = "Attacking "; // + Call fucntion - return what happend . ex attacking enemy
+                break;
+                
+            case "attack":
                 output = "Attacking "; // + Call fucntion - return what happend . ex attacking enemy
                 break;
                 
