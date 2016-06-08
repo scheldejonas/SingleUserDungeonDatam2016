@@ -23,6 +23,12 @@ public class Location implements ILocation {
         this.xCoordinate = xCoordinate;
     }
 
+    public Location(int indexNumber) {
+        this.indexNumber = indexNumber;
+        this.yCoordinate = 0;
+        this.xCoordinate = 0;
+    }
+
     @Override
     public int getXCoordinate() {
         return this.xCoordinate;
