@@ -55,8 +55,8 @@ public class GameController implements IGameController {
     }
 
     @Override
-    public void nextLineCommand(String text) {
-        CommandController.instance().Command(text);
+    public String nextLineCommand(String text) {
+        return CommandController.instance().Command(text);
     }
 
     @Override

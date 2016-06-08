@@ -9,28 +9,24 @@ package singleuserdungeon.control;
  *
  * @author misk
  */
-public class CommandController 
-{
+public class CommandController {
+    
     private static CommandController instance;
     
-    public static CommandController instance()
-    {
-        if(instance == null)
-        {
+    public static CommandController instance() {
+        if(instance == null) {
             instance = new CommandController();
         }
         
         return instance;
     }
     
-    public String Command(String commandString)
-    {
+    public String Command(String commandString) {
         String output = null;
         
         commandString = commandString.toLowerCase();
         
-        switch(commandString)
-        {
+        switch(commandString) {
             case "west":
                 output = "Going west "; // + Call fucntion - return what happend . ex into a wall/
                 break;

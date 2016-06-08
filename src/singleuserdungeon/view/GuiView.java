@@ -175,9 +175,9 @@ public class GuiView extends javax.swing.JFrame {
 
     private void jButtonAnswerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAnswerActionPerformed
         
-        outputText("You went to " + jTextFieldInputAnswer.getText() + "\n");
+        String commandAnswer = GameController.instance().nextLineCommand(jTextFieldInputAnswer.getText());
         
-        GameController.instance().nextLineCommand(jTextFieldInputAnswer.getText());
+        outputText(commandAnswer);
         
         clearAnswerField();
         
@@ -196,10 +196,12 @@ public class GuiView extends javax.swing.JFrame {
     private void jButtonExportConsoleToFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExportConsoleToFileActionPerformed
         boolean wasWritten = GameController.instance().WriteTextToFile(jTextAreaConsole.getText());
         if (wasWritten) {
-            outputText("Your story has been saved to the computer.");
+            String string = "Your story has been saved to the computer.";
+            setExportStatus(string);
         }
         else {
-            outputText("Your story is not saved, sorry, try again or contact us.");
+            String string = "Your story is not saved, sorry, try again or contact us.";
+            setExportStatus(string);
         }
     }//GEN-LAST:event_jButtonExportConsoleToFileActionPerformed
     
@@ -257,6 +259,10 @@ public class GuiView extends javax.swing.JFrame {
 
     private void clearExportStatus() {
         jLabelExportStatus.setText("");
+    }
+    
+    private void setExportStatus(String text) {
+        jLabelExportStatus.setText(text);
     }
 
     public String getLiveStory() {

@@ -23,5 +23,5 @@ public interface IGameController
     
     public boolean WriteTextToFile(String text);
     
-    public void nextLineCommand(String text);
+    public String nextLineCommand(String text);
 }
