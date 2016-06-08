@@ -98,7 +98,7 @@ public class GuiViewDungeonOne extends javax.swing.JFrame {
 
         jPanelGameConsole.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 120, 680, 260));
 
-        jTextFieldInputAnswer.setFont(new java.awt.Font("Avenir Next", 0, 18)); // NOI18N
+        jTextFieldInputAnswer.setFont(new java.awt.Font("Avenir Next", 0, 24)); // NOI18N
         jTextFieldInputAnswer.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextFieldInputAnswer.setBorder(null);
         jTextFieldInputAnswer.addActionListener(new java.awt.event.ActionListener() {

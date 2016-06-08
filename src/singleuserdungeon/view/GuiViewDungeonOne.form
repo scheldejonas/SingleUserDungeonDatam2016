@@ -88,7 +88,7 @@
         <Component class="javax.swing.JTextField" name="jTextFieldInputAnswer">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Avenir Next" size="18" style="0"/>
+              <Font name="Avenir Next" size="24" style="0"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="2"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
