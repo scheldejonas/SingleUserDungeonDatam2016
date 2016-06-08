@@ -49,15 +49,14 @@ public class GuiView extends javax.swing.JFrame {
 
         jLabel2 = new javax.swing.JLabel();
         jPanelGameConsole = new javax.swing.JPanel();
-        jButtonClose = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextAreaConsole = new javax.swing.JTextArea();
         jTextFieldInputAnswer = new javax.swing.JTextField();
         jButtonAnswer = new javax.swing.JButton();
         jLabelHeadline = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jButtonExportConsoleToFile = new javax.swing.JButton();
         jLabelExportStatus = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jPanelCommandInfo = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -74,116 +73,168 @@ public class GuiView extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jButtonExportConsoleToFile = new javax.swing.JButton();
 
         jLabel2.setText("jLabel2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 0, 0));
+        setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanelGameConsole.setBackground(new java.awt.Color(0, 0, 0));
         jPanelGameConsole.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButtonClose.setText("Close");
-        jButtonClose.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonCloseActionPerformed(evt);
-            }
-        });
-        jPanelGameConsole.add(jButtonClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        jScrollPane1.setOpaque(false);
 
         jTextAreaConsole.setEditable(false);
+        jTextAreaConsole.setBackground(new java.awt.Color(0, 0, 0));
         jTextAreaConsole.setColumns(20);
+        jTextAreaConsole.setForeground(new java.awt.Color(255, 255, 255));
+        jTextAreaConsole.setLineWrap(true);
         jTextAreaConsole.setRows(5);
         jScrollPane1.setViewportView(jTextAreaConsole);
 
-        jPanelGameConsole.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 80, 839, 300));
+        jPanelGameConsole.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 120, 680, 260));
 
+        jTextFieldInputAnswer.setFont(new java.awt.Font("Avenir Next", 0, 18)); // NOI18N
         jTextFieldInputAnswer.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        jTextFieldInputAnswer.setBorder(null);
         jTextFieldInputAnswer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldInputAnswerActionPerformed(evt);
             }
         });
-        jPanelGameConsole.add(jTextFieldInputAnswer, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 390, 740, -1));
+        jPanelGameConsole.add(jTextFieldInputAnswer, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 170, 40));
 
-        jButtonAnswer.setText("Action");
+        jButtonAnswer.setBackground(new java.awt.Color(204, 0, 0));
+        jButtonAnswer.setFont(new java.awt.Font("Diediedie", 3, 22)); // NOI18N
+        jButtonAnswer.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonAnswer.setText("EXECUTE");
+        jButtonAnswer.setBorderPainted(false);
+        jButtonAnswer.setOpaque(true);
         jButtonAnswer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAnswerActionPerformed(evt);
             }
         });
-        jPanelGameConsole.add(jButtonAnswer, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 390, 90, -1));
+        jPanelGameConsole.add(jButtonAnswer, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 390, 150, 40));
 
-        jLabelHeadline.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        jLabelHeadline.setFont(new java.awt.Font("Diediedie", 1, 48)); // NOI18N
+        jLabelHeadline.setForeground(new java.awt.Color(255, 0, 51));
         jLabelHeadline.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelHeadline.setText("Single User Dungeon by Jonas Schelde, Jens Egeberg Rasmussen & Michael Skjaldgaard");
-        jPanelGameConsole.add(jLabelHeadline, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 45, -1, -1));
+        jLabelHeadline.setText("Hall of Disaster");
+        jPanelGameConsole.add(jLabelHeadline, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        jLabel1.setText("If you need help, then you would have to yield it.");
-        jPanelGameConsole.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, 450, -1));
+        jLabel1.setFont(new java.awt.Font("Avenir Next", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Response");
+        jPanelGameConsole.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 80, 20));
 
-        jButtonExportConsoleToFile.setText("Export My Story");
+        jLabelExportStatus.setText(" ");
+        jPanelGameConsole.add(jLabelExportStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 15, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Avenir Next", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("If you need help, then you would have to yield it.");
+        jPanelGameConsole.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 540, 20));
+
+        getContentPane().add(jPanelGameConsole, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 690, 460));
+
+        jPanelCommandInfo.setBackground(new java.awt.Color(0, 0, 0));
+        jPanelCommandInfo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setFont(new java.awt.Font("Avenir Next", 1, 20)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Commands");
+        jPanelCommandInfo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jPanelCommandInfo.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, -1, -1));
+
+        jLabel6.setFont(new java.awt.Font("Avenir Next", 0, 13)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("North");
+        jPanelCommandInfo.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
+
+        jLabel7.setFont(new java.awt.Font("Avenir Next", 0, 13)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Save");
+        jPanelCommandInfo.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, -1, -1));
+
+        jLabel8.setFont(new java.awt.Font("Avenir Next", 0, 13)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("East");
+        jPanelCommandInfo.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
+
+        jLabel9.setFont(new java.awt.Font("Avenir Next", 0, 13)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("South");
+        jPanelCommandInfo.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
+
+        jLabel10.setFont(new java.awt.Font("Avenir Next", 0, 13)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("New");
+        jPanelCommandInfo.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, -1, -1));
+
+        jLabel11.setFont(new java.awt.Font("Avenir Next", 0, 13)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("Quit");
+        jPanelCommandInfo.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, -1, -1));
+
+        jLabel12.setFont(new java.awt.Font("Avenir Next", 0, 13)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("Use + item name");
+        jPanelCommandInfo.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, -1));
+
+        jLabel13.setFont(new java.awt.Font("Avenir Next", 0, 13)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("Pickup");
+        jPanelCommandInfo.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, -1));
+
+        jLabel14.setFont(new java.awt.Font("Avenir Next", 0, 13)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setText("Attack");
+        jPanelCommandInfo.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
+
+        jLabel15.setFont(new java.awt.Font("Avenir Next", 1, 11)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel15.setText("MENU");
+        jPanelCommandInfo.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, -1, -1));
+
+        jLabel16.setFont(new java.awt.Font("Avenir Next", 0, 13)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setText("West");
+        jPanelCommandInfo.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
+
+        jLabel17.setFont(new java.awt.Font("Avenir Next", 1, 11)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel17.setText("DIRECTIONS");
+        jPanelCommandInfo.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
+
+        jLabel18.setFont(new java.awt.Font("Avenir Next", 1, 11)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel18.setText("ACTIONS");
+        jPanelCommandInfo.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, -1, -1));
+
+        jLabel19.setFont(new java.awt.Font("Avenir Next", 0, 13)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel19.setText("Load");
+        jPanelCommandInfo.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, -1, -1));
+
+        jButtonExportConsoleToFile.setBackground(new java.awt.Color(102, 102, 102));
+        jButtonExportConsoleToFile.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonExportConsoleToFile.setText("Export Text");
+        jButtonExportConsoleToFile.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         jButtonExportConsoleToFile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonExportConsoleToFileActionPerformed(evt);
             }
         });
-        jPanelGameConsole.add(jButtonExportConsoleToFile, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, -1, -1));
+        jPanelCommandInfo.add(jButtonExportConsoleToFile, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 100, 30));
 
-        jLabelExportStatus.setText(" ");
-        jPanelGameConsole.add(jLabelExportStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 15, -1, -1));
-
-        getContentPane().add(jPanelGameConsole, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 460));
-
-        jPanelCommandInfo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel3.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        jLabel3.setText("Controls");
-        jPanelCommandInfo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
-        jPanelCommandInfo.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, -1, -1));
-
-        jLabel6.setText("North");
-        jPanelCommandInfo.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
-
-        jLabel7.setText("save");
-        jPanelCommandInfo.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, -1, -1));
-
-        jLabel8.setText("East");
-        jPanelCommandInfo.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
-
-        jLabel9.setText("South");
-        jPanelCommandInfo.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
-
-        jLabel10.setText("new");
-        jPanelCommandInfo.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, -1, -1));
-
-        jLabel11.setText("load");
-        jPanelCommandInfo.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, -1, -1));
-
-        jLabel12.setText("use + item name");
-        jPanelCommandInfo.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, -1));
-
-        jLabel13.setText("pickup");
-        jPanelCommandInfo.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, -1));
-
-        jLabel14.setText("attack");
-        jPanelCommandInfo.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
-
-        jLabel15.setFont(new java.awt.Font("Lucida Grande", 0, 10)); // NOI18N
-        jLabel15.setText("MENU");
-        jPanelCommandInfo.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, -1, -1));
-
-        jLabel16.setText("West");
-        jPanelCommandInfo.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
-
-        jLabel17.setFont(new java.awt.Font("Lucida Grande", 0, 10)); // NOI18N
-        jLabel17.setText("DIRECTIONS");
-        jPanelCommandInfo.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
-
-        jLabel18.setFont(new java.awt.Font("Lucida Grande", 0, 10)); // NOI18N
-        jLabel18.setText("ACTIONS");
-        jPanelCommandInfo.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, -1, -1));
-
-        getContentPane().add(jPanelCommandInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 0, 280, 500));
+        getContentPane().add(jPanelCommandInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 0, 210, 460));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -204,10 +255,6 @@ public class GuiView extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jTextFieldInputAnswerActionPerformed
 
-    private void jButtonCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCloseActionPerformed
-        this.dispose();
-    }//GEN-LAST:event_jButtonCloseActionPerformed
-
     private void jButtonExportConsoleToFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExportConsoleToFileActionPerformed
         boolean wasWritten = GameController.instance().WriteTextToFile(jTextAreaConsole.getText());
         if (wasWritten) {
@@ -222,7 +269,6 @@ public class GuiView extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAnswer;
-    private javax.swing.JButton jButtonClose;
     private javax.swing.JButton jButtonExportConsoleToFile;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -234,8 +280,10 @@ public class GuiView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
