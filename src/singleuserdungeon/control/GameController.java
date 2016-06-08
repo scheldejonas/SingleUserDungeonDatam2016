@@ -42,19 +42,19 @@ public class GameController implements IGameController {
 
     @Override
     public void endGame() {
-        GuiViewDungeonOne.instance().outputText("The end.");
+        GuiViewDungeonOne.instance().outputStoryText("The end.");
         fileHandler.saveTextToFile(GuiViewDungeonOne.instance().getLiveStory());
     }
 
     @Override
     public void resetGame() {
-        GuiViewDungeonOne.instance().ResetStory();
+        GuiViewDungeonOne.instance().ResetStoryText();
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void nextLevel(Player currentPlayer) {
-        GuiViewDungeonOne.instance().ResetStory();
+        GuiViewDungeonOne.instance().ResetStoryText();
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
