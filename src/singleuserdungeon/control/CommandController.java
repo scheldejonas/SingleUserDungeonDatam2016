@@ -49,14 +49,30 @@ public class CommandController
                 
             case "pickup":
                 output = "You picked up "; // + Call pickup fucntion - return item name
-                break;
-
-            case "use":
-                output = "Attacking "; // + Call fucntion - return what happend . ex attacking enemy
-                break;
+                break; 
                 
             case "attack":
                 output = "Attacking "; // + Call fucntion - return what happend . ex attacking enemy
+                break;
+                
+            case "new":
+                output = "new game "; // + Call fucntion - return what happend . ex attacking enemy
+                break;
+                
+            case "save":
+                output = "save game "; // + Call fucntion - return what happend . ex attacking enemy
+                break;
+                
+            case "load":
+                output = "load game "; // + Call fucntion - return what happend . ex attacking enemy
+                break;
+                
+            case "quit":
+                output = "quit game "; // + Call fucntion - return what happend . ex attacking enemy
+                break;
+                
+            case "use":
+                output = "use "; // + Call fucntion - return what happend . ex attacking enemy
                 break;
                 
             default:
