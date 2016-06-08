@@ -8,45 +8,38 @@ package singleuserdungeon.model.monster;
 import java.io.File;
 import java.util.ArrayList;
 import singleuserdungeon.interfaces.IXmlParser;
-import singleuserdungeon.model.monster.BaseMonster;
-import singleuserdungeon.model.room.Location;
-
-import java.util.Hashtable;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import singleuserdungeon.model.Item;
 /**
  *
  * @author misk
  */
-public class XmlParser implements IXmlParser
-{
-    private static XmlParser instance = null;
+public class XmlMonsterParser implements IXmlParser {
     
-    private ArrayList<BaseMonster> Monsters = new ArrayList<>();
-    private ArrayList<Location> Locations= new ArrayList<>();
-    private ArrayList<Item> Items = new ArrayList<>();
+    private static XmlMonsterParser instance = null;
     
-    public static XmlParser Instance()
+    public static XmlMonsterParser instance()
     {
         if(instance == null)
         {
-            instance = new XmlParser();
+            instance = new XmlMonsterParser();
         }
         
         return instance;
     }
     
-    private Document LoadXml(String name)
-    {
+    private ArrayList<BaseMonster> Monsters = new ArrayList<>();
+       
+    @Override
+    public Document LoadXml() {
         try
         {
         //Setting up file - Load and parse the file.
-        File inputFile = new File(System.getProperty("user.dir")+"/src/singleuserdungeon"+"/XmlFiles" + "/"+name+".xml");
+        File inputFile = new File(System.getProperty("user.dir")+"/src/singleuserdungeon"+"/XmlFiles" + "/Monsters.xml");
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder docBuilder = dbFactory.newDocumentBuilder();
         Document doc = docBuilder.parse(inputFile);
@@ -62,19 +55,14 @@ public class XmlParser implements IXmlParser
         }
     }
     
-
-    @Override
-    public BaseMonster GetMonster(int id) 
-    {
-        if(Monsters == null || Monsters.size() == 0)
-        {
+    public BaseMonster GetMonster(int id) {
+        
+        if(Monsters == null || Monsters.size() == 0) {
          
-            Document doc =  LoadXml("Monster");
+            Document doc =  LoadXml();
             
             doc.normalize();
             NodeList nList = doc.getElementsByTagName("Monster");
-            
-               
             
             for(int i = 0; i < nList.getLength();i++)
             {
@@ -85,33 +73,24 @@ public class XmlParser implements IXmlParser
                     Element eElement = (Element) nNode;
                    
                     String name = eElement.getElementsByTagName("name").item(0).getTextContent();
+                    String description = eElement.getElementsByTagName("description").item(0).getTextContent();
                      
                     float health = Float.parseFloat(eElement.getElementsByTagName("health").item(0).getTextContent());
                     float attack = Float.parseFloat(eElement.getElementsByTagName("attack").item(0).getTextContent());
                     float defense = Float.parseFloat(eElement.getElementsByTagName("defense").item(0).getTextContent());
                     float xpmod = Float.parseFloat(eElement.getElementsByTagName("xpmod").item(0).getTextContent());
 
-                    BaseMonster monster = new BaseMonster(name,health,attack,defense,xpmod);
+                    BaseMonster monster = new BaseMonster(name,description,health,attack,defense,xpmod);
                     Monsters.add(monster);
                 }
             }
            return Monsters.get(id);
+           
         }
-        else
-        {
+        else {
             return Monsters.get(id);
+            
         }
     }
-
-    @Override
-    public Location GetLocation(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Item GetItem(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     
 }

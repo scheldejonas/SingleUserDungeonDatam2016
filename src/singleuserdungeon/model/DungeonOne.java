@@ -26,8 +26,9 @@ public class DungeonOne implements IDungeon {
     }
 
     public DungeonOne() {
-        rooms.add(new Room(new Location(1), 1, "The sealed up hallway end.", ""
-                + "This is where it all started, You are at a dead end of hallway. In here you can see a very dim light hanging over three doors. ", null, null, null, null, true, items, monster, weapon));
+//
+//        rooms.add(new Room(new Location(1), 1, "The sealed dead end.", ""
+//                + "This is where it all started, You are at a dead end of hallway. In here you can see a very dim light hanging over three doors. ", null, null, null, null));
     }
 
     @Override

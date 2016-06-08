@@ -11,18 +11,19 @@ import singleuserdungeon.interfaces.IMonster;
  *
  * @author misk
  */
-public class BaseMonster implements IMonster
-{
+public class BaseMonster implements IMonster {
 
     private String name;
+    private String description;
     private float health;
     private float attack;
     private float defense;
     private float xpMod;
     
-    public BaseMonster(String monsterName,float monsterHealth, float monsterAttack, float monsterDefense,float monsterXpMod)
+    public BaseMonster(String monsterName,String monsterDescription, float monsterHealth, float monsterAttack, float monsterDefense,float monsterXpMod)
     {
         name = monsterName;
+        description = monsterDescription;
         health = monsterHealth;
         attack = monsterAttack;
         defense = monsterDefense;
@@ -30,27 +31,33 @@ public class BaseMonster implements IMonster
     }
 
     @Override
-    public String GetName() 
-    {
-        return name;
+    public String GetName() {
+        return this.name;
+    }
+    
+    @Override
+    public String getDescription() {
+        return this.description;
     }
 
     @Override
-    public float GetHealth()
-    {
-        return health;
+    public float GetHealth() {
+        return this.health;
     }
 
     @Override
-    public float GetAttack() 
-    {
-        return attack;
+    public float GetAttack() {
+        return this.attack;
     }
 
     @Override
-    public float GetDefense() 
-    {
-        return defense;
+    public float GetDefense() {
+        return this.defense;
     }
+
+    @Override
+    public String toString() {
+        return "BaseMonster_" + "name=" + name + "_description=" + description + "_health=" + health + "_attack=" + attack + "_defense=" + defense + "_xpMod=" + xpMod + "\n";
+    }    
     
 }

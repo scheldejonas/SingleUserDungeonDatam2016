@@ -30,7 +30,6 @@ public class FileHandler implements IFileHandler {
         stringDate += cal.get(Calendar.YEAR) + "_time_";
         stringDate += cal.get(Calendar.HOUR_OF_DAY) + "-";
         stringDate += cal.get(Calendar.MINUTE);
-        
 
         try {
             pr = new PrintWriter ("SUD_of_" + stringDate + ".txt");

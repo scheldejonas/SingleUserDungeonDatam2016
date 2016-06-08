@@ -7,7 +7,7 @@ package singleuserdungeon.interfaces;
 
 
 import java.util.ArrayList;
-import singleuserdungeon.model.Item;
+import singleuserdungeon.model.item.BaseItem;
 import singleuserdungeon.model.player.Weapon;
 import singleuserdungeon.model.monster.BaseMonster;
 import singleuserdungeon.model.room.Location;
@@ -31,9 +31,9 @@ public interface IRoom
     public boolean isEndTreasureChest();
     public boolean isVisited();
     public void setVisited(boolean visit);
-    public ArrayList<Item> getItems();
+    public BaseItem getItem();
     public Weapon getWeapon();
     public boolean isMonsterHere();
-    public BaseMonster getMonster();
+    public BaseItem getMonster();
     
 }

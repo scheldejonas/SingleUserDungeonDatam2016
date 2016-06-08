@@ -2,6 +2,7 @@
 <MonsterList>
     <Monster id="0"> //Zero index - Easy input in lists etc.
             <name>Wild Boar</name>
+            <description>Paws as big as your head, and claws longer then your sword, is attacking your from left, with your only managing to jump right, but one of the claws hit your chick with a long scratch. Bear fight started !</description>
             <health> 5.0f</health>
             <attack> 2.0f</attack>
             <defense> 2.0f</defense>   
@@ -9,6 +10,7 @@
     </Monster>>
     <Monster id="1"> //Zero index - Easy input in lists etc.
             <name>Goblin</name>
+            <description>A very deep discusting roar from behind is kicking your forward in a roll, hurting your body with scratches and making you bleed a little from your back. Fight your way back out of this room</description>
             <health> 3.0f</health>
             <attack> 1.5f</attack>
             <defense> 3.0f</defense>   
@@ -16,6 +18,7 @@
     </Monster>>
     <Monster id="0"> //Zero index - Easy input in lists etc.
                 <name>Orger</name>
+                <description>A big ugly monster orge is stepping in front of your with a roar so loud your ears started bleeding from inside. You have to fight back</description>
                 <health> 10.0f</health>
                 <attack> 5.0f</attack>
                 <defense> 0.0f</defense>   

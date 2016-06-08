@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package singleuserdungeon.interfaces;
-import singleuserdungeon.model.Item;
+import singleuserdungeon.model.item.BaseItem;
 import singleuserdungeon.model.player.Weapon;
 import singleuserdungeon.model.player.Player;
 

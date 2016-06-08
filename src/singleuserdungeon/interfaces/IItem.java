@@ -9,8 +9,16 @@ package singleuserdungeon.interfaces;
  *
  * @author misk
  */
-public interface IItem 
-{
+public interface IItem {
     
+    public String getName();
+
+    public String getDescription();
+
+    public int getGoldValue();
+
+    public int getDamageIncreaseValue();
+
+    public int getShieldIncreaseValue();
     
 }

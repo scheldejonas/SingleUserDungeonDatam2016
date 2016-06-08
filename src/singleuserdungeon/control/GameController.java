@@ -6,7 +6,6 @@
 package singleuserdungeon.control;
 
 import singleuserdungeon.interfaces.IGameController;
-import singleuserdungeon.control.*;
 import singleuserdungeon.model.*;
 import singleuserdungeon.model.player.Player;
 import singleuserdungeon.view.*;
