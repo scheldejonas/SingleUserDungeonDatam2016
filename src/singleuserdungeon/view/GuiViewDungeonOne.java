@@ -96,7 +96,7 @@ public class GuiViewDungeonOne extends javax.swing.JFrame {
         jTextAreaConsole.setRows(5);
         jScrollPane1.setViewportView(jTextAreaConsole);
 
-        jPanelGameConsole.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 120, 680, 260));
+        jPanelGameConsole.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 120, 670, 260));
 
         jTextFieldInputAnswer.setFont(new java.awt.Font("Avenir Next", 0, 24)); // NOI18N
         jTextFieldInputAnswer.setHorizontalAlignment(javax.swing.JTextField.LEFT);
@@ -106,30 +106,31 @@ public class GuiViewDungeonOne extends javax.swing.JFrame {
                 jTextFieldInputAnswerActionPerformed(evt);
             }
         });
-        jPanelGameConsole.add(jTextFieldInputAnswer, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 520, 40));
+        jPanelGameConsole.add(jTextFieldInputAnswer, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 390, 210, 40));
 
         jButtonAnswer.setBackground(new java.awt.Color(204, 0, 0));
         jButtonAnswer.setFont(new java.awt.Font("Diediedie", 3, 22)); // NOI18N
         jButtonAnswer.setForeground(new java.awt.Color(255, 255, 255));
         jButtonAnswer.setText("EXECUTE");
         jButtonAnswer.setBorderPainted(false);
+        jButtonAnswer.setOpaque(true);
         jButtonAnswer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAnswerActionPerformed(evt);
             }
         });
-        jPanelGameConsole.add(jButtonAnswer, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 390, 150, 40));
+        jPanelGameConsole.add(jButtonAnswer, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 390, 150, 40));
 
         jLabelHeadline.setFont(new java.awt.Font("Diediedie", 1, 48)); // NOI18N
         jLabelHeadline.setForeground(new java.awt.Color(255, 0, 51));
         jLabelHeadline.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelHeadline.setText("Hall of Disaster");
-        jPanelGameConsole.add(jLabelHeadline, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        jPanelGameConsole.add(jLabelHeadline, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Avenir Next", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Response");
-        jPanelGameConsole.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 80, 20));
+        jPanelGameConsole.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 80, 20));
 
         jLabelExportStatus.setText(" ");
         jPanelGameConsole.add(jLabelExportStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 15, -1, -1));
@@ -137,9 +138,9 @@ public class GuiViewDungeonOne extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Avenir Next", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("If you need help, then you would have to yield it.");
-        jPanelGameConsole.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 540, 20));
+        jPanelGameConsole.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 540, 20));
 
-        getContentPane().add(jPanelGameConsole, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 690, 460));
+        getContentPane().add(jPanelGameConsole, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 460));
 
         jPanelCommandInfo.setBackground(new java.awt.Color(0, 0, 0));
         jPanelCommandInfo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -231,9 +232,9 @@ public class GuiViewDungeonOne extends javax.swing.JFrame {
                 jButtonExportConsoleToFileActionPerformed(evt);
             }
         });
-        jPanelCommandInfo.add(jButtonExportConsoleToFile, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 100, 30));
+        jPanelCommandInfo.add(jButtonExportConsoleToFile, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 100, 30));
 
-        getContentPane().add(jPanelCommandInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 0, 210, 460));
+        getContentPane().add(jPanelCommandInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 0, 220, 460));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
