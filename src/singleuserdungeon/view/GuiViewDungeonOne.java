@@ -14,11 +14,11 @@ import singleuserdungeon.control.GameController;
  *
  * @author misk
  */
-public class GuiView extends javax.swing.JFrame {
+public class GuiViewDungeonOne extends javax.swing.JFrame {
 
-    private static GuiView instance = null;
+    private static GuiViewDungeonOne instance = null;
 
-    public GuiView() {
+    public GuiViewDungeonOne() {
         this.initComponents();
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -31,9 +31,9 @@ public class GuiView extends javax.swing.JFrame {
     /**
      * Creates new form GuiView
      */
-    public static GuiView instance() {
+    public static GuiViewDungeonOne instance() {
         if(instance == null) {
-            instance = new GuiView();            
+            instance = new GuiViewDungeonOne();            
         }
         return instance;
     }

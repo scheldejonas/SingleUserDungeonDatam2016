@@ -23,7 +23,7 @@ public class GameController implements IGameController {
         if(instance == null) {
             instance = new GameController();
             
-            GuiView.instance(); //Newing the game window, so the game restarts, if the somebody news the game from the starter.
+            GuiViewDungeonOne.instance(); //Newing the game window, so the game restarts, if the somebody news the game from the starter.
         }
         
         return instance;
@@ -38,24 +38,24 @@ public class GameController implements IGameController {
 
     @Override
     public void quitGame() {
-        GuiView.instance().disposeWindow(); //Saving story to file and closing down the window.
+        GuiViewDungeonOne.instance().disposeWindow(); //Saving story to file and closing down the window.
     }
 
     @Override
     public void endGame() {
-        GuiView.instance().outputText("The end.");
-        fileHandler.saveTextToFile(GuiView.instance().getLiveStory());
+        GuiViewDungeonOne.instance().outputText("The end.");
+        fileHandler.saveTextToFile(GuiViewDungeonOne.instance().getLiveStory());
     }
 
     @Override
     public void resetGame() {
-        GuiView.instance().ResetStory();
+        GuiViewDungeonOne.instance().ResetStory();
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void nextLevel(Player currentPlayer) {
-        GuiView.instance().ResetStory();
+        GuiViewDungeonOne.instance().ResetStory();
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
