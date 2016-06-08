@@ -30,6 +30,11 @@ public class GameController implements IGameController {
     }
     
     private FileHandler fileHandler = new FileHandler();
+    
+    public void newGame() {
+        DungeonController.instance();
+        
+    }
 
     @Override
     public void quitGame() {

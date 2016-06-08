@@ -7,6 +7,7 @@ package singleuserdungeon.model;
 
 import java.util.ArrayList;
 import singleuserdungeon.interfaces.IDungeon;
+import singleuserdungeon.model.room.Location;
 import singleuserdungeon.model.room.Room;
 
 /**
@@ -22,6 +23,11 @@ public class DungeonOne implements IDungeon {
     public DungeonOne(String dungeonName, String startDungeonDescription) {
         this.dungeonName = dungeonName;
         this.startDungeonDescription = startDungeonDescription;
+    }
+
+    public DungeonOne() {
+//        rooms.add(new Room(new Location(1, 1, 1), 1, "The sealed up hallway end.", ""
+//                + "This is where it all started, You are at a dead end of hallway. In here you can see a very dim light hanging over three doors. ", null, null, null, null, true, items, monster, weapon));
     }
 
     @Override

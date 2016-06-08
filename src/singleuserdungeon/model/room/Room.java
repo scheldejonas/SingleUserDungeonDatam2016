@@ -49,7 +49,7 @@ public class Room implements IRoom {
         if (monster != null) {
             this.isMonsterHere = true;
         }
-    }
+    }    
 
     @Override
     public Location getLocation() {

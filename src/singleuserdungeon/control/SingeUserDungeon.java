@@ -13,7 +13,7 @@ import singleuserdungeon.model.monster.BaseMonster;
  *
  * @author misk
  */
-public class Starter
+public class SingeUserDungeon
 {
     
 

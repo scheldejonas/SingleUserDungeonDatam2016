@@ -71,6 +71,9 @@ public class GuiView extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
 
         jLabel2.setText("jLabel2");
 
@@ -102,7 +105,7 @@ public class GuiView extends javax.swing.JFrame {
         });
         jPanelGameConsole.add(jTextFieldInputAnswer, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 390, 740, -1));
 
-        jButtonAnswer.setText("Answer");
+        jButtonAnswer.setText("Action");
         jButtonAnswer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAnswerActionPerformed(evt);
@@ -133,42 +136,54 @@ public class GuiView extends javax.swing.JFrame {
 
         jPanelCommandInfo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
-        jLabel3.setText("Your answers");
+        jLabel3.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        jLabel3.setText("Controls");
         jPanelCommandInfo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
         jPanelCommandInfo.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, -1, -1));
 
-        jLabel6.setText("north");
-        jPanelCommandInfo.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
+        jLabel6.setText("North");
+        jPanelCommandInfo.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
 
         jLabel7.setText("save");
-        jPanelCommandInfo.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
+        jPanelCommandInfo.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, -1, -1));
 
-        jLabel8.setText("east");
-        jPanelCommandInfo.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
+        jLabel8.setText("East");
+        jPanelCommandInfo.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
 
-        jLabel9.setText("south");
-        jPanelCommandInfo.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
+        jLabel9.setText("South");
+        jPanelCommandInfo.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
 
         jLabel10.setText("new");
-        jPanelCommandInfo.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
+        jPanelCommandInfo.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, -1, -1));
 
         jLabel11.setText("load");
-        jPanelCommandInfo.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, -1));
+        jPanelCommandInfo.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, -1, -1));
 
         jLabel12.setText("use + item name");
-        jPanelCommandInfo.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, -1));
+        jPanelCommandInfo.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, -1));
 
         jLabel13.setText("pickup");
-        jPanelCommandInfo.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
+        jPanelCommandInfo.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, -1));
 
         jLabel14.setText("attack");
-        jPanelCommandInfo.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, -1, -1));
+        jPanelCommandInfo.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
 
-        jLabel15.setText("west");
-        jPanelCommandInfo.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
+        jLabel15.setFont(new java.awt.Font("Lucida Grande", 0, 10)); // NOI18N
+        jLabel15.setText("MENU");
+        jPanelCommandInfo.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, -1, -1));
 
-        getContentPane().add(jPanelCommandInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 0, 150, 460));
+        jLabel16.setText("West");
+        jPanelCommandInfo.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
+
+        jLabel17.setFont(new java.awt.Font("Lucida Grande", 0, 10)); // NOI18N
+        jLabel17.setText("DIRECTIONS");
+        jPanelCommandInfo.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
+
+        jLabel18.setFont(new java.awt.Font("Lucida Grande", 0, 10)); // NOI18N
+        jLabel18.setText("ACTIONS");
+        jPanelCommandInfo.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, -1, -1));
+
+        getContentPane().add(jPanelCommandInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 0, 280, 500));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -216,6 +231,9 @@ public class GuiView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
@@ -252,6 +270,9 @@ public class GuiView extends javax.swing.JFrame {
         jTextAreaConsole.append(str+"\n");
     }
     
+    /**
+     * This is a method for closing down the windows and
+     */
     public void disposeWindow() {
         GameController.instance().WriteTextToFile(jTextAreaConsole.getText());
         this.dispose();
