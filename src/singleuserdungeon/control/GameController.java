@@ -67,5 +67,13 @@ public class GameController implements IGameController {
     public boolean WriteTextToFile(String text) {
         return fileHandler.saveTextToFile(text);
     }
+
+    @Override
+    public void outputHelpToStory() {
+        
+        String helpString = new MenuOptionHelp().getName();
+        
+        GuiViewDungeonOne.instance().outputStoryText(helpString);
+    }
     
 }

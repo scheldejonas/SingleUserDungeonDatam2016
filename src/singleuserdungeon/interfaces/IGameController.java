@@ -24,4 +24,6 @@ public interface IGameController
     public boolean WriteTextToFile(String text);
     
     public String nextLineCommand(String text);
+    
+    public void outputHelpToStory();
 }
