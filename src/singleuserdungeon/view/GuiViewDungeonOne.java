@@ -106,20 +106,19 @@ public class GuiViewDungeonOne extends javax.swing.JFrame {
                 jTextFieldInputAnswerActionPerformed(evt);
             }
         });
-        jPanelGameConsole.add(jTextFieldInputAnswer, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 170, 40));
+        jPanelGameConsole.add(jTextFieldInputAnswer, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 520, 40));
 
         jButtonAnswer.setBackground(new java.awt.Color(204, 0, 0));
         jButtonAnswer.setFont(new java.awt.Font("Diediedie", 3, 22)); // NOI18N
         jButtonAnswer.setForeground(new java.awt.Color(255, 255, 255));
         jButtonAnswer.setText("EXECUTE");
         jButtonAnswer.setBorderPainted(false);
-        jButtonAnswer.setOpaque(true);
         jButtonAnswer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAnswerActionPerformed(evt);
             }
         });
-        jPanelGameConsole.add(jButtonAnswer, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 390, 150, 40));
+        jPanelGameConsole.add(jButtonAnswer, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 390, 150, 40));
 
         jLabelHeadline.setFont(new java.awt.Font("Diediedie", 1, 48)); // NOI18N
         jLabelHeadline.setForeground(new java.awt.Color(255, 0, 51));
