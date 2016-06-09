@@ -6,7 +6,6 @@
 package singleuserdungeon.control;
 
 import singleuserdungeon.interfaces.IGameController;
-import singleuserdungeon.control.*;
 import singleuserdungeon.model.*;
 import singleuserdungeon.model.player.Player;
 import singleuserdungeon.view.*;
@@ -43,19 +42,19 @@ public class GameController implements IGameController {
 
     @Override
     public void endGame() {
-        GuiViewDungeonOne.instance().outputText("The end.");
+        GuiViewDungeonOne.instance().outputStoryText("The end.");
         fileHandler.saveTextToFile(GuiViewDungeonOne.instance().getLiveStory());
     }
 
     @Override
     public void resetGame() {
-        GuiViewDungeonOne.instance().ResetStory();
+        GuiViewDungeonOne.instance().ResetStoryText();
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void nextLevel(Player currentPlayer) {
-        GuiViewDungeonOne.instance().ResetStory();
+        GuiViewDungeonOne.instance().ResetStoryText();
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -67,6 +66,14 @@ public class GameController implements IGameController {
     @Override
     public boolean WriteTextToFile(String text) {
         return fileHandler.saveTextToFile(text);
+    }
+
+    @Override
+    public void outputHelpToStory() {
+        
+        String helpString = new MenuOptionHelp().getName();
+        
+        GuiViewDungeonOne.instance().outputStoryText(helpString);
     }
     
 }

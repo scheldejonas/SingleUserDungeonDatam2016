@@ -5,20 +5,14 @@
  */
 package singleuserdungeon.interfaces;
 
-import singleuserdungeon.model.Item;
-import singleuserdungeon.model.monster.BaseMonster;
-import singleuserdungeon.model.room.Location;
+import org.w3c.dom.Document;
 
 /**
  *
  * @author misk
  */
-public interface IXmlParser 
-{
-    public BaseMonster GetMonster(int id);
+public interface IXmlParser {
     
-    public Location GetLocation(int id);
-    
-    public Item GetItem(int id);
+    public Document LoadXml();
     
 }

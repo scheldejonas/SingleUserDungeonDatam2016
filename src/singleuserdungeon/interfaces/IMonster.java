@@ -13,6 +13,8 @@ public interface IMonster
 {
     public String GetName();
     
+    public String getDescription();
+    
     public float GetHealth();
     
     public float GetAttack();
