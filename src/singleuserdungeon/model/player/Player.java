@@ -114,6 +114,38 @@ public class Player implements IPlayer {
         
         return amount;
     }
+    
+    public String UseItem(String str)
+    {
+        str = str.substring(3);
+        
+        if(Backpack != null)
+        {
+            for(int i = 0; i <Backpack.size();i++)
+            {
+                String iName = Backpack.get(i).getName();
+                iName.toLowerCase();
+                
+                if(str.equals(iName))
+                {
+                    Use(Backpack.get(i).getName());
+                    return "You used "+Backpack.get(i).getName();
+                }
+                
+            }
+        
+            System.out.println("org "+str);
+        
+            return"You cant use that";
+        }
+        
+        return str+" does not exist";
+    }
+    
+    private void Use(String str)
+    {
+        
+    }
 
     @Override
     public String getDescription() {
