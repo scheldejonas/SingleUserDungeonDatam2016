@@ -49,14 +49,14 @@ public class BaseRoom implements IRoom {
         }
     }
 
-    public BaseRoom(Location location, String roomName, String roomDescription) {
+    public BaseRoom(int locationNumber, String roomName, String roomDescription, int northRoomNumber, int eastRoomNumber, int southRoomNumber, int westRoomNumber) {
         this.location = location;
         this.roomName = roomName;
         this.roomDescription = roomDescription;
-        this.northRoomNumber = 0;
-        this.eastRoomNumber = 0;
-        this.southRoomNumber = 0;
-        this.westRoomNumber = 0;
+        this.northRoomNumber = northRoomNumber;
+        this.eastRoomNumber = eastRoomNumber;
+        this.southRoomNumber = southRoomNumber;
+        this.westRoomNumber = westRoomNumber;
         this.isVisited = false;
         this.item = null;
         this.isMonsterHere = false;

@@ -1,10 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RoomList>
-    <Room id="0"> //Zero index - Easy input in lists etc.
+    <Room id="1"> //OneBased index - Easy input in lists etc.
         <name>The sealed dead end</name>
         <location>1</location>
         <description>This is where it all started, You are at a dead end of hallway. In here you can see a very dim light hanging in front of you far away. A man is suddenly asking from the corner of the dead end behind you: "What is your name, my young friend"?</description>
-        <northRoomNumber>
+        <northRoomNumber>0</northRoomNumber>
+        <eastRoomNumber>0</eastRoomNumber>
+        <southRoomNumber>2</southRoomNumber>
+        <westRoomNumber>0</westRoomNumber>
+    </Room>
+    <Room id="2"> //OneBased index - Easy input in lists etc.
+        <name>The corner for tomorrow</name>
+        <location>2</location>
+        <description>?</description>
+        <northRoomNumber>1</northRoomNumber>
+        <eastRoomNumber>0</eastRoomNumber>
+        <southRoomNumber>0</southRoomNumber>
+        <westRoomNumber>3</westRoomNumber>
+    </Room>
+    <Room id="3"> //OneBased index - Easy input in lists etc.
+        <name>The long hall</name>
+        <location>3</location>
+        <description>?</description>
+        <northRoomNumber>0</northRoomNumber>
+        <eastRoomNumber>2</eastRoomNumber>
+        <southRoomNumber>0</southRoomNumber>
+        <westRoomNumber>4</westRoomNumber>
+    </Room>
+    <Room id="4"> //OneBased index - Easy input in lists etc.
+        <name>Round table</name>
+        <location>4</location>
+        <description>?</description>
+        <northRoomNumber>5</northRoomNumber>
+        <eastRoomNumber>3</eastRoomNumber>
+        <southRoomNumber>11</southRoomNumber>
+        <westRoomNumber>0</westRoomNumber>
     </Room>
 </RoomList>
 
