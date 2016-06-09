@@ -90,7 +90,7 @@ public class CommandController {
                 break;
                 
             case "use":
-                output = DungeonController.instance.getPlayer().UseItem(org);//"use "; // + Call fucntion - return what happend . ex attacking enemy
+                output = DungeonController.Instance().getPlayer().UseItem(org);//"use "; // + Call fucntion - return what happend . ex attacking enemy
                 break;
                 
             default:
