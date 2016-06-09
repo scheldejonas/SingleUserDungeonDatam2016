@@ -5,6 +5,8 @@
  */
 package singleuserdungeon.control;
 
+import singleuserdungeon.model.room.RoomCommand;
+
 /**
  *
  * @author misk
@@ -13,12 +15,21 @@ public class CommandController {
     
     private static CommandController instance;
     
+    private RoomCommand rc = null;
+    
     public static CommandController instance() {
-        if(instance == null) {
+        if(instance == null)
+        {
             instance = new CommandController();
+            
+            instance.rc = new RoomCommand();
         }
         
         return instance;
+    }
+
+    private CommandController() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     public String Command(String commandString) {
@@ -29,18 +40,22 @@ public class CommandController {
         switch(commandString) {
             case "west":
                 output = "Going west "; // + Call fucntion - return what happend . ex into a wall/
+                rc.GoEast();
                 break;
                 
             case "north":
                 output = "Going north "; // + Call fucntion - return what happend . ex into a wall/
+                rc.GoNorth();
                 break;
                 
             case "east":
                 output = "Going east "; // + Call fucntion - return what happend . ex into a wall/
+                rc.GoEast();
                 break;
                 
             case "south":
                 output = "Going south "; // + Call fucntion - return what happend . ex into a wall/
+                rc.GoWest();
                 break;
                 
             case "pickup":

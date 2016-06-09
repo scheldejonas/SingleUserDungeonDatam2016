@@ -21,6 +21,7 @@ public class DungeonController {
 
     private Player currentPlayer;
     
+    
     public static DungeonController instance()
     {
         

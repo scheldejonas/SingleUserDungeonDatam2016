@@ -11,7 +11,9 @@ public class BaseItem implements IItem {
     private String name;
     private String description;
     private int goldValue;
+    private int damageValue;
     private int damageIncreaseValue;
+    private int shieldValue;
     private int shieldIncreaseValue;
 
     public BaseItem(String name, String description, int goldValue, int damageIncreaseValue, int shieldIncreaseValue) {
@@ -45,6 +47,16 @@ public class BaseItem implements IItem {
     @Override
     public int getShieldIncreaseValue() {
         return shieldIncreaseValue;
+    }
+    
+    public int getDamageValue()
+    {
+        return damageValue;
+    }
+    
+    public int getShieldValue()
+    {
+        return shieldValue;
     }
 
     @Override

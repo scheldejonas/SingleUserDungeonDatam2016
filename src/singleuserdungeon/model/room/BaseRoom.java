@@ -44,6 +44,8 @@ public class BaseRoom implements IRoom {
         if (monster != null) {
             this.isMonsterHere = true;
         }
+        
+        MonsterInRoomAttack();
     }
 
     public BaseRoom(int locationNumber, String roomName, String roomDescription, int northRoomNumber, int eastRoomNumber, int southRoomNumber, int westRoomNumber) {
@@ -58,6 +60,16 @@ public class BaseRoom implements IRoom {
         this.item = null;
         this.isMonsterHere = false;
         this.monster = null;
+        
+        MonsterInRoomAttack();
+    }
+    
+    private void MonsterInRoomAttack()
+    {
+        if(isMonsterHere)
+        {
+            this.monster.Attack();
+        }
     }
 
     @Override

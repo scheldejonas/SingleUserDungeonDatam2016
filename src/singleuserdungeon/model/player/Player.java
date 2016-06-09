@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import singleuserdungeon.interfaces.IPlayer;
 import singleuserdungeon.model.item.BaseItem;
 import singleuserdungeon.model.item.XmlItemParser;
+import singleuserdungeon.model.room.BaseRoom;
 
 /**
  *
@@ -20,7 +21,9 @@ public class Player implements IPlayer {
     private int hitPoints;
     private int level;
     private BaseItem weapon;
+    private BaseItem shield;
     private String description;
+    private BaseRoom currentRoom;
     
     private ArrayList<BaseItem> Backpack = new ArrayList<>();
     
@@ -37,6 +40,18 @@ public class Player implements IPlayer {
         this.description = NewDescription;
     }
     
+    public int GetDefenseValue()
+    {
+        if(this.shield != null)
+        {
+        return this.shield.getShieldValue();
+        }
+        else
+        {
+            return 0;
+        }
+    }
+    
     public void  AddItem(int id)
     {
         this.Backpack.add(XmlItemParser.instance().getItem(id));
@@ -45,6 +60,11 @@ public class Player implements IPlayer {
     public void AddWeapon(int id)
     {
        this.weapon =  XmlItemParser.instance().getItem(id);
+    }
+    
+    public void AddShield(int id)
+    {
+         this.shield =  XmlItemParser.instance().getItem(id);
     }
     
     @Override
@@ -106,6 +126,16 @@ public class Player implements IPlayer {
     @Override
     public void setWeapon(BaseItem weapon) {
         this.weapon = weapon;
+    }
+    
+    public BaseRoom getCurrentRoom()
+    {
+        return currentRoom;
+    }
+    
+    public void SetRoom(BaseRoom nextRoom)
+    {
+        currentRoom = nextRoom;
     }
    
 }

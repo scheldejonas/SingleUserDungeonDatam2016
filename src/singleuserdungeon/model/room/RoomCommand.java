@@ -7,6 +7,7 @@ package singleuserdungeon.model.room;
 
 import singleuserdungeon.control.DungeonController;
 import singleuserdungeon.model.DungeonOne;
+import singleuserdungeon.model.player.Player;
 import singleuserdungeon.view.GuiViewDungeonOne;
 
 /**
@@ -16,6 +17,7 @@ import singleuserdungeon.view.GuiViewDungeonOne;
 public class RoomCommand 
 {
     private DungeonOne dungeon = null;
+    private Player p = null;
     
     private BaseRoom getRoom(int id)
     {
@@ -37,22 +39,60 @@ public class RoomCommand
         return true;
     }
     
+    private Player GetPlayer()
+    {
+        if(p == null)
+        {
+           p = DungeonController.instance.getPlayer();
+        }
+        
+        return p;
+    }
     
+    private BaseRoom GetCurrentRoom()
+    {
+        return GetPlayer().getCurrentRoom();
+    }
+    
+    private void GoToRoom(int id)
+    {
+        BaseRoom room = DungeonController.instance.getDungeonOne().getRooms().get(id);
+        GetPlayer().SetRoom(room);
+    }
     
     
     public void GoNorth()
     {
+        if(isThereARoom(GetCurrentRoom().getNorthRoom()))
+        {
+            GoToRoom(GetCurrentRoom().getNorthRoom());
+        }
+     // DungeonController.instance.getDungeonOne().getRooms().get(0)
         
     }
     
     public void GoSouth()
     {
+        if(isThereARoom(GetCurrentRoom().getSouthRoom()))
+        {
+            GoToRoom(GetCurrentRoom().getSouthRoom());
+        }
     }
     
     public void GoEast()
-    {}
+    {
+        if(isThereARoom(GetCurrentRoom().getEastRoom()))
+        {
+            GoToRoom(GetCurrentRoom().getEastRoom());
+        }
+    }
     
     public void GoWest()
-    {}
+    {
+        if(isThereARoom(GetCurrentRoom().getWestRoom()))
+        {
+            GoToRoom(GetCurrentRoom().getWestRoom());
+        }
+    }
     
 }

@@ -19,6 +19,8 @@ public interface IMonster
     
     public float GetAttack();
     
+    public void Attack();
+    
     public float GetDefense();   
     
     
