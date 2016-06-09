@@ -26,7 +26,7 @@ public class SingeUserDungeon
      */
     public static void main(String[] args) {
       
-        GameController.Instance(); //Opening the game, the runner ends after this, therefore it is possible to start 2 games, with this Starter, by making a new instance variable in GameController
+        GameController.Instance().newGame(); //Opening the game, the runner ends after this, therefore it is possible to start 2 games, with this Starter, by making a new instance variable in GameController
         
     }
     

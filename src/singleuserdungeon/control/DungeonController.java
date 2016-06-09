@@ -16,10 +16,8 @@ import singleuserdungeon.model.player.Player;
 public class DungeonController {
     
     public static DungeonController instance;
-    
     private DungeonOne dungeonOne;
-
-    private Player currentPlayer = null;
+    private Player currentPlayer;
     
     
     public static DungeonController Instance()
@@ -50,10 +48,10 @@ public class DungeonController {
         return p;
     }
     
-    public void Reset()
+    public void resetDungeonAndPlayer()
     {
         this.dungeonOne = new DungeonOne();
-        currentPlayer = newPlayer();
+        this.currentPlayer = newPlayer();
     }
     
     public DungeonOne getDungeonOne()
@@ -71,11 +69,6 @@ public class DungeonController {
         System.out.println(this.currentPlayer);
         
         return this.currentPlayer;
-    }
-
-    public void recreateDungeon() {
-        this.dungeonOne = new DungeonOne();
-        this.currentPlayer = newPlayer();
     }
     
 }

@@ -64,11 +64,13 @@ public class CommandController {
                 break;
                 
             case "new":
-                output = "new game "; // + Call fucntion - return what happend . ex attacking enemy
+                output = "";
+                GameController.Instance().resetGame();
                 break;
                 
             case "save":
-                output = "save game "; // + Call fucntion - return what happend . ex attacking enemy
+                output = "We can inform you, the lords of this dungeon laid there eyes past your map and frooze it in there memory. A small note was placed in your pocket of time and state of where you can reset to."; // + Call function - return what happend . ex attacking enemy
+                GameController.Instance().saveGame();
                 break;
                 
             case "load":
