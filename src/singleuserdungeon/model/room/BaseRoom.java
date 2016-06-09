@@ -136,5 +136,10 @@ public class BaseRoom implements IRoom {
         return this.monster;
     }
 
+    @Override
+    public void setItem(BaseItem item) {
+        this.item = item;
+    }
+
     
 }

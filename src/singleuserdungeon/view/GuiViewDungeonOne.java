@@ -23,6 +23,7 @@ public class GuiViewDungeonOne extends javax.swing.JFrame {
     public GuiViewDungeonOne() 
     {
         this.initComponents();
+        this.getRootPane().setDefaultButton(jButtonAnswer);
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
@@ -138,7 +139,7 @@ public class GuiViewDungeonOne extends javax.swing.JFrame {
         });
         jPanelGameConsole.add(jButtonAnswer, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 390, 150, 40));
 
-        jLabelHeadline.setFont(new java.awt.Font("Diediedie", 1, 48)); // NOI18N
+        jLabelHeadline.setFont(new java.awt.Font("Agency FB", 1, 48)); // NOI18N
         jLabelHeadline.setForeground(new java.awt.Color(255, 0, 51));
         jLabelHeadline.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelHeadline.setText("Hall of Disaster");
@@ -147,12 +148,12 @@ public class GuiViewDungeonOne extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Avenir Next", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Response");
-        jPanelGameConsole.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 70, 20));
+        jPanelGameConsole.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, 20));
 
         jLabelResponseStatus.setFont(new java.awt.Font("Avenir Next", 0, 14)); // NOI18N
         jLabelResponseStatus.setForeground(new java.awt.Color(255, 255, 255));
         jLabelResponseStatus.setText("If you need help, then you would have to yield it.");
-        jPanelGameConsole.add(jLabelResponseStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 90, 540, 20));
+        jPanelGameConsole.add(jLabelResponseStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 530, 20));
 
         getContentPane().add(jPanelGameConsole, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 460));
 
@@ -241,7 +242,6 @@ public class GuiViewDungeonOne extends javax.swing.JFrame {
         jButtonExportConsoleToFile.setForeground(new java.awt.Color(255, 255, 255));
         jButtonExportConsoleToFile.setText("Export Text");
         jButtonExportConsoleToFile.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        jButtonExportConsoleToFile.setOpaque(true);
         jButtonExportConsoleToFile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonExportConsoleToFileActionPerformed(evt);
