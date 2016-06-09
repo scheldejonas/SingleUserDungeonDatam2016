@@ -17,7 +17,7 @@ import singleuserdungeon.view.GuiViewDungeonOne;
 public class RoomCommand 
 {
     private DungeonOne dungeon = null;
-    private Player p = null;
+    private Player player = null;
     
     private BaseRoom getRoom(int id)
     {
@@ -41,19 +41,12 @@ public class RoomCommand
     
     private Player GetPlayer()
     {
-        if(p == null)
+        if(player == null)
         {
-            try
-            {
-             p = DungeonController.instance.getPlayer();
-            }
-            catch(Exception e)
-            {
-                System.out.println(e.getMessage());
-            }
+            player = DungeonController.instance.getPlayer();
         }
         
-        return p;
+        return player;
     }
     
     private BaseRoom GetCurrentRoom()

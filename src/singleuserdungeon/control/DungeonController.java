@@ -36,7 +36,7 @@ public class DungeonController {
     public DungeonController()
     {
         this.dungeonOne = new DungeonOne();
-        this.currentPlayer = new Player();
+        this.currentPlayer = newPlayer();
     }
     
     public Player newPlayer()
@@ -45,6 +45,7 @@ public class DungeonController {
         
         p.AddItem(4);
         p.AddWeapon(1);
+        p.SetRoom(DungeonController.instance().getDungeonOne().getRooms().get(1));
         
         return p;
     }
