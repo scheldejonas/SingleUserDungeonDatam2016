@@ -22,6 +22,8 @@ public class XmlItemParser implements IXmlParser {
     
     private static XmlItemParser instance = null;
     
+    private ArrayList<BaseItem> Items =null;
+    
     public static XmlItemParser instance() {
         if(instance == null) {
             instance = new XmlItemParser();
@@ -30,7 +32,7 @@ public class XmlItemParser implements IXmlParser {
         return instance;
     }
     
-    private ArrayList<BaseItem> Items = new ArrayList<>();
+    
     
     @Override
     public Document LoadXml() {
@@ -54,19 +56,22 @@ public class XmlItemParser implements IXmlParser {
     
     public BaseItem getItem(int id) {
         
-        if(Items == null || Items.size() == 0) {
+        if(Items == null) {
          
             Document doc =  LoadXml();
-            
-            doc.normalize();
+            Items = new ArrayList<>();
+            doc.getDocumentElement().normalize();
             NodeList nList = doc.getElementsByTagName("Item");
             
-            for(int i = 0; i < nList.getLength();i++) {
+            for(int i = 0; i < nList.getLength();i++) 
+            {
                
-                Node nNode = nList.item(id);
-                if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+                Node nNode = nList.item(i);
+                Element eeElement = (Element) nNode;
+                 
+                if (nNode.getNodeType() == Node.ELEMENT_NODE) 
+                {
                     Element eElement = (Element) nNode;
-                   
                     String name = eElement.getElementsByTagName("name").item(0).getTextContent();
                     String description = eElement.getElementsByTagName("description").item(0).getTextContent();
                     
@@ -75,19 +80,27 @@ public class XmlItemParser implements IXmlParser {
                     int shieldIncreaseValue = Integer.parseInt(eElement.getElementsByTagName("shieldIncreaseValue").item(0).getTextContent());
 
                     BaseItem item = new BaseItem(name,description,goldValue,damageIncreaseValue,shieldIncreaseValue);
+                    
                     Items.add(item);
                 }
             }    
+            
             return Items.get(id);
             
         }
-        else {
+        else
+        {
             return Items.get(id);
             
         }
     }
 
-    public ArrayList<BaseItem> getAllItems() {
+    public ArrayList<BaseItem> getAllItems() 
+    {
+        if(Items == null)
+        {
+            getItem(0);
+        }
         return this.Items;
     }
     

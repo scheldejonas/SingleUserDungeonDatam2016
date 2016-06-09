@@ -32,16 +32,18 @@ public class DungeonOne implements IDungeon {
         ArrayList<BaseItem> items = XmlItemParser.instance().getAllItems();
         int healingPotionCounter = 0;
         
+        
+        
         for (BaseItem item : items) {
             
             if (item.getName().equals("Short sword")) {
-                items.remove(item);
+              //  items.remove(item);
             }
             
             if (item.getName().equals("Healing Potion")) { //Removes the first healing potion for 
                 
                 if (healingPotionCounter == 0) {
-                    items.remove(item);
+              //      items.remove(item);
                 }
                 healingPotionCounter++;
             }
