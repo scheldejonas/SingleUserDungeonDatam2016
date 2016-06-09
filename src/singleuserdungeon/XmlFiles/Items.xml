@@ -16,7 +16,7 @@
     </Item>
     <Item id="2"> //Zero index - Easy input in lists etc.
             <name>Long sword</name>
-            <description>?</description>
+            <description></description>
             <goldValue>20000</goldValue>
             <damageIncreaseValue>8</damageIncreaseValue>   
             <shieldIncreaseValue>0</shieldIncreaseValue>      
@@ -30,77 +30,77 @@
     </Item>
     <Item id="4"> //Zero index - Easy input in lists etc.
             <name>Healing Potion</name>
-            <description>?</description>
+            <description></description>
             <goldValue>1000</goldValue>
             <damageIncreaseValue>0</damageIncreaseValue>   
             <shieldIncreaseValue>0</shieldIncreaseValue>      
     </Item>
     <Item id="5"> //Zero index - Easy input in lists etc.
             <name>Healing Potion</name>
-            <description>?</description>
+            <description></description>
             <goldValue>1000</goldValue>
             <damageIncreaseValue>0</damageIncreaseValue>   
             <shieldIncreaseValue>0</shieldIncreaseValue>      
     </Item>
     <Item id="6"> //Zero index - Easy input in lists etc.
             <name>Healing Potion</name>
-            <description>?</description>
+            <description></description>
             <goldValue>1000</goldValue>
             <damageIncreaseValue>0</damageIncreaseValue>   
             <shieldIncreaseValue>0</shieldIncreaseValue>      
     </Item>
     <Item id="7"> //Zero index - Easy input in lists etc.
             <name>Healing Potion</name>
-            <description>?</description>
+            <description></description>
             <goldValue>1000</goldValue>
             <damageIncreaseValue>0</damageIncreaseValue>   
             <shieldIncreaseValue>0</shieldIncreaseValue>      
     </Item>
     <Item id="8"> //Zero index - Easy input in lists etc.
             <name>Healing Potion</name>
-            <description>?</description>
+            <description></description>
             <goldValue>1000</goldValue>
             <damageIncreaseValue>0</damageIncreaseValue>   
             <shieldIncreaseValue>0</shieldIncreaseValue>      
     </Item> 
     <Item id="9"> //Zero index - Easy input in lists etc.
             <name>Rubi</name>
-            <description>?</description>
+            <description></description>
             <goldValue>200</goldValue>
             <damageIncreaseValue>0</damageIncreaseValue>   
             <shieldIncreaseValue>0</shieldIncreaseValue>      
     </Item>
     <Item id="10"> //Zero index - Easy input in lists etc.
             <name>Rubi</name>
-            <description>?</description>
+            <description></description>
             <goldValue>200</goldValue>
             <damageIncreaseValue>0</damageIncreaseValue>   
             <shieldIncreaseValue>0</shieldIncreaseValue>      
     </Item>
     <Item id="11"> //Zero index - Easy input in lists etc.
             <name>Rubi</name>
-            <description>?</description>
+            <description></description>
             <goldValue>200</goldValue>
             <damageIncreaseValue>0</damageIncreaseValue>   
             <shieldIncreaseValue>0</shieldIncreaseValue>      
     </Item>
     <Item id="12"> //Zero index - Easy input in lists etc.
             <name>Pearl</name>
-            <description>?</description>
+            <description></description>
             <goldValue>200</goldValue>
             <damageIncreaseValue>0</damageIncreaseValue>   
             <shieldIncreaseValue>0</shieldIncreaseValue>      
     </Item>
     <Item id="13"> //Zero index - Easy input in lists etc.
             <name>Pearl</name>
-            <description>?</description>
+            <description></description>
             <goldValue>200</goldValue>
             <damageIncreaseValue>0</damageIncreaseValue>   
             <shieldIncreaseValue>0</shieldIncreaseValue>      
     </Item>
     <Item id="14"> //Zero index - Easy input in lists etc.
             <name>Pearl</name>
-            <description>?</description>
+            <description></description>
             <goldValue>50</goldValue>
             <damageIncreaseValue>0</damageIncreaseValue>   
             <shieldIncreaseValue>0</shieldIncreaseValue>      

@@ -30,7 +30,9 @@ public class CommandController {
 
     public String Command(String commandString) {
         String output = null;
+        String org = commandString;
         
+        commandString = commandString.split(" ")[0];
         commandString = commandString.toLowerCase();
         
         switch(commandString) {
@@ -55,12 +57,12 @@ public class CommandController {
                 break;
                 
             case "pickup":
-                output = "You picked up "; // + Call pickup fucntion - return item name
+                output = rc.PickupItem();// "You picked up "; // + Call pickup fucntion - return item name
                 
                 break; 
                 
             case "attack":
-                output = "Attacking "; // + Call fucntion - return what happend . ex attacking enemy
+                output = rc.AttackMonster();//"Attacking "; // + Call fucntion - return what happend . ex attacking enemy
                 break;
                 
             case "new":
@@ -88,7 +90,7 @@ public class CommandController {
                 break;
                 
             case "use":
-                output = "use "; // + Call fucntion - return what happend . ex attacking enemy
+                output = DungeonController.instance.getPlayer().UseItem(org);//"use "; // + Call fucntion - return what happend . ex attacking enemy
                 break;
                 
             default:

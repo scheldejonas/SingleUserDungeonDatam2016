@@ -7,6 +7,7 @@ package singleuserdungeon.model.room;
 
 import singleuserdungeon.control.DungeonController;
 import singleuserdungeon.model.DungeonOne;
+import singleuserdungeon.model.monster.BaseMonster;
 import singleuserdungeon.model.player.Player;
 import singleuserdungeon.view.GuiViewDungeonOne;
 
@@ -27,6 +28,35 @@ public class RoomCommand
         }
         
         return dungeon.getRooms().get(id);
+    }
+    
+    public String AttackMonster()
+    {
+        BaseRoom br = GetCurrentRoom();
+        
+        if(br.getMonster() != null)
+        {
+            Player p = GetPlayer();
+            BaseMonster bm = br.getMonster();
+            int atk = (int)bm.GetDefense() - p.getWeapon().getDamageValue();
+            bm.SetHealth((int)bm.GetHealth() - atk); 
+            
+            return bm.GetName()+ " took "+atk+" damage.";
+        }
+        
+        return "There is nothing to attack.";
+    }
+    
+    public String PickupItem()
+    {
+        BaseRoom br = GetCurrentRoom();
+        
+        if(br.getItem() != null)
+        {
+            return "You picked up "+br.getItem().getName()+" "+br.getItem().getDescription();
+        }
+        
+        return "There is nothing to pickup";
     }
     
     public boolean isThereARoom(int id)
