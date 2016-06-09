@@ -86,5 +86,9 @@ public class XmlItemParser implements IXmlParser {
             
         }
     }
+
+    public ArrayList<BaseItem> getAllItems() {
+        return this.Items;
+    }
     
 }
