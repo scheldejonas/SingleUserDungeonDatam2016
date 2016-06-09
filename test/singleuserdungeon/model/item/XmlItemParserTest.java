@@ -24,7 +24,7 @@ public class XmlItemParserTest {
     
     public XmlItemParserTest() 
     {
-        
+        String expectedOutPut = "We check the first 4 items in the xml parser. On the Items File.".toString();
     }
     
     @BeforeClass

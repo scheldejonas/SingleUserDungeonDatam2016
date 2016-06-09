@@ -62,7 +62,7 @@
             <goldValue>1000</goldValue>
             <damageIncreaseValue>0</damageIncreaseValue>   
             <shieldIncreaseValue>0</shieldIncreaseValue>      
-    </Item>
+    </Item> 
     <Item id="9"> //Zero index - Easy input in lists etc.
             <name>Rubi</name>
             <description>?</description>

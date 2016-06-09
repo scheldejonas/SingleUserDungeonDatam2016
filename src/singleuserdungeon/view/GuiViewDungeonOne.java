@@ -350,6 +350,7 @@ public class GuiViewDungeonOne extends javax.swing.JFrame {
     }
     
     public void outputResponseStatus(String text) {
+        
         jLabelResponseStatus.setText(text);
     }
 
