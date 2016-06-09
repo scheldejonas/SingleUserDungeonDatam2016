@@ -346,11 +346,11 @@ public class GuiViewDungeonOne extends javax.swing.JFrame {
         this.dispose();
     }
 
-    private void clearResponseStatus() {
+    public void clearResponseStatus() {
         jLabelResponseStatus.setText("");
     }
     
-    private void outputResponseStatus(String text) {
+    public void outputResponseStatus(String text) {
         jLabelResponseStatus.setText(text);
     }
 
