@@ -20,8 +20,18 @@ public class BaseItem implements IItem {
         this.name = name;
         this.description = description;
         this.goldValue = goldValue;
-        this.damageIncreaseValue = damageIncreaseValue;
-        this.shieldIncreaseValue = shieldIncreaseValue;
+        this.damageValue = damageIncreaseValue;
+        this.shieldValue = shieldIncreaseValue;
+    }
+    
+    public void SetShieldIncreaseValue(int i)
+    {
+        shieldIncreaseValue = i;
+    }
+    
+    public void SetDamageIncreaseValue(int i)
+    {
+        damageIncreaseValue = i;
     }
 
     @Override
@@ -51,12 +61,12 @@ public class BaseItem implements IItem {
     
     public int getDamageValue()
     {
-        return damageValue;
+        return damageValue+getDamageIncreaseValue();
     }
     
     public int getShieldValue()
     {
-        return shieldValue;
+        return shieldValue+getShieldIncreaseValue();
     }
 
     @Override
