@@ -43,5 +43,11 @@ public class Location implements ILocation {
     public int getLocationIndexNumber() {
         return this.indexNumber;
     }
+
+    @Override
+    public String toString() {
+        return "Location_" + "indexNumber=" + indexNumber;
+    }
+    
     
 }

@@ -22,7 +22,7 @@ public class XmlItemParser implements IXmlParser {
     
     private static XmlItemParser instance = null;
     
-    private ArrayList<BaseItem> Items =null;
+    private ArrayList<BaseItem> Items = null;
     
     public static XmlItemParser instance() {
         if(instance == null) {
@@ -67,11 +67,11 @@ public class XmlItemParser implements IXmlParser {
             {
                
                 Node nNode = nList.item(i);
-                Element eeElement = (Element) nNode;
                  
                 if (nNode.getNodeType() == Node.ELEMENT_NODE) 
                 {
                     Element eElement = (Element) nNode;
+                    
                     String name = eElement.getElementsByTagName("name").item(0).getTextContent();
                     String description = eElement.getElementsByTagName("description").item(0).getTextContent();
                     

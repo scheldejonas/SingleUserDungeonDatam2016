@@ -32,7 +32,7 @@ public class XmlMonsterParser implements IXmlParser {
         return instance;
     }
     
-    private ArrayList<BaseMonster> Monsters = new ArrayList<>();
+    private ArrayList<BaseMonster> Monsters;
        
     @Override
     public Document LoadXml() {
@@ -57,17 +57,18 @@ public class XmlMonsterParser implements IXmlParser {
     
     public BaseMonster GetMonster(int id) {
         
-        if(Monsters == null || Monsters.size() == 0) {
+        if(Monsters == null) {
          
             Document doc =  LoadXml();
-            
-            doc.normalize();
+            Monsters = new ArrayList<>();
+            doc.getDocumentElement().normalize();
             NodeList nList = doc.getElementsByTagName("Monster");
             
-            for(int i = 0; i < nList.getLength();i++)
+            for (int i = 0; i < nList.getLength();i++)
             {
                
-                Node nNode = nList.item(id);
+                Node nNode = nList.item(i);
+                
                 if (nNode.getNodeType() == Node.ELEMENT_NODE)
                 {
                     Element eElement = (Element) nNode;

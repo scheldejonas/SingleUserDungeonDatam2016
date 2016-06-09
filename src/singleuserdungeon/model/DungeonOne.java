@@ -33,23 +33,21 @@ public class DungeonOne implements IDungeon {
         int healingPotionCounter = 0;
         
         
-        
-        for (BaseItem item : items) {
+        for (int i = 0; i < items.size(); i++) {
             
-            if (item.getName().equals("Short sword")) {
-              //  items.remove(item);
+            if (items.get(i).getName().equals("Short sword")) {
+                items.remove(items.get(i));
             }
-            
-            if (item.getName().equals("Healing Potion")) { //Removes the first healing potion for 
+            else if (items.get(i).getName().equals("Healing Potion")) { //Removes the first healing potion for 
                 
                 if (healingPotionCounter == 0) {
-              //      items.remove(item);
+                    items.remove(items.get(i));
                 }
                 healingPotionCounter++;
             }
             
         }
-        
+
         Random rnd = new Random();
         int itemChooser = 0;
         boolean isEqualRoomCountsLeft = false;
@@ -57,7 +55,7 @@ public class DungeonOne implements IDungeon {
         
         for (BaseRoom room : rooms) {
             
-            if (isEqualRoomCountsLeft || rnd.nextBoolean()) {
+            if ( (isEqualRoomCountsLeft || rnd.nextBoolean()) && items.size() > 0) {
                 itemChooser = rnd.nextInt(items.size());
                 room.setItem(items.get(itemChooser));
                 items.remove(itemChooser);

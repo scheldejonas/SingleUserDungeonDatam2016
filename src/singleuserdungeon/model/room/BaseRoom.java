@@ -29,8 +29,8 @@ public class BaseRoom implements IRoom {
     private boolean isMonsterHere;
     private BaseMonster monster;
 
-    public BaseRoom(Location location, String roomName, String roomDescription, int northRoom, int eastRoom, int southRoom, int westRoom, boolean isEndTreasureChest, BaseItem item, BaseMonster monster) {
-        this.location = location;
+    public BaseRoom(int locationNumber, String roomName, String roomDescription, int northRoom, int eastRoom, int southRoom, int westRoom, boolean isEndTreasureChest, BaseItem item, BaseMonster monster) {
+        this.location = new Location(locationNumber);
         this.roomName = roomName;
         this.roomDescription = roomDescription;
         this.northRoomNumber = northRoom;
@@ -49,7 +49,7 @@ public class BaseRoom implements IRoom {
     }
 
     public BaseRoom(int locationNumber, String roomName, String roomDescription, int northRoomNumber, int eastRoomNumber, int southRoomNumber, int westRoomNumber) {
-        this.location = location;
+        this.location = new Location(locationNumber);
         this.roomName = roomName;
         this.roomDescription = roomDescription;
         this.northRoomNumber = northRoomNumber;

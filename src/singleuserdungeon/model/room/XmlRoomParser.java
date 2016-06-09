@@ -33,7 +33,7 @@ public class XmlRoomParser implements IXmlParser {
         return instance;
     }
     
-    private ArrayList<BaseRoom> Rooms = new ArrayList<>();
+    private ArrayList<BaseRoom> rooms;
        
     @Override
     public Document LoadXml() {
@@ -58,19 +58,21 @@ public class XmlRoomParser implements IXmlParser {
     
     public BaseRoom getRoom(int id) {
         
-        if(Rooms == null || Rooms.size() == 0) {
+        if(rooms == null) {
          
             Document doc =  LoadXml();
-            
-            doc.normalize();
+            rooms = new ArrayList<>();
+            doc.getDocumentElement().normalize();
             NodeList nList = doc.getElementsByTagName("Room");
             
             for(int i = 0; i < nList.getLength();i++)
             {
                
-                Node nNode = nList.item(id);
+                Node nNode = nList.item(i);
+                
                 if (nNode.getNodeType() == Node.ELEMENT_NODE)
                 {
+                    
                     Element eElement = (Element) nNode;
                    
                     String name = eElement.getElementsByTagName("name").item(0).getTextContent();
@@ -84,20 +86,23 @@ public class XmlRoomParser implements IXmlParser {
 
                     BaseRoom room = new BaseRoom(location, name, description, northRoomNumber, eastRoomNumber, southRoomNumber, westRoomNumber);
                             
-                    Rooms.add(room);
+                    rooms.add(room);
                 }
             }
-           return Rooms.get(id);
+           return rooms.get(id);
            
         }
         else {
-            return Rooms.get(id);
+            return rooms.get(id);
             
         }
     }
 
     public ArrayList<BaseRoom> getAllRooms() {
-        return this.Rooms;
+        if (rooms == null) {
+            getRoom(0);
+        }
+        return this.rooms;
     }
     
 }
