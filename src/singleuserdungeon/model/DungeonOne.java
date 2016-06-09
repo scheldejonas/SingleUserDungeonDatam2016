@@ -10,9 +10,9 @@ import java.util.Random;
 import singleuserdungeon.interfaces.IDungeon;
 import singleuserdungeon.model.item.BaseItem;
 import singleuserdungeon.model.item.XmlItemParser;
-import singleuserdungeon.model.room.Location;
 import singleuserdungeon.model.room.BaseRoom;
 import singleuserdungeon.model.room.XmlRoomParser;
+import singleuserdungeon.view.GuiViewDungeonOne;
 
 /**
  *
@@ -27,11 +27,10 @@ public class DungeonOne implements IDungeon {
     public DungeonOne() {
         
         this.dungeonName = "Hall of disaster";
-        this.dungeonDescription = "There has been a disaster in the world, you where one of the few who survived a huge group escape from the evil world controllers, who derived a lot of people from their homes and denied them food in 30 days, to make them work for building their castles. Your escaped down the sour channel with good luck and is laying here in the floor, trying to find you energy back";
+        this.dungeonDescription = "There has been a disaster in the world, you where one of the few who survived a huge group escape from the evil world controllers, who derived a lot of people from their homes and denied them food in 30 days, to make them work for building their castles. Your escaped down the sour channel with good luck and is laying here in on floor, trying to find you energy back";
         this.rooms = XmlRoomParser.Instance().getAllRooms();
         ArrayList<BaseItem> items = XmlItemParser.instance().getAllItems();
         int healingPotionCounter = 0;
-        
         
         for (int i = 0; i < items.size(); i++) {
             
@@ -42,8 +41,9 @@ public class DungeonOne implements IDungeon {
                 
                 if (healingPotionCounter == 0) {
                     items.remove(items.get(i));
-                }
+                }                
                 healingPotionCounter++;
+                
             }
             
         }
@@ -67,6 +67,9 @@ public class DungeonOne implements IDungeon {
             
             roomCounter--;
         }
+        
+        GuiViewDungeonOne.instance().outputStoryText(dungeonName);
+        GuiViewDungeonOne.instance().outputStoryText(dungeonDescription);
         
     }
 

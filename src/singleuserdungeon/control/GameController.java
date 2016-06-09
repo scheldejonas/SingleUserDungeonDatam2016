@@ -21,22 +21,16 @@ public class GameController implements IGameController {
     public static GameController Instance() {
         if(instance == null) {
             instance = new GameController();
-            
             GuiViewDungeonOne.instance(); //Newing the game window, so the game restarts, if the somebody news the game from the starter.
-            
         }
         
         return instance;
     }
     
-    private FileHandler fileHandler = new FileHandler();
-
-    public GameController() {
-        newGame();
-    }  
+    private FileHandler fileHandler = new FileHandler(); 
     
     public void newGame() {
-        DungeonController.Instance().recreateDungeon();
+        DungeonController.Instance();
     }
 
     @Override
@@ -53,13 +47,11 @@ public class GameController implements IGameController {
     @Override
     public void resetGame() {
         GuiViewDungeonOne.instance().ResetStoryText();
-        DungeonController.Instance().Reset();
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        DungeonController.Instance().resetDungeonAndPlayer();
     }
 
     @Override
     public void nextLevel(Player currentPlayer) {
-        GuiViewDungeonOne.instance().ResetStoryText();
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -79,6 +71,11 @@ public class GameController implements IGameController {
         String helpString = new MenuOptionHelp().getName();
         
         GuiViewDungeonOne.instance().outputStoryText(helpString);
+    }
+
+    public void saveGame() {
+        StorageController.Instance().saveDungeonController();
+        StorageController.Instance().savePlayer();
     }
     
 }
