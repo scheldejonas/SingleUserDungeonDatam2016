@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RoomList>
+    <Room id="0"> //Zero index - Easy input in lists etc.
+        <name>The sealed dead end</name>
+        <location>1</location>
+        <description>This is where it all started, You are at a dead end of hallway. In here you can see a very dim light hanging in front of you far away. A man is suddenly asking from the corner of the dead end behind you: "What is your name, my young friend"?</description>
+        <
+    </Room>
+</RoomList>
+
+
+

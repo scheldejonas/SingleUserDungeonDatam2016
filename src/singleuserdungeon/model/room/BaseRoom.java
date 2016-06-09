@@ -8,39 +8,37 @@ package singleuserdungeon.model.room;
 import java.util.ArrayList;
 import singleuserdungeon.interfaces.IRoom;
 import singleuserdungeon.model.item.BaseItem;
-import singleuserdungeon.model.player.Weapon;
 import singleuserdungeon.model.monster.BaseMonster;
+import singleuserdungeon.model.player.Weapon;
 
 /**
  *
  * @author scheldejonas
  */
-public class Room implements IRoom {
+public class BaseRoom implements IRoom {
 
     private Location location;
-    private int roomIndexNumber;
     private String roomName;
     private String roomDescription;
-    private Room northRoom;
-    private Room eastRoom;
-    private Room southRoom;
-    private Room westRoom;
+    private int northRoomNumber;
+    private int eastRoomNumber;
+    private int southRoomNumber;
+    private int westRoomNumber;
     private boolean isEndTreasureChest;
     private boolean isVisited;
     private BaseItem item;
     private boolean isMonsterHere;
-    private BaseItem monster;
+    private BaseMonster monster;
     private Weapon weapon;
 
-    public Room(Location location, int roomIndexNumber, String roomName, String roomDescription, Room northRoom, Room eastRoom, Room southRoom, Room westRoom, boolean isEndTreasureChest, BaseItem item, BaseItem monster, Weapon weapon) {
+    public BaseRoom(Location location, String roomName, String roomDescription, int northRoom, int eastRoom, int southRoom, int westRoom, boolean isEndTreasureChest, BaseItem item, BaseMonster monster, Weapon weapon) {
         this.location = location;
-        this.roomIndexNumber = roomIndexNumber;
         this.roomName = roomName;
         this.roomDescription = roomDescription;
-        this.northRoom = northRoom;
-        this.eastRoom = eastRoom;
-        this.southRoom = southRoom;
-        this.westRoom = westRoom;
+        this.northRoomNumber = northRoom;
+        this.eastRoomNumber = eastRoom;
+        this.southRoomNumber = southRoom;
+        this.westRoomNumber = westRoom;
         this.isEndTreasureChest = isEndTreasureChest;
         this.item = item;
         this.monster = monster;
@@ -51,32 +49,24 @@ public class Room implements IRoom {
         }
     }
 
-    public Room(Location location, int roomIndexNumber, String roomName, String roomDescription) {
+    public BaseRoom(Location location, String roomName, String roomDescription) {
         this.location = location;
-        this.roomIndexNumber = roomIndexNumber;
         this.roomName = roomName;
         this.roomDescription = roomDescription;
-        this.northRoom = null;
-        this.eastRoom = null;
-        this.southRoom = null;
-        this.westRoom = null;
+        this.northRoomNumber = 0;
+        this.eastRoomNumber = 0;
+        this.southRoomNumber = 0;
+        this.westRoomNumber = 0;
         this.isVisited = false;
         this.item = null;
         this.isMonsterHere = false;
         this.monster = null;
         this.weapon = null;
-    }
-    
-    
+    }    
 
     @Override
     public Location getLocation() {
         return this.location;
-    }
-
-    @Override
-    public int getRoomIndexNumber() {
-        return this.roomIndexNumber;
     }
 
     @Override
@@ -88,25 +78,25 @@ public class Room implements IRoom {
     public String GetRoomDescription() {
         return this.roomDescription;
     }
-
+    
     @Override
-    public Room getNorthRoom() {
-        return this.northRoom;
+    public int getNorthRoom() {
+        return this.northRoomNumber;
     }
 
     @Override
-    public Room getEastRoom() {
-        return this.eastRoom;
+    public int getEastRoom() {
+        return this.eastRoomNumber;
     }
 
     @Override
-    public Room getSouthRoom() {
-        return this.southRoom;
+    public int getSouthRoom() {
+        return this.southRoomNumber;
     }
 
     @Override
-    public Room getWestRoom() {
-        return this.westRoom;
+    public int getWestRoom() {
+        return this.westRoomNumber;
     }
 
     @Override
@@ -141,7 +131,7 @@ public class Room implements IRoom {
     }
 
     @Override
-    public BaseItem getMonster() {
+    public BaseMonster getMonster() {
         return this.monster;
     }
 
@@ -149,5 +139,6 @@ public class Room implements IRoom {
     public Weapon getWeapon() {
         return this.weapon;
     }
+
     
 }
