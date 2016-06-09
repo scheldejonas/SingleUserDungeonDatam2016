@@ -42,7 +42,8 @@ public class DungeonController {
     {
         Player p = new Player();
         
-        
+        p.AddItem(4);
+        p.AddWeapon(1);
         
         return p;
     }

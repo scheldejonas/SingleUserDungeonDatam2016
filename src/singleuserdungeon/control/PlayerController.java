@@ -19,7 +19,7 @@ public class PlayerController {
     
     public void StartUpInitComponents() {
         player.setHitPoints(30);
-        player.setNumberOfHealingPotions(1);
+        player.AddItem(4);
         player.setWeapon(XmlItemParser.instance().getItem(1));
     }
     

@@ -8,6 +8,7 @@ package singleuserdungeon.model.player;
 import java.util.ArrayList;
 import singleuserdungeon.interfaces.IPlayer;
 import singleuserdungeon.model.item.BaseItem;
+import singleuserdungeon.model.item.XmlItemParser;
 
 /**
  *
@@ -18,7 +19,6 @@ public class Player implements IPlayer {
     private String name;
     private int hitPoints;
     private int level;
-    private int numberOfHealingPotions;
     private BaseItem weapon;
     private String description;
     
@@ -28,14 +28,23 @@ public class Player implements IPlayer {
     {
     }
     
-    public Player(String NewName,int NewHitpoints, int NewLevel, int NewNumberOfHealingPotions, BaseItem NewWeapon, String NewDescription) 
+    public Player(String NewName,int NewHitpoints, int NewLevel, BaseItem NewWeapon, String NewDescription) 
     {
         this.name = NewName;
         this.hitPoints = NewHitpoints;
         this.level = NewLevel;
-        this.numberOfHealingPotions = NewNumberOfHealingPotions;
         this.weapon = NewWeapon;
         this.description = NewDescription;
+    }
+    
+    public void  AddItem(int id)
+    {
+        this.Backpack.add(XmlItemParser.instance().getItem(id));
+    }
+    
+    public void AddWeapon(int id)
+    {
+       this.weapon =  XmlItemParser.instance().getItem(id);
     }
     
     @Override
@@ -69,13 +78,19 @@ public class Player implements IPlayer {
     }
 
     @Override
-    public int getNumberOfHealingPotions() {
-        return numberOfHealingPotions;
-    }
-
-    @Override
-    public void setNumberOfHealingPotions(int numberOfHealingPotions) {
-        this.numberOfHealingPotions = numberOfHealingPotions;
+    public int getNumberOfHealingPotions() 
+    {
+        int amount =0;
+        
+        for(int i =0; i < Backpack.size();i++)
+        {
+            if(Backpack.get(i).getName().equals("Healing Potion"))
+            {
+                amount++;
+            }
+        }
+        
+        return amount;
     }
 
     @Override
