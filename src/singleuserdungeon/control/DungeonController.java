@@ -72,5 +72,10 @@ public class DungeonController {
         
         return this.currentPlayer;
     }
+
+    public void recreateDungeon() {
+        this.dungeonOne = new DungeonOne();
+        this.currentPlayer = newPlayer();
+    }
     
 }

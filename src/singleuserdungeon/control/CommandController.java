@@ -79,12 +79,12 @@ public class CommandController {
                 
             case "quit":
                 output = "quit game "; // + Call fucntion - return what happend . ex attacking enemy
-                GameController.instance().quitGame();
+                GameController.Instance().quitGame();
                 break;
                 
             case "help":
                 output = "You yelded for help";
-                GameController.instance().outputHelpToStory();
+                GameController.Instance().outputHelpToStory();
                 break;
                 
             case "use":

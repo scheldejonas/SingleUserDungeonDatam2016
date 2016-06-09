@@ -16,13 +16,14 @@ import singleuserdungeon.view.*;
  */
 public class GameController implements IGameController {
     
-    private static GameController instance = null;
+    private static GameController instance;
     
-    public static GameController instance() {
+    public static GameController Instance() {
         if(instance == null) {
             instance = new GameController();
             
             GuiViewDungeonOne.instance(); //Newing the game window, so the game restarts, if the somebody news the game from the starter.
+            
         }
         
         return instance;
@@ -35,7 +36,7 @@ public class GameController implements IGameController {
     }  
     
     public void newGame() {
-        DungeonController.Instance();
+        DungeonController.Instance().recreateDungeon();
     }
 
     @Override

@@ -260,7 +260,7 @@ public class GuiViewDungeonOne extends javax.swing.JFrame {
 
     private void jButtonAnswerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAnswerActionPerformed
         
-        String commandAnswer = GameController.instance().nextLineCommand(jTextFieldInputAnswer.getText());
+        String commandAnswer = GameController.Instance().nextLineCommand(jTextFieldInputAnswer.getText());
         
         outputStoryText(commandAnswer);
         
@@ -275,7 +275,7 @@ public class GuiViewDungeonOne extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldInputAnswerActionPerformed
 
     private void jButtonExportConsoleToFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExportConsoleToFileActionPerformed
-        boolean wasWritten = GameController.instance().WriteTextToFile(jTextAreaConsole.getText());
+        boolean wasWritten = GameController.Instance().WriteTextToFile(jTextAreaConsole.getText());
         if (wasWritten) {
             String string = "Your story has been saved to the computer.";
             outputResponseStatus(string);
@@ -341,7 +341,7 @@ public class GuiViewDungeonOne extends javax.swing.JFrame {
      * This is a method for closing down the windows and
      */
     public void disposeWindow() {
-        GameController.instance().WriteTextToFile(jTextAreaConsole.getText());
+        GameController.Instance().WriteTextToFile(jTextAreaConsole.getText());
         this.dispose();
     }
 
