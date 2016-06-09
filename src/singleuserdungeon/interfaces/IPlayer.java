@@ -18,7 +18,6 @@ public interface IPlayer {
     public int getHitPoints();
     public int getLevel();
     public int getNumberOfHealingPotions();
-    public void setNumberOfHealingPotions(int numberOfHealingPotions);
     public BaseItem getWeapon();
     public void setWeapon(BaseItem weapon);
     public void setName(String name);
