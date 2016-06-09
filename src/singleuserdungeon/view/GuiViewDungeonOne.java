@@ -72,8 +72,7 @@ public class GuiViewDungeonOne extends javax.swing.JFrame {
         jButtonAnswer = new javax.swing.JButton();
         jLabelHeadline = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabelExportStatus = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        jLabelResponseStatus = new javax.swing.JLabel();
         jPanelCommandInfo = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -92,6 +91,7 @@ public class GuiViewDungeonOne extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jButtonExportConsoleToFile = new javax.swing.JButton();
+        jLabel20 = new javax.swing.JLabel();
 
         jLabel2.setText("jLabel2");
 
@@ -149,13 +149,10 @@ public class GuiViewDungeonOne extends javax.swing.JFrame {
         jLabel1.setText("Response");
         jPanelGameConsole.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 80, 20));
 
-        jLabelExportStatus.setText(" ");
-        jPanelGameConsole.add(jLabelExportStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 15, -1, -1));
-
-        jLabel4.setFont(new java.awt.Font("Avenir Next", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("If you need help, then you would have to yield it.");
-        jPanelGameConsole.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 540, 20));
+        jLabelResponseStatus.setFont(new java.awt.Font("Avenir Next", 0, 14)); // NOI18N
+        jLabelResponseStatus.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelResponseStatus.setText("If you need help, then you would have to yield it.");
+        jPanelGameConsole.add(jLabelResponseStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 540, 20));
 
         getContentPane().add(jPanelGameConsole, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 460));
 
@@ -197,8 +194,8 @@ public class GuiViewDungeonOne extends javax.swing.JFrame {
 
         jLabel11.setFont(new java.awt.Font("Avenir Next", 0, 13)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("Quit");
-        jPanelCommandInfo.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, -1, -1));
+        jLabel11.setText("Help");
+        jPanelCommandInfo.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Avenir Next", 0, 13)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
@@ -240,16 +237,22 @@ public class GuiViewDungeonOne extends javax.swing.JFrame {
         jLabel19.setText("Load");
         jPanelCommandInfo.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, -1, -1));
 
-        jButtonExportConsoleToFile.setBackground(new java.awt.Color(102, 102, 102));
+        jButtonExportConsoleToFile.setBackground(new java.awt.Color(51, 51, 51));
         jButtonExportConsoleToFile.setForeground(new java.awt.Color(255, 255, 255));
         jButtonExportConsoleToFile.setText("Export Text");
         jButtonExportConsoleToFile.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        jButtonExportConsoleToFile.setOpaque(true);
         jButtonExportConsoleToFile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonExportConsoleToFileActionPerformed(evt);
             }
         });
-        jPanelCommandInfo.add(jButtonExportConsoleToFile, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 100, 30));
+        jPanelCommandInfo.add(jButtonExportConsoleToFile, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 100, 30));
+
+        jLabel20.setFont(new java.awt.Font("Avenir Next", 0, 13)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel20.setText("Quit");
+        jPanelCommandInfo.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, -1, -1));
 
         getContentPane().add(jPanelCommandInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 0, 220, 460));
 
@@ -260,11 +263,11 @@ public class GuiViewDungeonOne extends javax.swing.JFrame {
         
         String commandAnswer = GameController.instance().nextLineCommand(jTextFieldInputAnswer.getText());
         
-        outputText(commandAnswer);
+        outputStoryText(commandAnswer);
         
         clearAnswerField();
         
-        clearExportStatus();
+        clearResponseStatus();
         
     }//GEN-LAST:event_jButtonAnswerActionPerformed
 
@@ -276,11 +279,11 @@ public class GuiViewDungeonOne extends javax.swing.JFrame {
         boolean wasWritten = GameController.instance().WriteTextToFile(jTextAreaConsole.getText());
         if (wasWritten) {
             String string = "Your story has been saved to the computer.";
-            setExportStatus(string);
+            outputResponseStatus(string);
         }
         else {
             String string = "Your story is not saved, sorry, try again or contact us.";
-            setExportStatus(string);
+            outputResponseStatus(string);
         }
     }//GEN-LAST:event_jButtonExportConsoleToFileActionPerformed
     
@@ -299,15 +302,15 @@ public class GuiViewDungeonOne extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JLabel jLabelExportStatus;
     private javax.swing.JLabel jLabelHeadline;
+    private javax.swing.JLabel jLabelResponseStatus;
     private javax.swing.JPanel jPanelCommandInfo;
     private javax.swing.JPanel jPanelGameConsole;
     private javax.swing.JScrollPane jScrollPane1;
@@ -322,7 +325,7 @@ public class GuiViewDungeonOne extends javax.swing.JFrame {
     /**
      * This resets the text in the gui windows of the game.
      */
-    public void ResetStory() {
+    public void ResetStoryText() {
         jTextAreaConsole.setText("");
     }
     
@@ -331,7 +334,7 @@ public class GuiViewDungeonOne extends javax.swing.JFrame {
      * It uses append, with a newline inserted after.
      * @param str 
      */
-    public void outputText(String str) {
+    public void outputStoryText(String str) {
         jTextAreaConsole.append(str+"\n");
     }
     
@@ -343,12 +346,12 @@ public class GuiViewDungeonOne extends javax.swing.JFrame {
         this.dispose();
     }
 
-    private void clearExportStatus() {
-        jLabelExportStatus.setText("");
+    private void clearResponseStatus() {
+        jLabelResponseStatus.setText("");
     }
     
-    private void setExportStatus(String text) {
-        jLabelExportStatus.setText(text);
+    private void outputResponseStatus(String text) {
+        jLabelResponseStatus.setText(text);
     }
 
     public String getLiveStory() {
