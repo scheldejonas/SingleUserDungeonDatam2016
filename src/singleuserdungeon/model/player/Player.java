@@ -6,6 +6,7 @@
 package singleuserdungeon.model.player;
 
 import singleuserdungeon.interfaces.IPlayer;
+import singleuserdungeon.model.item.BaseItem;
 
 /**
  *
@@ -17,14 +18,14 @@ public class Player implements IPlayer {
     private int hitPoints;
     private int level;
     private int numberOfHealingPotions;
-    private Weapon weapon;
+    private BaseItem weapon;
     private String description;
 
     public Player() 
     {
     }
     
-    public Player(String NewName,int NewHitpoints, int NewLevel, int NewNumberOfHealingPotions, Weapon NewWeapon, String NewDescription) 
+    public Player(String NewName,int NewHitpoints, int NewLevel, int NewNumberOfHealingPotions, BaseItem NewWeapon, String NewDescription) 
     {
         this.name = NewName;
         this.hitPoints = NewHitpoints;
@@ -80,12 +81,12 @@ public class Player implements IPlayer {
     }
 
     @Override
-    public Weapon getWeapon() {
+    public BaseItem getWeapon() {
         return this.weapon;
     }
 
     @Override
-    public void setWeapon(Weapon weapon) {
+    public void setWeapon(BaseItem weapon) {
         this.weapon = weapon;
     }
    

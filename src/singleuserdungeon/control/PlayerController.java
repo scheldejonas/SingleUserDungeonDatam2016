@@ -6,8 +6,8 @@
 package singleuserdungeon.control;
 
 import singleuserdungeon.interfaces.IPlayer;
+import singleuserdungeon.model.item.XmlItemParser;
 import singleuserdungeon.model.player.Player;
-import singleuserdungeon.model.player.Weapon;
 
 /**
  *
@@ -20,7 +20,7 @@ public class PlayerController {
     public void StartUpInitComponents() {
         player.setHitPoints(30);
         player.setNumberOfHealingPotions(1);
-        player.setWeapon(new Weapon("LongSword", "The standard of swords, you want to replace it rather sooner than later.. but for now it gets the job done", 6, 5, 2));
+        player.setWeapon(XmlItemParser.instance().getItem(1));
     }
     
 }

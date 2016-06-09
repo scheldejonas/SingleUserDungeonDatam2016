@@ -7,6 +7,34 @@
             <damageIncreaseValue>0</damageIncreaseValue>   
             <shieldIncreaseValue>0</shieldIncreaseValue>      
     </Item>
+    <Item id="1"> //Zero index - Easy input in lists etc.
+            <name>Short sword</name>
+            <description>This is a sword to defend your self quickly. The small details in the blade tells this blacksmith never really spend a lot of time to sharpen it, to make it damage hard.</description>
+            <goldValue>15000</goldValue>
+            <damageIncreaseValue>6</damageIncreaseValue>   
+            <shieldIncreaseValue>0</shieldIncreaseValue>      
+    </Item>
+    <Item id="2"> //Zero index - Easy input in lists etc.
+            <name>Long sword</name>
+            <description>?</description>
+            <goldValue>20000</goldValue>
+            <damageIncreaseValue>8</damageIncreaseValue>   
+            <shieldIncreaseValue>0</shieldIncreaseValue>      
+    </Item>
+    <Item id="3"> //Zero index - Easy input in lists etc.
+            <name>Weapon poison potion</name>
+            <description>This is found to be single poison for your weapon, which makes it become much more sharper and deadly poisoning to your enemy's, it will give your sword more damage towards monsters, until you switch weapon</description>
+            <goldValue>5000</goldValue>
+            <damageIncreaseValue>5</damageIncreaseValue>   
+            <shieldIncreaseValue>0</shieldIncreaseValue>      
+    </Item>
+    <Item id="4"> //Zero index - Easy input in lists etc.
+            <name>Healing Potion</name>
+            <description>?</description>
+            <goldValue>1000</goldValue>
+            <damageIncreaseValue>0</damageIncreaseValue>   
+            <shieldIncreaseValue>0</shieldIncreaseValue>      
+    </Item>
 </ItemList>
 
 
