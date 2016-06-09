@@ -6,7 +6,7 @@
 package singleuserdungeon.interfaces;
 
 import java.util.ArrayList;
-import singleuserdungeon.model.room.Room;
+import singleuserdungeon.model.room.BaseRoom;
 
 /**
  *
@@ -18,12 +18,12 @@ public interface IDungeon {
      * This is for keeping the rooms in one container and using the controller get all sorts of information out of this list with rooms
      * @return ArrayList of rooms
      */
-    public ArrayList<Room> getRooms();
+    public ArrayList<BaseRoom> getRooms();
     
     /**
      * This is for updating the rooms
      */
-    public void setRooms(ArrayList<Room> rooms);
+    public void setRooms(ArrayList<BaseRoom> rooms);
     
     /**
      * This is the main name of the game, and should be returned when the game is entered

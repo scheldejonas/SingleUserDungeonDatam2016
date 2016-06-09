@@ -12,7 +12,7 @@ import singleuserdungeon.model.player.Weapon;
 import singleuserdungeon.model.monster.BaseMonster;
 import singleuserdungeon.model.room.Location;
 import singleuserdungeon.model.player.Player;
-import singleuserdungeon.model.room.Room;
+import singleuserdungeon.model.room.BaseRoom;
 
 /**
  *
@@ -24,16 +24,16 @@ public interface IRoom
     public int getRoomIndexNumber();
     public String GetRoomName();
     public String GetRoomDescription();
-    public Room getNorthRoom();
-    public Room getEastRoom();
-    public Room getSouthRoom();
-    public Room getWestRoom();
+    public int getNorthRoom();
+    public int getEastRoom();
+    public int getSouthRoom();
+    public int getWestRoom();
     public boolean isEndTreasureChest();
     public boolean isVisited();
     public void setVisited(boolean visit);
     public BaseItem getItem();
     public Weapon getWeapon();
     public boolean isMonsterHere();
-    public BaseItem getMonster();
+    public BaseMonster getMonster();
     
 }
