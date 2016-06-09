@@ -7,6 +7,7 @@ package singleuserdungeon.control;
 
 import singleuserdungeon.interfaces.IGameController;
 import singleuserdungeon.model.*;
+import singleuserdungeon.control.*;
 import singleuserdungeon.model.player.Player;
 import singleuserdungeon.view.*;
 
@@ -21,10 +22,13 @@ public class GameController implements IGameController {
     public static GameController Instance() {
         if(instance == null) {
             instance = new GameController();
-            GuiViewDungeonOne.instance(); //Newing the game window, so the game restarts, if the somebody news the game from the starter.
         }
         
         return instance;
+    }
+
+    public GameController() {
+        GuiViewDungeonOne.Instance(); //Newing the game window, so the game restarts, if the somebody news the game from the starter.
     }
     
     private FileHandler fileHandler = new FileHandler(); 
@@ -35,18 +39,18 @@ public class GameController implements IGameController {
 
     @Override
     public void quitGame() {
-        GuiViewDungeonOne.instance().disposeWindow(); //Saving story to file and closing down the window.
+        GuiViewDungeonOne.Instance().disposeWindow(); //Saving story to file and closing down the window.
     }
 
     @Override
     public void endGame() {
-        GuiViewDungeonOne.instance().outputStoryText("The end.");
-        fileHandler.saveTextToFile(GuiViewDungeonOne.instance().getLiveStory());
+        GuiViewDungeonOne.Instance().outputStoryText("The end.");
+        fileHandler.saveTextToFile(GuiViewDungeonOne.Instance().getLiveStory());
     }
 
     @Override
     public void resetGame() {
-        GuiViewDungeonOne.instance().ResetStoryText();
+        GuiViewDungeonOne.Instance().ResetStoryText();
         DungeonController.Instance().resetDungeonAndPlayer();
     }
 
@@ -70,12 +74,11 @@ public class GameController implements IGameController {
         
         String helpString = new MenuOptionHelp().getName();
         
-        GuiViewDungeonOne.instance().outputStoryText(helpString);
+        GuiViewDungeonOne.Instance().outputStoryText(helpString);
     }
 
     public void saveGame() {
         StorageController.Instance().saveDungeonController();
-        StorageController.Instance().savePlayer();
     }
     
 }

@@ -68,8 +68,8 @@ public class DungeonOne implements IDungeon {
             roomCounter--;
         }
         
-        GuiViewDungeonOne.instance().outputStoryText(dungeonName);
-        GuiViewDungeonOne.instance().outputStoryText(dungeonDescription);
+        GuiViewDungeonOne.Instance().outputStoryText(dungeonName);
+        GuiViewDungeonOne.Instance().outputStoryText(dungeonDescription);
         
     }
 

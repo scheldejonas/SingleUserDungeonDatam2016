@@ -5,6 +5,11 @@
  */
 package singleuserdungeon.control;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import singleuserdungeon.view.GuiViewDungeonOne;
+
 /**
  *
  * @author scheldejonas
@@ -13,18 +18,17 @@ public class StorageController {
     
     private static StorageController instance;
 
-    public StorageController Instance() {
+    public static StorageController Instance() {
         
         if (instance == null) {
-            this.instance = new StorageController();
+            instance = new StorageController();
         }
         
-        return this.instance;
+        return instance;
     }
 
     public void saveDungeonController() {
-        DungeonController.Instance().saveToSerialFile();
+        DungeonController.Instance().saveDungeonControllerToSerFile();
     }
-    
-    
+
 }

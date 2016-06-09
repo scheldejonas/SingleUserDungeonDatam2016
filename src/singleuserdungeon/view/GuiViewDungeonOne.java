@@ -35,7 +35,7 @@ public class GuiViewDungeonOne extends javax.swing.JFrame {
     /**
      * Creates new form GuiView
      */
-    public static GuiViewDungeonOne instance() {
+    public static GuiViewDungeonOne Instance() {
         if(instance == null) {
             instance = new GuiViewDungeonOne();            
         }
