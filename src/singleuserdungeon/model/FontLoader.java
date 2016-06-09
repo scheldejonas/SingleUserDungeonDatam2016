@@ -7,6 +7,7 @@ package singleuserdungeon.model;
 
 
 import java.awt.Font;
+import java.awt.GraphicsEnvironment;
 import java.io.FileInputStream;
 import java.io.InputStream;
 /**
@@ -34,7 +35,7 @@ public class FontLoader
         if(DieFont == null)
         {
             DieFont = LoadFont();
-            
+            GraphicsEnvironment.getLocalGraphicsEnvironment().registerFont(DieFont);
            
         }
         
