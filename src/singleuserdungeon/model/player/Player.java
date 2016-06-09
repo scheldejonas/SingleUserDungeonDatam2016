@@ -5,7 +5,9 @@
  */
 package singleuserdungeon.model.player;
 
+import java.util.ArrayList;
 import singleuserdungeon.interfaces.IPlayer;
+import singleuserdungeon.model.item.BaseItem;
 
 /**
  *
@@ -19,10 +21,14 @@ public class Player implements IPlayer {
     private int numberOfHealingPotions;
     private Weapon weapon;
     private String description;
-
+    
+    private ArrayList<BaseItem> Backpack = new ArrayList<>();
+    
     public Player() 
     {
     }
+    
+    
     
     public Player(String NewName,int NewHitpoints, int NewLevel, int NewNumberOfHealingPotions, Weapon NewWeapon, String NewDescription) 
     {

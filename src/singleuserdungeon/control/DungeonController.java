@@ -7,6 +7,7 @@ package singleuserdungeon.control;
 
 import singleuserdungeon.interfaces.IDungeon;
 import singleuserdungeon.model.DungeonOne;
+import singleuserdungeon.model.player.Player;
 
 /**
  *
@@ -15,20 +16,50 @@ import singleuserdungeon.model.DungeonOne;
 public class DungeonController {
     
     public static DungeonController instance;
+    
+    private DungeonOne dungeonOne;
 
-    public static DungeonController instance() {
+    private Player currentPlayer;
+    
+    public static DungeonController instance()
+    {
         
-        if (instance == null) {
+        if (instance == null) 
+        {
             instance = new DungeonController();
         }
         
         return instance;
     }
     
-    private final DungeonOne dungeonOne;
-
-    public DungeonController() {
+    public DungeonController()
+    {
         this.dungeonOne = new DungeonOne();
+        this.currentPlayer = new Player();
+    }
+    
+    public Player newPlayer()
+    {
+        Player p = new Player();
+        
+        
+        
+        return p;
+    }
+    
+    public void Reset()
+    {
+        this.dungeonOne = new DungeonOne();
+    }
+    
+    public DungeonOne getDungeonOne()
+    {
+        return this.dungeonOne;
+    }
+    
+    public Player getPlayer()
+    {
+        return currentPlayer;
     }
     
 }

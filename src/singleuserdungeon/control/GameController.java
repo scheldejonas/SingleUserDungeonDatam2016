@@ -49,6 +49,7 @@ public class GameController implements IGameController {
     @Override
     public void resetGame() {
         GuiViewDungeonOne.instance().ResetStoryText();
+        DungeonController.instance().Reset();
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
