@@ -43,7 +43,14 @@ public class RoomCommand
     {
         if(p == null)
         {
-           p = DungeonController.instance.getPlayer();
+            try
+            {
+             p = DungeonController.instance.getPlayer();
+            }
+            catch(Exception e)
+            {
+                System.out.println(e.getMessage());
+            }
         }
         
         return p;

@@ -28,10 +28,6 @@ public class CommandController {
         return instance;
     }
 
-    private CommandController() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
     public String Command(String commandString) {
         String output = null;
         
@@ -40,7 +36,7 @@ public class CommandController {
         switch(commandString) {
             case "west":
                 output = "Going west "; // + Call fucntion - return what happend . ex into a wall/
-                rc.GoEast();
+                rc.GoWest();
                 break;
                 
             case "north":
@@ -55,7 +51,7 @@ public class CommandController {
                 
             case "south":
                 output = "Going south "; // + Call fucntion - return what happend . ex into a wall/
-                rc.GoWest();
+                rc.GoSouth();
                 break;
                 
             case "pickup":

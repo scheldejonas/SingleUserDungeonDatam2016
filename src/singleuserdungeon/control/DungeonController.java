@@ -19,7 +19,7 @@ public class DungeonController {
     
     private DungeonOne dungeonOne;
 
-    private Player currentPlayer;
+    private Player currentPlayer = null;
     
     
     public static DungeonController instance()
@@ -52,6 +52,7 @@ public class DungeonController {
     public void Reset()
     {
         this.dungeonOne = new DungeonOne();
+        currentPlayer = newPlayer();
     }
     
     public DungeonOne getDungeonOne()
@@ -61,7 +62,14 @@ public class DungeonController {
     
     public Player getPlayer()
     {
-        return currentPlayer;
+        if(this.currentPlayer == null)
+        {
+            this.currentPlayer = newPlayer();
+        }
+        
+        System.out.println(this.currentPlayer);
+        
+        return this.currentPlayer;
     }
     
 }
