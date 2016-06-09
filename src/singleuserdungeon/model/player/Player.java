@@ -19,7 +19,7 @@ public class Player implements IPlayer {
     private int hitPoints;
     private int level;
     private int numberOfHealingPotions;
-    private Weapon weapon;
+    private BaseItem weapon;
     private String description;
     
     private ArrayList<BaseItem> Backpack = new ArrayList<>();
@@ -28,9 +28,7 @@ public class Player implements IPlayer {
     {
     }
     
-    
-    
-    public Player(String NewName,int NewHitpoints, int NewLevel, int NewNumberOfHealingPotions, Weapon NewWeapon, String NewDescription) 
+    public Player(String NewName,int NewHitpoints, int NewLevel, int NewNumberOfHealingPotions, BaseItem NewWeapon, String NewDescription) 
     {
         this.name = NewName;
         this.hitPoints = NewHitpoints;
@@ -86,12 +84,12 @@ public class Player implements IPlayer {
     }
 
     @Override
-    public Weapon getWeapon() {
+    public BaseItem getWeapon() {
         return this.weapon;
     }
 
     @Override
-    public void setWeapon(Weapon weapon) {
+    public void setWeapon(BaseItem weapon) {
         this.weapon = weapon;
     }
    

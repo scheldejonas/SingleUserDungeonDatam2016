@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import singleuserdungeon.interfaces.IRoom;
 import singleuserdungeon.model.item.BaseItem;
 import singleuserdungeon.model.monster.BaseMonster;
-import singleuserdungeon.model.player.Weapon;
 
 /**
  *
@@ -29,9 +28,8 @@ public class BaseRoom implements IRoom {
     private BaseItem item;
     private boolean isMonsterHere;
     private BaseMonster monster;
-    private Weapon weapon;
 
-    public BaseRoom(Location location, String roomName, String roomDescription, int northRoom, int eastRoom, int southRoom, int westRoom, boolean isEndTreasureChest, BaseItem item, BaseMonster monster, Weapon weapon) {
+    public BaseRoom(Location location, String roomName, String roomDescription, int northRoom, int eastRoom, int southRoom, int westRoom, boolean isEndTreasureChest, BaseItem item, BaseMonster monster) {
         this.location = location;
         this.roomName = roomName;
         this.roomDescription = roomDescription;
@@ -42,27 +40,30 @@ public class BaseRoom implements IRoom {
         this.isEndTreasureChest = isEndTreasureChest;
         this.item = item;
         this.monster = monster;
-        this.weapon = weapon;
         this.isVisited = false;
         if (monster != null) {
             this.isMonsterHere = true;
         }
     }
 
-    public BaseRoom(Location location, String roomName, String roomDescription) {
+    public BaseRoom(int locationNumber, String roomName, String roomDescription, int northRoomNumber, int eastRoomNumber, int southRoomNumber, int westRoomNumber) {
         this.location = location;
         this.roomName = roomName;
         this.roomDescription = roomDescription;
-        this.northRoomNumber = 0;
-        this.eastRoomNumber = 0;
-        this.southRoomNumber = 0;
-        this.westRoomNumber = 0;
+        this.northRoomNumber = northRoomNumber;
+        this.eastRoomNumber = eastRoomNumber;
+        this.southRoomNumber = southRoomNumber;
+        this.westRoomNumber = westRoomNumber;
         this.isVisited = false;
         this.item = null;
         this.isMonsterHere = false;
         this.monster = null;
-        this.weapon = null;
-    }    
+    }
+
+    @Override
+    public String toString() {
+        return "BaseRoom_" + "location=" + location + "_roomName=" + roomName + "_roomDescription=" + roomDescription + "_northRoomNumber=" + northRoomNumber + "_eastRoomNumber=" + eastRoomNumber + ", southRoomNumber=" + southRoomNumber + ", westRoomNumber=" + westRoomNumber + ", isEndTreasureChest=" + isEndTreasureChest + ", isVisited=" + isVisited + ", item=" + item + ", isMonsterHere=" + isMonsterHere + ", monster=" + monster + '}';
+    }
 
     @Override
     public Location getLocation() {
@@ -133,11 +134,6 @@ public class BaseRoom implements IRoom {
     @Override
     public BaseMonster getMonster() {
         return this.monster;
-    }
-
-    @Override
-    public Weapon getWeapon() {
-        return this.weapon;
     }
 
     

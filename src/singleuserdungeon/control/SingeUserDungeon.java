@@ -10,6 +10,8 @@ import singleuserdungeon.model.item.BaseItem;
 import singleuserdungeon.model.item.XmlItemParser;
 import singleuserdungeon.model.monster.XmlMonsterParser;
 import singleuserdungeon.model.monster.BaseMonster;
+import singleuserdungeon.model.room.BaseRoom;
+import singleuserdungeon.model.room.XmlRoomParser;
 
 /**
  *
@@ -28,8 +30,11 @@ public class SingeUserDungeon
         
         BaseItem item = XmlItemParser.instance().getItem(0);
         
+        BaseRoom room = XmlRoomParser.instance().getRoom(0);
+        
         System.out.println(monster.toString());
         System.out.println(item.toString());
+        System.out.println(room.toString());
         
         GameController.instance(); //Opening the game, the runner ends after this, therefore it is possible to start 2 games, with this Starter, by making a new instance variable in GameController
         
