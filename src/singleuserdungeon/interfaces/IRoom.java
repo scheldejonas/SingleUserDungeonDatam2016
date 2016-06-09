@@ -21,7 +21,6 @@ import singleuserdungeon.model.room.BaseRoom;
 public interface IRoom
 {
     public Location getLocation();
-    public int getRoomIndexNumber();
     public String GetRoomName();
     public String GetRoomDescription();
     public int getNorthRoom();

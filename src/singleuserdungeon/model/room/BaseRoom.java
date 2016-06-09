@@ -31,9 +31,8 @@ public class BaseRoom implements IRoom {
     private BaseMonster monster;
     private Weapon weapon;
 
-    public BaseRoom(Location location, int roomIndexNumber, String roomName, String roomDescription, int northRoom, int eastRoom, int southRoom, int westRoom, boolean isEndTreasureChest, BaseItem item, BaseMonster monster, Weapon weapon) {
+    public BaseRoom(Location location, String roomName, String roomDescription, int northRoom, int eastRoom, int southRoom, int westRoom, boolean isEndTreasureChest, BaseItem item, BaseMonster monster, Weapon weapon) {
         this.location = location;
-        this.roomIndexNumber = roomIndexNumber;
         this.roomName = roomName;
         this.roomDescription = roomDescription;
         this.northRoomNumber = northRoom;
@@ -52,7 +51,6 @@ public class BaseRoom implements IRoom {
 
     public BaseRoom(Location location, String roomName, String roomDescription) {
         this.location = location;
-        this.roomIndexNumber = roomIndexNumber;
         this.roomName = roomName;
         this.roomDescription = roomDescription;
         this.northRoomNumber = 0;
@@ -69,11 +67,6 @@ public class BaseRoom implements IRoom {
     @Override
     public Location getLocation() {
         return this.location;
-    }
-
-    @Override
-    public int getRoomIndexNumber() {
-        return this.roomIndexNumber;
     }
 
     @Override

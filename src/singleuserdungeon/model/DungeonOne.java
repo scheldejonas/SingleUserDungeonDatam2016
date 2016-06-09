@@ -26,11 +26,6 @@ public class DungeonOne implements IDungeon {
     }
 
     public DungeonOne() {
-
-        rooms.add(new BaseRoom(new Location(1), 1, "The sealed dead end.", ""
-                + "This is where it all started, You are at a dead end of hallway. In here you can see a very dim light hanging in front of you far away. A man is suddenly asking from the corner of the dead end behind you: \"What is your name, my young friend\"?"));
-        rooms.add(new BaseRoom(new Location(2), 2, "The corner for tomorrow", ""
-                + "This is"));
     }
 
     @Override
