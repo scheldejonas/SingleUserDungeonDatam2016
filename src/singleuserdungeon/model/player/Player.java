@@ -5,6 +5,7 @@
  */
 package singleuserdungeon.model.player;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import singleuserdungeon.interfaces.IPlayer;
 import singleuserdungeon.model.item.BaseItem;
@@ -15,7 +16,7 @@ import singleuserdungeon.model.room.BaseRoom;
  *
  * @author misk
  */
-public class Player implements IPlayer {
+public class Player implements IPlayer,Serializable {
     
     private String name;
     private int hitPoints;

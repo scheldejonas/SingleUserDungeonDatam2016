@@ -24,7 +24,7 @@ public class RoomCommand
     {
         if(dungeon != null)
         {
-            dungeon =  DungeonController.instance.getDungeonOne();
+            dungeon =  DungeonController.Instance().getDungeonOne();
         }
         
         return dungeon.getRooms().get(id);
@@ -65,7 +65,7 @@ public class RoomCommand
         
         if(id == 0)
         {
-            GuiViewDungeonOne.instance().outputResponseStatus("There is no room");
+            GuiViewDungeonOne.Instance().outputResponseStatus("There is no room");
             return false;
         }
         
@@ -76,7 +76,7 @@ public class RoomCommand
     {
         if(player == null)
         {
-            player = DungeonController.instance.getPlayer();
+            player = DungeonController.Instance().getPlayer();
         }
         
         return player;
@@ -89,7 +89,7 @@ public class RoomCommand
     
     private void GoToRoom(int id)
     {
-        BaseRoom room = DungeonController.instance.getDungeonOne().getRooms().get(id);
+        BaseRoom room = DungeonController.Instance().getDungeonOne().getRooms().get(id);
         GetPlayer().SetRoom(room);
         
     }

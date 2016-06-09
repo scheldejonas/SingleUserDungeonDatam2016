@@ -1,12 +1,13 @@
 package singleuserdungeon.model.item;
 
+import java.io.Serializable;
 import singleuserdungeon.interfaces.IItem;
 
 /**
  *
  * @author misk
  */
-public class BaseItem implements IItem {
+public class BaseItem implements IItem,Serializable {
     
     private String name;
     private String description;

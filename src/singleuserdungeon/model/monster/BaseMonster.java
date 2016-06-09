@@ -32,7 +32,7 @@ public class BaseMonster implements IMonster {
         defense = monsterDefense;
         xpMod = monsterXpMod;        
         
-        GuiViewDungeonOne.instance().outputStoryText(name+ " "+ description);
+        GuiViewDungeonOne.Instance().outputStoryText(name+ " "+ description);
     }
 
     public void SetHealth(int health)
@@ -73,9 +73,9 @@ public class BaseMonster implements IMonster {
     @Override
     public void Attack() 
     {
-        int atk = (int) attack - DungeonController.instance.getPlayer().GetDefenseValue();
-        Player p = DungeonController.instance.getPlayer();
+        int atk = (int) attack - DungeonController.Instance().getPlayer().GetDefenseValue();
+        Player p = DungeonController.Instance().getPlayer();
         p.setHitPoints(p.getHitPoints()-atk);
-        GuiViewDungeonOne.instance().outputStoryText(this.name +" attack you with "+atk);
+        GuiViewDungeonOne.Instance().outputStoryText(this.name +" attack you with "+atk);
     }
 }

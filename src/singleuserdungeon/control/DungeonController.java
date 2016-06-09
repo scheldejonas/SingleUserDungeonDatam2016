@@ -8,41 +8,36 @@ package singleuserdungeon.control;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-import java.io.Serializable;
-import singleuserdungeon.interfaces.IDungeon;
 import singleuserdungeon.model.DungeonOne;
 import singleuserdungeon.model.player.Player;
+import singleuserdungeon.view.GuiViewDungeonOne;
 
 /**
  *
  * @author scheldejonas
  */
-public class DungeonController implements Serializable {
+public class DungeonController {
     
     private static DungeonController instance;
     private DungeonOne dungeonOne;
     private Player currentPlayer;
     
     
-    public static DungeonController Instance()
-    {
+    public static DungeonController Instance() {
         
-        if (instance == null) 
-        {
+        if (instance == null) {
             instance = new DungeonController();
         }
         
         return instance;
     }
     
-    public DungeonController()
-    {
-        this.dungeonOne = new DungeonOne();
-        this.currentPlayer = newPlayer();
+    public DungeonController() {
+        dungeonOne = new DungeonOne();
+        currentPlayer = newPlayer();
     }
     
-    public Player newPlayer()
-    {
+    public Player newPlayer() {
         Player p = new Player();
         
         p.AddItem(4);
@@ -52,38 +47,43 @@ public class DungeonController implements Serializable {
         return p;
     }
     
-    public void resetDungeonAndPlayer()
-    {
-        this.dungeonOne = new DungeonOne();
-        this.currentPlayer = newPlayer();
+    public void resetDungeonAndPlayer() {
+        dungeonOne = new DungeonOne();
+        currentPlayer = newPlayer();
     }
     
-    public DungeonOne getDungeonOne()
-    {
+    public DungeonOne getDungeonOne() {
         return this.dungeonOne;
     }
     
-    public Player getPlayer()
-    {
-        if(this.currentPlayer == null)
-        {
-            this.currentPlayer = newPlayer();
+    public Player getPlayer() {
+        if (currentPlayer == null) {
+            currentPlayer = newPlayer();
         }
         
-        System.out.println(this.currentPlayer);
-        
-        return this.currentPlayer;
+        return currentPlayer;
     }
 
-    public static void saveToSerialFile() {
+    public void saveDungeonControllerToSerFile() {
+        
         try (
-            FileOutputStream fos = new FileOutputStream("treets.ser");
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            //FileOutputStream fosDungeon = new FileOutputStream("dungeonone.ser");
+            //ObjectOutputStream oosDungeon = new ObjectOutputStream(fosDungeon);
+            FileOutputStream fosPlayer = new FileOutputStream("player.ser");
+            ObjectOutputStream oosPlayer = new ObjectOutputStream(fosPlayer);
         ) {
-            oos.writeObject(this.instance);
+            
+            //oosDungeon.writeObject(instance.getDungeonOne().getRooms());
+            oosPlayer.writeObject(instance.getPlayer());
+            
         } catch (IOException ioe) {
-            System.out.println("Problem saving Dungeon Controller");
+            String errorMessage = "There was a problem saving Dungeon Controller";
+            System.out.println(errorMessage);
+            ioe.printStackTrace();
+            GuiViewDungeonOne.Instance().outputResponseStatus(errorMessage);
         }
+                
+        
     }
     
 }

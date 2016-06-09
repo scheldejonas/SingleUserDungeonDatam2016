@@ -5,6 +5,7 @@
  */
 package singleuserdungeon.model.room;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import singleuserdungeon.interfaces.IRoom;
 import singleuserdungeon.model.item.BaseItem;
@@ -14,7 +15,7 @@ import singleuserdungeon.model.monster.BaseMonster;
  *
  * @author scheldejonas
  */
-public class BaseRoom implements IRoom {
+public class BaseRoom implements IRoom,Serializable {
 
     private Location location;
     private String roomName;
