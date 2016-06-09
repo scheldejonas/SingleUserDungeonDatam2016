@@ -5,6 +5,10 @@
  */
 package singleuserdungeon.control;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import singleuserdungeon.interfaces.IDungeon;
 import singleuserdungeon.model.DungeonOne;
 import singleuserdungeon.model.player.Player;
@@ -13,9 +17,9 @@ import singleuserdungeon.model.player.Player;
  *
  * @author scheldejonas
  */
-public class DungeonController {
+public class DungeonController implements Serializable {
     
-    public static DungeonController instance;
+    private static DungeonController instance;
     private DungeonOne dungeonOne;
     private Player currentPlayer;
     
@@ -69,6 +73,17 @@ public class DungeonController {
         System.out.println(this.currentPlayer);
         
         return this.currentPlayer;
+    }
+
+    public static void saveToSerialFile() {
+        try (
+            FileOutputStream fos = new FileOutputStream("treets.ser");
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+        ) {
+            oos.writeObject(this.instance);
+        } catch (IOException ioe) {
+            System.out.println("Problem saving Dungeon Controller");
+        }
     }
     
 }
