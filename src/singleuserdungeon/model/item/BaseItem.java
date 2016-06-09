@@ -25,13 +25,11 @@ public class BaseItem implements IItem,Serializable {
         this.shieldValue = shieldIncreaseValue;
     }
     
-    public void SetShieldIncreaseValue(int i)
-    {
+    public void SetShieldIncreaseValue(int i) {
         shieldIncreaseValue = i;
     }
     
-    public void SetDamageIncreaseValue(int i)
-    {
+    public void SetDamageIncreaseValue(int i) {
         damageIncreaseValue = i;
     }
 

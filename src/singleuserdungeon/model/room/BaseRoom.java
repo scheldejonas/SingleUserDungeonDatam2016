@@ -17,7 +17,7 @@ import singleuserdungeon.model.monster.BaseMonster;
  */
 public class BaseRoom implements IRoom,Serializable {
 
-    private Location location;
+    private transient Location location;
     private String roomName;
     private String roomDescription;
     private int northRoomNumber;
@@ -26,9 +26,9 @@ public class BaseRoom implements IRoom,Serializable {
     private int westRoomNumber;
     private boolean isEndTreasureChest;
     private boolean isVisited;
-    private BaseItem item;
+    private transient BaseItem item;
     private boolean isMonsterHere;
-    private BaseMonster monster;
+    private transient BaseMonster monster;
 
     public BaseRoom(int locationNumber, String roomName, String roomDescription, int northRoom, int eastRoom, int southRoom, int westRoom, boolean isEndTreasureChest, BaseItem item, BaseMonster monster) {
         this.location = new Location(locationNumber);

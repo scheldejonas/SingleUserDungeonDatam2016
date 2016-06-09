@@ -21,11 +21,11 @@ public class Player implements IPlayer,Serializable {
     private String name;
     private int hitPoints;
     private int level;
-    private BaseItem weapon;
-    private BaseItem shield;
+    private transient BaseItem weapon;
+    private transient BaseItem shield;
     private String description;
-    private BaseRoom currentRoom;
-    private ArrayList<BaseItem> Backpack;
+    private transient BaseRoom currentRoom;
+    private transient ArrayList<BaseItem> Backpack;
     
     public Player() 
     {
@@ -168,7 +168,6 @@ public class Player implements IPlayer,Serializable {
 
     @Override
     public BaseItem getWeapon() {
-        
         return this.weapon;
     }
 
@@ -199,6 +198,18 @@ public class Player implements IPlayer,Serializable {
             nextRoom.getMonster().Attack();
         }
         currentRoom = nextRoom;
+    }
+
+    public ArrayList<BaseItem> getBackpack() {
+        return this.Backpack;
+    }
+
+    public void removeBackpack() {
+        this.Backpack = null;
+    }
+
+    public BaseItem getShield() {
+        return this.shield;
     }
    
 }

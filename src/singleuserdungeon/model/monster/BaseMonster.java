@@ -5,6 +5,7 @@
  */
 package singleuserdungeon.model.monster;
 
+import java.io.Serializable;
 import singleuserdungeon.control.DungeonController;
 import singleuserdungeon.interfaces.IMonster;
 import singleuserdungeon.model.player.Player;
@@ -14,7 +15,7 @@ import singleuserdungeon.view.GuiViewDungeonOne;
  *
  * @author misk
  */
-public class BaseMonster implements IMonster {
+public class BaseMonster implements IMonster,Serializable {
 
     private String name;
     private String description;

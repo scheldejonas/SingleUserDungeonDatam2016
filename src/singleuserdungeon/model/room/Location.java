@@ -5,13 +5,14 @@
  */
 package singleuserdungeon.model.room;
 
+import java.io.Serializable;
 import singleuserdungeon.interfaces.ILocation;
 
 /**
  *
  * @author scheldejonas
  */
-public class Location implements ILocation {
+public class Location implements ILocation,Serializable {
 
     private int indexNumber;
     private int yCoordinate;

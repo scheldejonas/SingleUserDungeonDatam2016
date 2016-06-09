@@ -8,6 +8,7 @@ package singleuserdungeon.control;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 import singleuserdungeon.model.DungeonOne;
 import singleuserdungeon.model.player.Player;
 import singleuserdungeon.view.GuiViewDungeonOne;
@@ -66,15 +67,14 @@ public class DungeonController {
 
     public void saveDungeonControllerToSerFile() {
         
+        instance.dungeonOne.saveDungeonToSerFile(instance.dungeonOne.getRooms());
+
         try (
-            //FileOutputStream fosDungeon = new FileOutputStream("dungeonone.ser");
-            //ObjectOutputStream oosDungeon = new ObjectOutputStream(fosDungeon);
             FileOutputStream fosPlayer = new FileOutputStream("player.ser");
             ObjectOutputStream oosPlayer = new ObjectOutputStream(fosPlayer);
         ) {
-            
-            //oosDungeon.writeObject(instance.getDungeonOne().getRooms());
-            oosPlayer.writeObject(instance.getPlayer());
+             
+            oosPlayer.writeObject(currentPlayer);
             
         } catch (IOException ioe) {
             String errorMessage = "There was a problem saving Dungeon Controller";
@@ -82,7 +82,62 @@ public class DungeonController {
             ioe.printStackTrace();
             GuiViewDungeonOne.Instance().outputResponseStatus(errorMessage);
         }
-                
+        
+        try (
+            FileOutputStream fosPlayer = new FileOutputStream("playerWeapon.ser");
+            ObjectOutputStream oosPlayer = new ObjectOutputStream(fosPlayer);
+        ) {
+             
+            oosPlayer.writeObject(currentPlayer.getWeapon());
+            
+        } catch (IOException ioe) {
+            String errorMessage = "There was a problem saving Dungeon Controller";
+            System.out.println(errorMessage);
+            ioe.printStackTrace();
+            GuiViewDungeonOne.Instance().outputResponseStatus(errorMessage);
+        }
+        
+        try (
+            FileOutputStream fosPlayer = new FileOutputStream("playerShield.ser");
+            ObjectOutputStream oosPlayer = new ObjectOutputStream(fosPlayer);
+        ) {
+             
+            oosPlayer.writeObject(currentPlayer.getShield());
+            
+        } catch (IOException ioe) {
+            String errorMessage = "There was a problem saving Dungeon Controller";
+            System.out.println(errorMessage);
+            ioe.printStackTrace();
+            GuiViewDungeonOne.Instance().outputResponseStatus(errorMessage);
+        }
+        
+        try (
+            FileOutputStream fosPlayer = new FileOutputStream("playerCurrentRoom.ser");
+            ObjectOutputStream oosPlayer = new ObjectOutputStream(fosPlayer);
+        ) {
+             
+            oosPlayer.writeObject(currentPlayer.getCurrentRoom());
+            
+        } catch (IOException ioe) {
+            String errorMessage = "There was a problem saving Dungeon Controller";
+            System.out.println(errorMessage);
+            ioe.printStackTrace();
+            GuiViewDungeonOne.Instance().outputResponseStatus(errorMessage);
+        }
+        
+        try (
+            FileOutputStream fosPlayer = new FileOutputStream("playerBackPack.ser");
+            ObjectOutputStream oosPlayer = new ObjectOutputStream(fosPlayer);
+        ) {
+             
+            oosPlayer.writeObject(currentPlayer.getBackpack());
+            
+        } catch (IOException ioe) {
+            String errorMessage = "There was a problem saving Dungeon Controller";
+            System.out.println(errorMessage);
+            ioe.printStackTrace();
+            GuiViewDungeonOne.Instance().outputResponseStatus(errorMessage);
+        }
         
     }
     
