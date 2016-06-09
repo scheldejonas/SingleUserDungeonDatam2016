@@ -62,7 +62,7 @@ public class BaseRoom implements IRoom {
 
     @Override
     public String toString() {
-        return "BaseRoom_" + "location=" + location + "_roomName=" + roomName + "_roomDescription=" + roomDescription + "_northRoomNumber=" + northRoomNumber + "_eastRoomNumber=" + eastRoomNumber + ", southRoomNumber=" + southRoomNumber + ", westRoomNumber=" + westRoomNumber + ", isEndTreasureChest=" + isEndTreasureChest + ", isVisited=" + isVisited + ", item=" + item + ", isMonsterHere=" + isMonsterHere + ", monster=" + monster + '}';
+        return "BaseRoom_" + "location=" + location + "_roomName=" + roomName + "_roomDescription=" + roomDescription + "_northRoomNumber=" + northRoomNumber + "_eastRoomNumber=" + eastRoomNumber + "_southRoomNumber=" + southRoomNumber + "_westRoomNumber=" + westRoomNumber + "_isEndTreasureChest=" + isEndTreasureChest + "_isVisited=" + isVisited + "_item=" + item + "_isMonsterHere=" + isMonsterHere + "_monster=" + monster;
     }
 
     @Override
