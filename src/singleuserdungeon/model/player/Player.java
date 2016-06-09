@@ -144,7 +144,20 @@ public class Player implements IPlayer {
     
     private void Use(String str)
     {
-        
+        switch(str)
+        {
+            case "Weapon poison potion":
+            {
+                this.weapon.SetDamageIncreaseValue(5);
+            }
+            case "Healing Potion":
+            {
+                setHitPoints(getHitPoints()+10);
+                RemoveItem("Healing Potion");
+                
+            }
+            
+        }
     }
 
     @Override
@@ -154,6 +167,7 @@ public class Player implements IPlayer {
 
     @Override
     public BaseItem getWeapon() {
+        
         return this.weapon;
     }
 
@@ -165,6 +179,17 @@ public class Player implements IPlayer {
     public BaseRoom getCurrentRoom()
     {
         return currentRoom;
+    }
+    
+    private void RemoveItem(String str)
+    {
+        for(int i = 0; i < Backpack.size();i++)
+        {
+            if(Backpack.get(i).getName().equals(str))
+            {
+                Backpack.remove(i);
+            }
+        }
     }
     
     public void SetRoom(BaseRoom nextRoom)
