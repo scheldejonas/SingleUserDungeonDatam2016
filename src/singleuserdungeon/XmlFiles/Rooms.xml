@@ -36,6 +36,150 @@
         <southRoomNumber>11</southRoomNumber>
         <westRoomNumber>0</westRoomNumber>
     </Room>
+    <Room id="5"> //OneBased index - Easy input in lists etc.
+        <name>A big kitchen with pots of sawed legs and arms</name>
+        <location>5</location>
+        <description>?</description>
+        <northRoomNumber>0</northRoomNumber>
+        <eastRoomNumber>0</eastRoomNumber>
+        <southRoomNumber>4</southRoomNumber>
+        <westRoomNumber>6</westRoomNumber>
+    </Room>
+    <Room id="6"> //OneBased index - Easy input in lists etc.
+        <name>Four cheats placed in a cross, with alter in middle</name>
+        <location>6</location>
+        <description>?</description>
+        <northRoomNumber>7</northRoomNumber>
+        <eastRoomNumber>5</eastRoomNumber>
+        <southRoomNumber>0</southRoomNumber>
+        <westRoomNumber>20</westRoomNumber>
+    </Room>
+    <Room id="7"> //OneBased index - Easy input in lists etc.
+        <name>A big room with torture tools all over</name>
+        <location>7</location>
+        <description>?</description>
+        <northRoomNumber>9</northRoomNumber>
+        <eastRoomNumber>0</eastRoomNumber>
+        <southRoomNumber>6</southRoomNumber>
+        <westRoomNumber>8</westRoomNumber>
+    </Room>
+    <Room id="8"> //OneBased index - Easy input in lists etc.
+        <name>A prison with a lot of chains hanging in sealing</name>
+        <location>8</location>
+        <description>?</description>
+        <northRoomNumber>0</northRoomNumber>
+        <eastRoomNumber>7</eastRoomNumber>
+        <southRoomNumber>0</southRoomNumber>
+        <westRoomNumber>0</westRoomNumber>
+    </Room>
+    <Room id="9"> //OneBased index - Easy input in lists etc.
+        <name>Big barrols of wine filling up the room in a mace</name>
+        <location>9</location>
+        <description>?</description>
+        <northRoomNumber>0</northRoomNumber>
+        <eastRoomNumber>10</eastRoomNumber>
+        <southRoomNumber>7</southRoomNumber>
+        <westRoomNumber>0</westRoomNumber>
+    </Room>
+    <Room id="10"> //OneBased index - Easy input in lists etc.
+        <name>End wall covered in a massive painting with gods and monsters fighting together</name>
+        <location>10</location>
+        <description>?</description>
+        <northRoomNumber>0</northRoomNumber>
+        <eastRoomNumber>0</eastRoomNumber>
+        <southRoomNumber>0</southRoomNumber>
+        <westRoomNumber>9</westRoomNumber>
+    </Room>
+    <Room id="11"> //OneBased index - Easy input in lists etc.
+        <name>Puke on the walls</name>
+        <location>11</location>
+        <description>?</description>
+        <northRoomNumber>4</northRoomNumber>
+        <eastRoomNumber>0</eastRoomNumber>
+        <southRoomNumber>12</southRoomNumber>
+        <westRoomNumber>0</westRoomNumber>
+    </Room>
+    <Room id="12"> //OneBased index - Easy input in lists etc.
+        <name>A big tree is growing from the floor</name>
+        <location>12</location>
+        <description>?</description>
+        <northRoomNumber>11</northRoomNumber>
+        <eastRoomNumber>0</eastRoomNumber>
+        <southRoomNumber>0</southRoomNumber>
+        <westRoomNumber>13</westRoomNumber>
+    </Room>
+    <Room id="13"> //OneBased index - Easy input in lists etc.
+        <name>Deadbody's covered in autumn leaves all over the floor</name>
+        <location>13</location>
+        <description>?</description>
+        <northRoomNumber>0</northRoomNumber>
+        <eastRoomNumber>12</eastRoomNumber>
+        <southRoomNumber>0</southRoomNumber>
+        <westRoomNumber>14</westRoomNumber>
+    </Room>
+    <Room id="14"> //OneBased index - Easy input in lists etc.
+        <name>The wall figure of the great bull</name>
+        <location>14</location>
+        <description>?</description>
+        <northRoomNumber>17</northRoomNumber>
+        <eastRoomNumber>13</eastRoomNumber>
+        <southRoomNumber>0</southRoomNumber>
+        <westRoomNumber>15</westRoomNumber>
+    </Room>
+    <Room id="15"> //OneBased index - Easy input in lists etc.
+        <name>Jawbroken faces all over the walls</name>
+        <location>15</location>
+        <description>?</description>
+        <northRoomNumber>16</northRoomNumber>
+        <eastRoomNumber>14</eastRoomNumber>
+        <southRoomNumber>0</southRoomNumber>
+        <westRoomNumber>0</westRoomNumber>
+    </Room>
+    <Room id="16"> //OneBased index - Easy input in lists etc.
+        <name>Puke on the walls</name>
+        <location>16</location>
+        <description>?</description>
+        <northRoomNumber>0</northRoomNumber>
+        <eastRoomNumber>0</eastRoomNumber>
+        <southRoomNumber>15</southRoomNumber>
+        <westRoomNumber>0</westRoomNumber>
+    </Room>
+    <Room id="17"> //OneBased index - Easy input in lists etc.
+        <name>Uprising narrow stairway with loose steps</name>
+        <location>17</location>
+        <description>?</description>
+        <northRoomNumber>18</northRoomNumber>
+        <eastRoomNumber>0</eastRoomNumber>
+        <southRoomNumber>12</southRoomNumber>
+        <westRoomNumber>0</westRoomNumber>
+    </Room>
+    <Room id="18"> //OneBased index - Easy input in lists etc.
+        <name>The floor covered as one big grill with lake running below</name>
+        <location>18</location>
+        <description>?</description>
+        <northRoomNumber>18</northRoomNumber>
+        <eastRoomNumber>0</eastRoomNumber>
+        <southRoomNumber>17</southRoomNumber>
+        <westRoomNumber>19</westRoomNumber>
+    </Room>
+    <Room id="19"> //OneBased index - Easy input in lists etc.
+        <name>A deep and dark well with torturing sounds coming from within</name>
+        <location>19</location>
+        <description>?</description>
+        <northRoomNumber>0</northRoomNumber>
+        <eastRoomNumber>18</eastRoomNumber>
+        <southRoomNumber>0</southRoomNumber>
+        <westRoomNumber>0</westRoomNumber>
+    </Room>
+    <Room id="20"> //OneBased index - Easy input in lists etc.
+        <name>Balcony covered in flowers</name>
+        <location>20</location>
+        <description>?</description>
+        <northRoomNumber>0</northRoomNumber>
+        <eastRoomNumber>6</eastRoomNumber>
+        <southRoomNumber>18</southRoomNumber>
+        <westRoomNumber>0</westRoomNumber>
+    </Room>
 </RoomList>
 
 

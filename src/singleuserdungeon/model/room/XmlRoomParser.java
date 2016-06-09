@@ -56,7 +56,7 @@ public class XmlRoomParser implements IXmlParser {
         }
     }
     
-    public BaseRoom GetRoom(int id) {
+    public BaseRoom getRoom(int id) {
         
         if(Rooms == null || Rooms.size() == 0) {
          
