@@ -71,18 +71,18 @@ public class XmlRoomParser implements IXmlParser {
                 Node nNode = nList.item(id);
                 if (nNode.getNodeType() == Node.ELEMENT_NODE)
                 {
-                    Element eElement = (Element) nNode;
-                   
-                    String name = eElement.getElementsByTagName("name").item(0).getTextContent();
-                    String description = eElement.getElementsByTagName("description").item(0).getTextContent();
-                     
-                    float health = Float.parseFloat(eElement.getElementsByTagName("health").item(0).getTextContent());
-                    float attack = Float.parseFloat(eElement.getElementsByTagName("attack").item(0).getTextContent());
-                    float defense = Float.parseFloat(eElement.getElementsByTagName("defense").item(0).getTextContent());
-                    float xpmod = Float.parseFloat(eElement.getElementsByTagName("xpmod").item(0).getTextContent());
-
-                    BaseRoom room = new BaseRoom(name,description,health,attack,defense,xpmod);
-                    Rooms.add(room);
+//                    Element eElement = (Element) nNode;
+//                   
+//                    String name = eElement.getElementsByTagName("name").item(0).getTextContent();
+//                    String description = eElement.getElementsByTagName("description").item(0).getTextContent();
+//                     
+//                    float health = Float.parseFloat(eElement.getElementsByTagName("health").item(0).getTextContent());
+//                    float attack = Float.parseFloat(eElement.getElementsByTagName("attack").item(0).getTextContent());
+//                    float defense = Float.parseFloat(eElement.getElementsByTagName("defense").item(0).getTextContent());
+//                    float xpmod = Float.parseFloat(eElement.getElementsByTagName("xpmod").item(0).getTextContent());
+//
+//                    BaseRoom room = new BaseRoom(name,description,health,attack,defense,xpmod);
+//                    Rooms.add(room);
                 }
             }
            return Rooms.get(id);
