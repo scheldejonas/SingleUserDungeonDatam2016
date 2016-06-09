@@ -74,8 +74,6 @@ public class XmlParser implements IXmlParser
             doc.normalize();
             NodeList nList = doc.getElementsByTagName("Monster");
             
-               
-            
             for(int i = 0; i < nList.getLength();i++)
             {
                
