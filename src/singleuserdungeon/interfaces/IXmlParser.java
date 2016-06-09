@@ -15,4 +15,5 @@ public interface IXmlParser {
     
     public Document LoadXml();
     
+    
 }

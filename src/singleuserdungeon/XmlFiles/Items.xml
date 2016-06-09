@@ -57,9 +57,9 @@
             <shieldIncreaseValue>0</shieldIncreaseValue>      
     </Item>
     <Item id="8"> //Zero index - Easy input in lists etc.
-            <name>Rubi</name>
+            <name>Healing Potion</name>
             <description>?</description>
-            <goldValue>200</goldValue>
+            <goldValue>1000</goldValue>
             <damageIncreaseValue>0</damageIncreaseValue>   
             <shieldIncreaseValue>0</shieldIncreaseValue>      
     </Item>
@@ -78,7 +78,7 @@
             <shieldIncreaseValue>0</shieldIncreaseValue>      
     </Item>
     <Item id="11"> //Zero index - Easy input in lists etc.
-            <name>Pearl</name>
+            <name>Rubi</name>
             <description>?</description>
             <goldValue>200</goldValue>
             <damageIncreaseValue>0</damageIncreaseValue>   
@@ -92,6 +92,13 @@
             <shieldIncreaseValue>0</shieldIncreaseValue>      
     </Item>
     <Item id="13"> //Zero index - Easy input in lists etc.
+            <name>Pearl</name>
+            <description>?</description>
+            <goldValue>200</goldValue>
+            <damageIncreaseValue>0</damageIncreaseValue>   
+            <shieldIncreaseValue>0</shieldIncreaseValue>      
+    </Item>
+    <Item id="14"> //Zero index - Easy input in lists etc.
             <name>Pearl</name>
             <description>?</description>
             <goldValue>50</goldValue>

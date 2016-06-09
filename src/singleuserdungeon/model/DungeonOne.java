@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import singleuserdungeon.interfaces.IDungeon;
 import singleuserdungeon.model.room.Location;
 import singleuserdungeon.model.room.BaseRoom;
+import singleuserdungeon.model.room.XmlRoomParser;
 
 /**
  *
@@ -18,14 +19,16 @@ public class DungeonOne implements IDungeon {
 
     private ArrayList<BaseRoom> rooms;
     private String dungeonName;
-    private String startDungeonDescription;
-
-    public DungeonOne(String dungeonName, String startDungeonDescription) {
-        this.dungeonName = dungeonName;
-        this.startDungeonDescription = startDungeonDescription;
-    }
+    private String dungeonDescription;
 
     public DungeonOne() {
+        this.dungeonName = "Hall of disaster";
+        this.dungeonDescription = "This is ";
+        this.rooms = XmlRoomParser.instance().getAllRooms();
+        
+        for (BaseRoom room : rooms) {
+            
+        }
     }
 
     @Override
@@ -40,7 +43,7 @@ public class DungeonOne implements IDungeon {
 
     @Override
     public String getStartDungeonDescription() {
-        return this.startDungeonDescription;
+        return this.dungeonDescription;
     }
 
     @Override

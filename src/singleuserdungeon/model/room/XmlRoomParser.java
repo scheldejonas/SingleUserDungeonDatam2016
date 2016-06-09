@@ -95,5 +95,9 @@ public class XmlRoomParser implements IXmlParser {
             
         }
     }
+
+    public ArrayList<BaseRoom> getAllRooms() {
+        return this.Rooms;
+    }
     
 }
