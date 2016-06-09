@@ -23,7 +23,6 @@ public class GuiViewDungeonOne extends javax.swing.JFrame {
     public GuiViewDungeonOne() 
     {
         this.initComponents();
-        this.getRootPane().setDefaultButton(jButtonAnswer);
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
