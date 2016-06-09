@@ -24,11 +24,11 @@ public class Player implements IPlayer {
     private BaseItem shield;
     private String description;
     private BaseRoom currentRoom;
-    
-    private ArrayList<BaseItem> Backpack = new ArrayList<>();
+    private ArrayList<BaseItem> Backpack;
     
     public Player() 
     {
+        this.Backpack = new ArrayList();
     }
     
     public Player(String NewName,int NewHitpoints, int NewLevel, BaseItem NewWeapon, String NewDescription) 
@@ -38,13 +38,14 @@ public class Player implements IPlayer {
         this.level = NewLevel;
         this.weapon = NewWeapon;
         this.description = NewDescription;
+        this.Backpack = new ArrayList();
     }
     
     public int GetDefenseValue()
     {
         if(this.shield != null)
         {
-        return this.shield.getShieldValue();
+            return this.shield.getShieldValue();
         }
         else
         {
@@ -54,7 +55,8 @@ public class Player implements IPlayer {
     
     public void  AddItem(int id)
     {
-        this.Backpack.add(XmlItemParser.instance().getItem(id));
+        BaseItem item = XmlItemParser.instance().getItem(id);
+        this.Backpack.add(item);
     }
     
     public void AddWeapon(int id)
@@ -135,6 +137,9 @@ public class Player implements IPlayer {
     
     public void SetRoom(BaseRoom nextRoom)
     {
+        if (nextRoom.isMonsterHere()) {
+            nextRoom.getMonster().Attack();
+        }
         currentRoom = nextRoom;
     }
    

@@ -67,7 +67,7 @@ public class BaseMonster implements IMonster {
     @Override
     public void Attack() 
     {
-        int atk = (int)attack - DungeonController.instance.getPlayer().GetDefenseValue();
+        int atk = (int) attack - DungeonController.instance.getPlayer().GetDefenseValue();
         
         DungeonController.instance.getPlayer().setHitPoints(atk);
         GuiViewDungeonOne.instance().outputStoryText(this.name +" attack you with "+atk);

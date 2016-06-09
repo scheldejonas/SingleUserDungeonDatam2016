@@ -20,19 +20,15 @@ import org.w3c.dom.NodeList;
  */
 public class XmlItemParser implements IXmlParser {
     
-    private static XmlItemParser instance = null;
-    
-    private ArrayList<BaseItem> Items = null;
+    private static XmlItemParser instance;
+    private ArrayList<BaseItem> items;
     
     public static XmlItemParser instance() {
         if(instance == null) {
             instance = new XmlItemParser();
         }
-        
         return instance;
     }
-    
-    
     
     @Override
     public Document LoadXml() {
@@ -56,10 +52,10 @@ public class XmlItemParser implements IXmlParser {
     
     public BaseItem getItem(int id) {
         
-        if(Items == null) {
+        if(this.items == null || this.items.size() == 0) {
          
             Document doc =  LoadXml();
-            Items = new ArrayList<>();
+            this.items = new ArrayList();
             doc.getDocumentElement().normalize();
             NodeList nList = doc.getElementsByTagName("Item");
             
@@ -81,27 +77,27 @@ public class XmlItemParser implements IXmlParser {
 
                     BaseItem item = new BaseItem(name,description,goldValue,damageIncreaseValue,shieldIncreaseValue);
                     
-                    Items.add(item);
+                    this.items.add(item);
                 }
             }    
             
-            return Items.get(id);
+            return this.items.get(id);
             
         }
         else
         {
-            return Items.get(id);
+            return this.items.get(id);
             
         }
     }
 
     public ArrayList<BaseItem> getAllItems() 
     {
-        if(Items == null)
+        if(this.items == null)
         {
             getItem(0);
         }
-        return this.Items;
+        return (ArrayList<BaseItem>) this.items.clone();
     }
     
 }

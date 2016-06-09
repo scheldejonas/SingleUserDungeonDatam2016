@@ -57,7 +57,7 @@ public class XmlMonsterParser implements IXmlParser {
     
     public BaseMonster GetMonster(int id) {
         
-        if(Monsters == null) {
+        if(Monsters == null || Monsters.size() == 0) {
          
             Document doc =  LoadXml();
             Monsters = new ArrayList<>();
@@ -92,6 +92,10 @@ public class XmlMonsterParser implements IXmlParser {
             return Monsters.get(id);
             
         }
+    }
+    
+    public ArrayList<BaseMonster> getAllMonsters() {
+        return (ArrayList<BaseMonster>) this.Monsters.clone();
     }
     
 }

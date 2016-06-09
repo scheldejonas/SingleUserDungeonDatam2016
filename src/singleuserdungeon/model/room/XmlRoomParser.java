@@ -23,7 +23,7 @@ public class XmlRoomParser implements IXmlParser {
     
     private static XmlRoomParser instance = null;
     
-    public static XmlRoomParser instance()
+    public static XmlRoomParser Instance()
     {
         if(instance == null)
         {
@@ -58,7 +58,7 @@ public class XmlRoomParser implements IXmlParser {
     
     public BaseRoom getRoom(int id) {
         
-        if(rooms == null) {
+        if(rooms == null || rooms.size() == 0) {
          
             Document doc =  LoadXml();
             rooms = new ArrayList<>();
@@ -102,7 +102,7 @@ public class XmlRoomParser implements IXmlParser {
         if (rooms == null) {
             getRoom(0);
         }
-        return this.rooms;
+        return (ArrayList<BaseRoom>) this.rooms.clone();
     }
     
 }

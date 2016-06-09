@@ -35,7 +35,7 @@ public class GameController implements IGameController {
     }  
     
     public void newGame() {
-        DungeonController.instance();
+        DungeonController.Instance();
     }
 
     @Override
@@ -52,7 +52,7 @@ public class GameController implements IGameController {
     @Override
     public void resetGame() {
         GuiViewDungeonOne.instance().ResetStoryText();
-        DungeonController.instance().Reset();
+        DungeonController.Instance().Reset();
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

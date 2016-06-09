@@ -22,7 +22,7 @@ public class DungeonController {
     private Player currentPlayer = null;
     
     
-    public static DungeonController instance()
+    public static DungeonController Instance()
     {
         
         if (instance == null) 
@@ -45,7 +45,7 @@ public class DungeonController {
         
         p.AddItem(4);
         p.AddWeapon(1);
-        p.SetRoom(DungeonController.instance().getDungeonOne().getRooms().get(1));
+        p.SetRoom(this.getDungeonOne().getRooms().get(1));
         
         return p;
     }
