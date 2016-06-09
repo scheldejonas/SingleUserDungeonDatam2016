@@ -45,7 +45,7 @@ public class DungeonController {
         
         p.AddItem(4);
         p.AddWeapon(1);
-        p.SetRoom(this.getDungeonOne().getRooms().get(1));
+        p.SetRoom(this.getDungeonOne().getRooms().get(0));
         
         return p;
     }

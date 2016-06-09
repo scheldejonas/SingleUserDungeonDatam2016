@@ -31,11 +31,14 @@ public class RoomCommand
     
     public boolean isThereARoom(int id)
     {
+        System.out.println("Room id" +id);
+        
         if(id == 0)
         {
             GuiViewDungeonOne.instance().outputResponseStatus("There is no room");
             return false;
         }
+        
         return true;
     }
     
@@ -58,41 +61,58 @@ public class RoomCommand
     {
         BaseRoom room = DungeonController.instance.getDungeonOne().getRooms().get(id);
         GetPlayer().SetRoom(room);
+        
     }
     
     
-    public void GoNorth()
+    public String GoNorth()
     {
         if(isThereARoom(GetCurrentRoom().getNorthRoom()))
         {
             GoToRoom(GetCurrentRoom().getNorthRoom());
+            return "Going north ";
+            
         }
+        
+        return null;
      // DungeonController.instance.getDungeonOne().getRooms().get(0)
         
     }
     
-    public void GoSouth()
+    public String GoSouth()
     {
         if(isThereARoom(GetCurrentRoom().getSouthRoom()))
         {
             GoToRoom(GetCurrentRoom().getSouthRoom());
+            
+            return "Going south ";
         }
+        
+        return null;
     }
     
-    public void GoEast()
+    public String GoEast()
     {
         if(isThereARoom(GetCurrentRoom().getEastRoom()))
         {
             GoToRoom(GetCurrentRoom().getEastRoom());
+            
+            return "Going east ";
         }
+        
+        return null;
     }
     
-    public void GoWest()
+    public String GoWest()
     {
         if(isThereARoom(GetCurrentRoom().getWestRoom()))
         {
             GoToRoom(GetCurrentRoom().getWestRoom());
+            
+            return "Going west";
         }
+        
+        return null;
     }
     
 }

@@ -35,27 +35,28 @@ public class CommandController {
         
         switch(commandString) {
             case "west":
-                output = "Going west "; // + Call fucntion - return what happend . ex into a wall/
-                rc.GoWest();
+                //output = "Going west "; // + Call fucntion - return what happend . ex into a wall/
+                output = rc.GoWest();
                 break;
                 
             case "north":
-                output = "Going north "; // + Call fucntion - return what happend . ex into a wall/
-                rc.GoNorth();
+              //  output = "Going north "; // + Call fucntion - return what happend . ex into a wall/
+                output = rc.GoNorth();
                 break;
                 
             case "east":
-                output = "Going east "; // + Call fucntion - return what happend . ex into a wall/
-                rc.GoEast();
+                //output = "Going east "; // + Call fucntion - return what happend . ex into a wall/
+                output = rc.GoEast();
                 break;
                 
             case "south":
-                output = "Going south "; // + Call fucntion - return what happend . ex into a wall/
-                rc.GoSouth();
+                //output = "Going south "; // + Call fucntion - return what happend . ex into a wall/
+                output = rc.GoSouth();
                 break;
                 
             case "pickup":
                 output = "You picked up "; // + Call pickup fucntion - return item name
+                
                 break; 
                 
             case "attack":
