@@ -42,7 +42,14 @@ public class Player implements IPlayer {
     
     public int GetDefenseValue()
     {
+        if(this.shield != null)
+        {
         return this.shield.getShieldValue();
+        }
+        else
+        {
+            return 0;
+        }
     }
     
     public void  AddItem(int id)
