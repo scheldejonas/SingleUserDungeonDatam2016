@@ -5,7 +5,9 @@
  */
 package singleuserdungeon.model.monster;
 
+import singleuserdungeon.control.DungeonController;
 import singleuserdungeon.interfaces.IMonster;
+import singleuserdungeon.view.GuiViewDungeonOne;
 
 /**
  *
@@ -28,6 +30,8 @@ public class BaseMonster implements IMonster {
         attack = monsterAttack;
         defense = monsterDefense;
         xpMod = monsterXpMod;        
+        
+        GuiViewDungeonOne.instance().outputStoryText(name+ " "+ description);
     }
 
     @Override
@@ -59,5 +63,13 @@ public class BaseMonster implements IMonster {
     public String toString() {
         return "BaseMonster_" + "name=" + name + "_description=" + description + "_health=" + health + "_attack=" + attack + "_defense=" + defense + "_xpMod=" + xpMod + "\n";
     }    
-    
+
+    @Override
+    public void Attack() 
+    {
+        int atk = (int)attack - DungeonController.instance.getPlayer().GetDefenseValue();
+        
+        DungeonController.instance.getPlayer().setHitPoints(atk);
+        GuiViewDungeonOne.instance().outputStoryText(this.name +" attack you with "+atk);
+    }
 }
