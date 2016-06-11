@@ -31,9 +31,7 @@ public class BaseMonster implements IMonster,Serializable {
         health = monsterHealth;
         attack = monsterAttack;
         defense = monsterDefense;
-        xpMod = monsterXpMod;        
-        
-        GuiViewDungeonOne.Instance().outputStoryText(name+ " "+ description);
+        xpMod = monsterXpMod;
     }
 
     public void SetHealth(int health)
@@ -74,7 +72,7 @@ public class BaseMonster implements IMonster,Serializable {
     @Override
     public void Attack() 
     {
-        int atk = (int) attack - DungeonController.Instance().getPlayer().GetDefenseValue();
+        int atk = (int) attack - DungeonController.Instance().getPlayer().getDefenseValue();
         Player p = DungeonController.Instance().getPlayer();
         p.setHitPoints(p.getHitPoints()-atk);
         GuiViewDungeonOne.Instance().outputStoryText(this.name +" attack you with "+atk);

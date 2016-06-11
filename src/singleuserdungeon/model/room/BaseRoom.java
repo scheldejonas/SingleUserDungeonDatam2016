@@ -29,6 +29,7 @@ public class BaseRoom implements IRoom,Serializable {
     private transient BaseItem item;
     private boolean isMonsterHere;
     private transient BaseMonster monster;
+    private boolean isItemHere;
 
     public BaseRoom(int locationNumber, String roomName, String roomDescription, int northRoom, int eastRoom, int southRoom, int westRoom, boolean isEndTreasureChest, BaseItem item, BaseMonster monster) {
         this.location = new Location(locationNumber);
@@ -45,6 +46,9 @@ public class BaseRoom implements IRoom,Serializable {
         if (monster != null) {
             this.isMonsterHere = true;
         }
+        if (item != null) {
+            this.isItemHere = true;
+        }
     }
 
     public BaseRoom(int locationNumber, String roomName, String roomDescription, int northRoomNumber, int eastRoomNumber, int southRoomNumber, int westRoomNumber) {
@@ -57,8 +61,9 @@ public class BaseRoom implements IRoom,Serializable {
         this.westRoomNumber = westRoomNumber;
         this.isVisited = false;
         this.item = null;
-        this.isMonsterHere = false;
+        this.isItemHere = false;
         this.monster = null;
+        this.isMonsterHere = false;
     }
     
 
@@ -142,6 +147,18 @@ public class BaseRoom implements IRoom,Serializable {
     @Override
     public void setItem(BaseItem item) {
         this.item = item;
+    }
+
+    @Override
+    public void setMonster(BaseMonster monster) {
+        this.monster = monster;
+    }
+
+    boolean isItemHere() {
+        if (item != null) {
+            this.isItemHere = true;
+        }
+        return this.isItemHere();
     }
 
     

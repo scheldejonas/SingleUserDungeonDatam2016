@@ -67,7 +67,7 @@ public class GameController implements IGameController {
     @Override
     public void nextLineCommand(String text) {
         
-        CommandController.instance().Command(text); //The story and response answer to the Gui, will be performed from the CommandController
+        CommandController.Instance().Command(text); //The story and response answer to the Gui, will be performed from the CommandController
     }
 
     @Override

@@ -91,7 +91,7 @@ public class XmlItemParser implements IXmlParser {
         }
     }
 
-    public ArrayList<BaseItem> getAllItems() 
+    public ArrayList<BaseItem> getCopyOfAllItems() 
     {
         if(this.items == null)
         {

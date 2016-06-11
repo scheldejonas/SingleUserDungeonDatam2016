@@ -13,6 +13,8 @@ import java.util.Random;
 import singleuserdungeon.interfaces.IDungeon;
 import singleuserdungeon.model.item.BaseItem;
 import singleuserdungeon.model.item.XmlItemParser;
+import singleuserdungeon.model.monster.BaseMonster;
+import singleuserdungeon.model.monster.XmlMonsterParser;
 import singleuserdungeon.model.room.BaseRoom;
 import singleuserdungeon.model.room.XmlRoomParser;
 import singleuserdungeon.view.GuiViewDungeonOne;
@@ -32,7 +34,7 @@ public class DungeonOne implements IDungeon {
         this.dungeonName = "Hall of disaster";
         this.dungeonDescription = "There has been a disaster in the world, you where one of the few who survived a huge group escape from the evil world controllers, who derived a lot of people from their homes and denied them food in 30 days, to make them work for building their castles. Your escaped down the sour channel with good luck and is laying here in on floor, trying to find you energy back. Only place to go is south.";
         this.rooms = XmlRoomParser.Instance().getAllRooms();
-        ArrayList<BaseItem> items = XmlItemParser.instance().getAllItems();
+        ArrayList<BaseItem> items = XmlItemParser.instance().getCopyOfAllItems();
         int healingPotionCounter = 0;
         
         for (int i = 0; i < items.size(); i++) {
@@ -51,21 +53,34 @@ public class DungeonOne implements IDungeon {
             
         }
 
-        Random rnd = new Random();
+        Random random = new Random();
         int itemChooser = 0;
-        boolean isEqualRoomCountsLeft = false;
+        boolean isEqualRoomCountsLeftForItems = false;
+        int monsterChooser = 0;
+        boolean isEqualRoomCountsLeftForMonsters = false;
+        ArrayList<BaseMonster> monsters = XmlMonsterParser.instance().getCopyOfAllMonsters();
         int roomCounter = rooms.size();
         
         for (BaseRoom room : rooms) {
             
-            if ( (isEqualRoomCountsLeft || rnd.nextBoolean()) && items.size() > 0) {
-                itemChooser = rnd.nextInt(items.size());
+            if ( (isEqualRoomCountsLeftForItems || random.nextBoolean()) && items.size() > 0 && roomCounter < (rooms.size() - 2) ) {
+                itemChooser = random.nextInt(items.size());
                 room.setItem(items.get(itemChooser));
-                items.remove(itemChooser);
+                items.remove(itemChooser);                
             }
             
-            if (roomCounter == items.size() && !isEqualRoomCountsLeft) {
-                isEqualRoomCountsLeft = true;
+            if (roomCounter == items.size() && !isEqualRoomCountsLeftForItems) {
+                isEqualRoomCountsLeftForItems = true;
+            }
+            
+            if ( (isEqualRoomCountsLeftForMonsters || random.nextBoolean()) && monsters.size() > 0 && roomCounter < (rooms.size() - 2) ) {
+                monsterChooser = random.nextInt(monsters.size());
+                room.setMonster(monsters.get(monsterChooser));
+                monsters.remove(monsterChooser);
+            }
+            
+            if (roomCounter == monsters.size() && !isEqualRoomCountsLeftForMonsters) {
+                isEqualRoomCountsLeftForMonsters = true;
             }
             
             roomCounter--;

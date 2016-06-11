@@ -111,6 +111,7 @@ public class GuiViewDungeonOne extends javax.swing.JFrame {
         jTextAreaConsole.setForeground(new java.awt.Color(255, 255, 255));
         jTextAreaConsole.setLineWrap(true);
         jTextAreaConsole.setRows(5);
+        jTextAreaConsole.setWrapStyleWord(true);
         jScrollPane1.setViewportView(jTextAreaConsole);
 
         jPanelGameConsole.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 120, 670, 260));

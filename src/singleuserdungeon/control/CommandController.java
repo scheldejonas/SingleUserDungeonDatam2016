@@ -5,6 +5,7 @@
  */
 package singleuserdungeon.control;
 
+import singleuserdungeon.interfaces.ICommandController;
 import singleuserdungeon.model.room.RoomCommand;
 import singleuserdungeon.view.GuiViewDungeonOne;
 
@@ -16,14 +17,14 @@ public class CommandController implements ICommandController {
     
     private static CommandController instance;
     
-    private RoomCommand rc = null;
+    private RoomCommand roomCommand = null;
     
-    public static CommandController instance() {
+    public static CommandController Instance() {
         if(instance == null)
         {
             instance = new CommandController();
             
-            instance.rc = new RoomCommand();
+            instance.roomCommand = new RoomCommand();
         }
         
         return instance;
@@ -39,30 +40,30 @@ public class CommandController implements ICommandController {
         switch(commandString) {
             case "west":
                 //output = "Going west "; // + Call fucntion - return what happend . ex into a wall/
-                rc.GoWest();
+                roomCommand.goWest();
                 break;
                 
             case "north":
               //  output = "Going north "; // + Call fucntion - return what happend . ex into a wall/
-                rc.GoNorth();
+                roomCommand.goNorth();
                 break;
                 
             case "east":
                 //output = "Going east "; // + Call fucntion - return what happend . ex into a wall/
-                rc.GoEast();
+                roomCommand.goEast();
                 break;
                 
             case "south":
                 //output = "Going south "; // + Call fucntion - return what happend . ex into a wall/
-                rc.GoSouth();
+                roomCommand.goSouth();
                 break;
                 
             case "pickup":
-                rc.PickupItem();// "You picked up "; // + Call pickup fucntion - return item name
+                roomCommand.pickupItem();// "You picked up "; // + Call pickup fucntion - return item name
                 break; 
                 
             case "attack":
-                rc.AttackMonster();//"Attacking "; // + Call fucntion - return what happend . ex attacking enemy
+                roomCommand.attackMonster();//"Attacking "; // + Call fucntion - return what happend . ex attacking enemy
                 break;
                 
             case "new":
@@ -86,7 +87,7 @@ public class CommandController implements ICommandController {
                 break;
                 
             case "use":
-                DungeonController.Instance().getPlayer().UseItem(orginalCommandString);//"use "; // + Call fucntion - return what happend . ex attacking enemy
+                DungeonController.Instance().getPlayer().useItem(orginalCommandString);//"use "; // + Call fucntion - return what happend . ex attacking enemy
                 break;
                 
             default:

@@ -7,10 +7,14 @@ package singleuserdungeon.model.player;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import singleuserdungeon.control.DungeonController;
+import singleuserdungeon.control.GameController;
 import singleuserdungeon.interfaces.IPlayer;
 import singleuserdungeon.model.item.BaseItem;
 import singleuserdungeon.model.item.XmlItemParser;
+import singleuserdungeon.model.monster.BaseMonster;
 import singleuserdungeon.model.room.BaseRoom;
+import singleuserdungeon.view.GuiViewDungeonOne;
 
 /**
  *
@@ -42,7 +46,7 @@ public class Player implements IPlayer,Serializable {
         this.Backpack = new ArrayList();
     }
     
-    public int GetDefenseValue()
+    public int getDefenseValue()
     {
         if(this.shield != null)
         {
@@ -54,13 +58,17 @@ public class Player implements IPlayer,Serializable {
         }
     }
     
-    public void  AddItem(int id)
+    public void  addItem(int id)
     {
         BaseItem item = XmlItemParser.instance().getItem(id);
         this.Backpack.add(item);
     }
     
-    public void AddWeapon(int id)
+    public void addItem(BaseItem newBaseItem) {
+        this.Backpack.add(newBaseItem);
+    }
+    
+    public void addWeapon(int id)
     {
        this.weapon =  XmlItemParser.instance().getItem(id);
     }
@@ -116,7 +124,7 @@ public class Player implements IPlayer,Serializable {
         return amount;
     }
     
-    public String UseItem(String str)
+    public String useItem(String str)
     {
         str = str.substring(3);
         
@@ -192,11 +200,8 @@ public class Player implements IPlayer,Serializable {
         }
     }
     
-    public void SetRoom(BaseRoom nextRoom)
+    public void setRoom(BaseRoom nextRoom)
     {
-        if (nextRoom.isMonsterHere()) {
-            nextRoom.getMonster().Attack();
-        }
         currentRoom = nextRoom;
     }
 
@@ -210,6 +215,23 @@ public class Player implements IPlayer,Serializable {
 
     public BaseItem getShield() {
         return this.shield;
+    }
+
+    public void takeAttack(BaseMonster monster) {
+        
+        int monsterAttackValue = (int) (monster.GetAttack() + this.getDefenseValue());
+        int playerHealth = this.hitPoints;
+                
+        if ( (playerHealth - monsterAttackValue) <= 0) {
+            GuiViewDungeonOne.Instance().outputStoryText("The monster killed you with the hit of " + monsterAttackValue + " damage in it's strike.");
+            GameController.Instance().endGame();
+        }
+        else {
+            this.hitPoints -= monsterAttackValue;
+            GuiViewDungeonOne.Instance().outputStoryText("The monster hit you with " + monsterAttackValue + " damage in it's strike." + " You have " + this.hitPoints + " left.");
+            GuiViewDungeonOne.Instance().outputStoryText("Maybe there is a beautifull item placed behind the monster after you have killed it.");
+        }
+        
     }
    
 }

@@ -18,7 +18,6 @@ import singleuserdungeon.view.GuiViewDungeonOne;
 public class RoomCommand 
 {
     private DungeonOne dungeon = null;
-    private Player player = null;
     
     private BaseRoom getRoom(int id)
     {
@@ -30,33 +29,37 @@ public class RoomCommand
         return dungeon.getRooms().get(id);
     }
     
-    public String AttackMonster()
+    public void attackMonster()
     {
-        BaseRoom br = GetCurrentRoom();
+        BaseRoom baseRoom = DungeonController.Instance().getPlayer().getCurrentRoom();
+        Player player = DungeonController.Instance().getPlayer();
         
-        if(br.getMonster() != null)
+        if(baseRoom.isMonsterHere())
         {
-            Player player = GetPlayer();
-            BaseMonster baseMonster = br.getMonster();
-            int attack = (int)baseMonster.GetDefense() - player.getWeapon().getDamageValue();
+            BaseMonster baseMonster = baseRoom.getMonster();
+            int attack = (int) (player.getWeapon().getDamageValue() + player.getWeapon().getDamageIncreaseValue() - baseMonster.GetDefense());
             baseMonster.SetHealth((int)baseMonster.GetHealth() - attack); 
             
-            return baseMonster.GetName() + " took " + attack + " damage.";
+            GuiViewDungeonOne.Instance().outputStoryText( baseMonster.GetName() + " took " + attack + " damage, from your blade and has " + baseMonster.GetHealth() + " life left." );
         }
-        
-        return "There is nothing to attack.";
+        else {
+            GuiViewDungeonOne.Instance().outputResponseStatus("There is nothing to attack.");
+        }        
     }
     
-    public String PickupItem()
+    public void pickupItem()
     {
-        BaseRoom baseRoom = GetCurrentRoom();
+        BaseRoom baseRoom = DungeonController.Instance().getPlayer().getCurrentRoom();
         
-        if(baseRoom.getItem() != null)
+        if (baseRoom.isItemHere())
         {
-            return "You picked up " + baseRoom.getItem().getName() + " " + baseRoom.getItem().getDescription();
+            DungeonController.Instance().getPlayer().addItem( baseRoom.getItem() );
+            GuiViewDungeonOne.Instance().outputStoryText("You picked up " + baseRoom.getItem().getName());
+            GuiViewDungeonOne.Instance().outputStoryText( baseRoom.getItem().getDescription() );
         }
-        
-        return "There is nothing to pickup";
+        else {
+            GuiViewDungeonOne.Instance().outputResponseStatus("There is nothing to pickup");
+        }
     }
     
     public boolean isThereARoom(int id)
@@ -72,65 +75,82 @@ public class RoomCommand
         return true;
     }
     
-    private Player GetPlayer()
-    {
-        if(player == null)
-        {
-            player = DungeonController.Instance().getPlayer();
-        }
-        
-        return player;
-    }
-    
-    private BaseRoom GetCurrentRoom()
-    {
-        return GetPlayer().getCurrentRoom();
-    }
-    
-    private void GoToRoom(int id)
+    private void goToRoom(int id)
     {
         BaseRoom room = DungeonController.Instance().getDungeonOne().getRooms().get(id-1);
-        GetPlayer().SetRoom(room);
+        DungeonController.Instance().getPlayer().setRoom(room);
     }
     
     
-    public void GoNorth()
+    public void goNorth()
     {
-        if (isThereARoom(GetCurrentRoom().getNorthRoom()))
+        BaseRoom baseRoom = DungeonController.Instance().getPlayer().getCurrentRoom();
+        
+        if (isThereARoom(baseRoom.getNorthRoom()))
         {
-            GoToRoom(GetCurrentRoom().getNorthRoom());
-            GuiViewDungeonOne.Instance().outputStoryText("You took the north door, and entered " + GetPlayer().getCurrentRoom().GetRoomName() );
-            GuiViewDungeonOne.Instance().outputStoryText(GetPlayer().getCurrentRoom().GetRoomDescription()); 
+            goToRoom(baseRoom.getNorthRoom());
+            GuiViewDungeonOne.Instance().outputStoryText("You took the north door, and entered " + DungeonController.Instance().getPlayer().getCurrentRoom().GetRoomName() );
+            GuiViewDungeonOne.Instance().outputStoryText( DungeonController.Instance().getPlayer().getCurrentRoom().GetRoomDescription());
+            
+            if (baseRoom.isMonsterHere()) {
+                GuiViewDungeonOne.Instance().outputStoryText("You have been attacked by " + baseRoom.getMonster().GetName());
+                GuiViewDungeonOne.Instance().outputStoryText(baseRoom.getMonster().getDescription());
+                DungeonController.Instance().getPlayer().takeAttack(baseRoom.getMonster());
+            }
         }
     }
     
-    public void GoSouth()
+    public void goSouth()
     {
-        if(isThereARoom(GetCurrentRoom().getSouthRoom()))
+        BaseRoom baseRoom = DungeonController.Instance().getPlayer().getCurrentRoom();
+        
+        if(isThereARoom(baseRoom.getSouthRoom()))
         {
-            GoToRoom(GetCurrentRoom().getSouthRoom());
-            GuiViewDungeonOne.Instance().outputStoryText("You took the south door, and entered " + GetPlayer().getCurrentRoom().GetRoomName() );
-            GuiViewDungeonOne.Instance().outputStoryText(GetPlayer().getCurrentRoom().GetRoomDescription());
+            goToRoom(baseRoom.getSouthRoom());
+            GuiViewDungeonOne.Instance().outputStoryText("You took the south door, and entered " + DungeonController.Instance().getPlayer().getCurrentRoom().GetRoomName() );
+            GuiViewDungeonOne.Instance().outputStoryText( DungeonController.Instance().getPlayer().getCurrentRoom().GetRoomDescription());
+            
+            if (baseRoom.isMonsterHere()) {
+                GuiViewDungeonOne.Instance().outputStoryText("You have been attacked by " + baseRoom.getMonster().GetName());
+                GuiViewDungeonOne.Instance().outputStoryText(baseRoom.getMonster().getDescription());
+                DungeonController.Instance().getPlayer().takeAttack(baseRoom.getMonster());
+            }
         }
     }
     
-    public void GoEast()
+    public void goEast()
     {
-        if(isThereARoom(GetCurrentRoom().getEastRoom()))
+        BaseRoom baseRoom = DungeonController.Instance().getPlayer().getCurrentRoom();
+        
+        if(isThereARoom(baseRoom.getEastRoom()))
         {
-            GoToRoom(GetCurrentRoom().getEastRoom());
-            GuiViewDungeonOne.Instance().outputStoryText("You took the east door, and entered " + GetPlayer().getCurrentRoom().GetRoomName() );
-            GuiViewDungeonOne.Instance().outputStoryText(GetPlayer().getCurrentRoom().GetRoomDescription());
+            goToRoom(baseRoom.getEastRoom());
+            GuiViewDungeonOne.Instance().outputStoryText("You took the east door, and entered " + DungeonController.Instance().getPlayer().getCurrentRoom().GetRoomName() );
+            GuiViewDungeonOne.Instance().outputStoryText( DungeonController.Instance().getPlayer().getCurrentRoom().GetRoomDescription());
+            
+            if (baseRoom.isMonsterHere()) {
+                GuiViewDungeonOne.Instance().outputStoryText("You have been attacked by " + baseRoom.getMonster().GetName());
+                GuiViewDungeonOne.Instance().outputStoryText(baseRoom.getMonster().getDescription());
+                DungeonController.Instance().getPlayer().takeAttack(baseRoom.getMonster());
+            }
         }
     }
     
-    public void GoWest()
+    public void goWest()
     {
-        if(isThereARoom(GetCurrentRoom().getWestRoom()))
+        BaseRoom baseRoom = DungeonController.Instance().getPlayer().getCurrentRoom();
+        
+        if(isThereARoom(baseRoom.getWestRoom()))
         {
-            GoToRoom(GetCurrentRoom().getWestRoom());
-            GuiViewDungeonOne.Instance().outputStoryText("You took the west door, and entered " + GetPlayer().getCurrentRoom().GetRoomName() );
-            GuiViewDungeonOne.Instance().outputStoryText(GetPlayer().getCurrentRoom().GetRoomDescription());
+            goToRoom(baseRoom.getWestRoom());
+            GuiViewDungeonOne.Instance().outputStoryText("You took the west door, and entered " + DungeonController.Instance().getPlayer().getCurrentRoom().GetRoomName() );
+            GuiViewDungeonOne.Instance().outputStoryText( DungeonController.Instance().getPlayer().getCurrentRoom().GetRoomDescription());
+            
+            if (baseRoom.isMonsterHere()) {
+                GuiViewDungeonOne.Instance().outputStoryText("You have been attacked by " + baseRoom.getMonster().GetName());
+                GuiViewDungeonOne.Instance().outputStoryText(baseRoom.getMonster().getDescription());
+                DungeonController.Instance().getPlayer().takeAttack(baseRoom.getMonster());
+            }
         }
     }
     

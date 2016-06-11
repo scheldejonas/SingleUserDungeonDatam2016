@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package singleuserdungeon.control;
+package singleuserdungeon.interfaces;
 
 /**
  *
  * @author scheldejonas
  */
-interface ICommandController {
+public interface ICommandController {
     
     public void Command(String commandString);
     

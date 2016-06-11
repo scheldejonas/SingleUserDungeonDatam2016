@@ -94,7 +94,10 @@ public class XmlMonsterParser implements IXmlParser {
         }
     }
     
-    public ArrayList<BaseMonster> getAllMonsters() {
+    public ArrayList<BaseMonster> getCopyOfAllMonsters() {
+        if (this.Monsters == null) {
+            GetMonster(0);
+        }
         return (ArrayList<BaseMonster>) this.Monsters.clone();
     }
     

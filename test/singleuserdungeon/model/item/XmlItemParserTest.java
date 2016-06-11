@@ -82,7 +82,7 @@ public class XmlItemParserTest {
         System.out.println("getAllItems");
         XmlItemParser instance = new XmlItemParser();
         int expResult = 15;
-        ArrayList<BaseItem> result = instance.getAllItems();
+        ArrayList<BaseItem> result = instance.getCopyOfAllItems();
         assertTrue(result.size() == expResult );
         
         // TODO review the generated test code and remove the default call to fail.

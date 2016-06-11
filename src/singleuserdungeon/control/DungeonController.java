@@ -39,13 +39,15 @@ public class DungeonController {
     }
     
     public Player newPlayer() {
-        Player p = new Player();
+        Player player = new Player();
         
-        p.AddItem(4);
-        p.AddWeapon(1);
-        p.SetRoom(this.getDungeonOne().getRooms().get(0));
+        player.setHitPoints(30);
+        player.setLevel(1);
+        player.addItem(4);
+        player.addWeapon(1);
+        player.setRoom(this.getDungeonOne().getRooms().get(0));
         
-        return p;
+        return player;
     }
     
     public void resetDungeonAndPlayer() {
