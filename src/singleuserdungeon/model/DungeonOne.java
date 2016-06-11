@@ -30,7 +30,7 @@ public class DungeonOne implements IDungeon {
     public DungeonOne() {
         
         this.dungeonName = "Hall of disaster";
-        this.dungeonDescription = "There has been a disaster in the world, you where one of the few who survived a huge group escape from the evil world controllers, who derived a lot of people from their homes and denied them food in 30 days, to make them work for building their castles. Your escaped down the sour channel with good luck and is laying here in on floor, trying to find you energy back";
+        this.dungeonDescription = "There has been a disaster in the world, you where one of the few who survived a huge group escape from the evil world controllers, who derived a lot of people from their homes and denied them food in 30 days, to make them work for building their castles. Your escaped down the sour channel with good luck and is laying here in on floor, trying to find you energy back. Only place to go is south.";
         this.rooms = XmlRoomParser.Instance().getAllRooms();
         ArrayList<BaseItem> items = XmlItemParser.instance().getAllItems();
         int healingPotionCounter = 0;

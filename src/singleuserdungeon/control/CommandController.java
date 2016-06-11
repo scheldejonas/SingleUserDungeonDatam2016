@@ -6,12 +6,13 @@
 package singleuserdungeon.control;
 
 import singleuserdungeon.model.room.RoomCommand;
+import singleuserdungeon.view.GuiViewDungeonOne;
 
 /**
  *
  * @author misk
  */
-public class CommandController {
+public class CommandController implements ICommandController {
     
     private static CommandController instance;
     
@@ -28,76 +29,69 @@ public class CommandController {
         return instance;
     }
 
-    public String Command(String commandString) {
-        String output = null;
-        String org = commandString;
-        
+    public void Command(String commandString) {
+                
+        String output;
+        String orginalCommandString = commandString;
         commandString = commandString.split(" ")[0];
         commandString = commandString.toLowerCase();
         
         switch(commandString) {
             case "west":
                 //output = "Going west "; // + Call fucntion - return what happend . ex into a wall/
-                output = rc.GoWest();
+                rc.GoWest();
                 break;
                 
             case "north":
               //  output = "Going north "; // + Call fucntion - return what happend . ex into a wall/
-                output = rc.GoNorth();
+                rc.GoNorth();
                 break;
                 
             case "east":
                 //output = "Going east "; // + Call fucntion - return what happend . ex into a wall/
-                output = rc.GoEast();
+                rc.GoEast();
                 break;
                 
             case "south":
                 //output = "Going south "; // + Call fucntion - return what happend . ex into a wall/
-                output = rc.GoSouth();
+                rc.GoSouth();
                 break;
                 
             case "pickup":
-                output = rc.PickupItem();// "You picked up "; // + Call pickup fucntion - return item name
-                
+                rc.PickupItem();// "You picked up "; // + Call pickup fucntion - return item name
                 break; 
                 
             case "attack":
-                output = rc.AttackMonster();//"Attacking "; // + Call fucntion - return what happend . ex attacking enemy
+                rc.AttackMonster();//"Attacking "; // + Call fucntion - return what happend . ex attacking enemy
                 break;
                 
             case "new":
-                output = "";
                 GameController.Instance().resetGame();
                 break;
                 
             case "save":
-                output = "We can inform you, the lords of this dungeon laid there eyes past your map and frooze it in there memory. A small note was placed in your pocket of time and state of where you can reset to."; // + Call function - return what happend . ex attacking enemy
                 GameController.Instance().saveGame();
                 break;
                 
             case "load":
-                output = "load game "; // + Call fucntion - return what happend . ex attacking enemy
+                GuiViewDungeonOne.Instance().outputResponseStatus("Not supported yet.");
                 break;
                 
             case "quit":
-                output = "quit game "; // + Call fucntion - return what happend . ex attacking enemy
                 GameController.Instance().quitGame();
                 break;
                 
             case "help":
-                output = "You yelded for help";
                 GameController.Instance().outputHelpToStory();
                 break;
                 
             case "use":
-                output = DungeonController.Instance().getPlayer().UseItem(org);//"use "; // + Call fucntion - return what happend . ex attacking enemy
+                DungeonController.Instance().getPlayer().UseItem(orginalCommandString);//"use "; // + Call fucntion - return what happend . ex attacking enemy
                 break;
                 
             default:
-                output = "You cant do that now";
+                GuiViewDungeonOne.Instance().outputResponseStatus("It is not possible to type anything else then commands to the right");
         }
-        
-        return output;
     }
     
 }

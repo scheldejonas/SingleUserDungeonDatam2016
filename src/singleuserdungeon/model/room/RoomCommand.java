@@ -36,12 +36,12 @@ public class RoomCommand
         
         if(br.getMonster() != null)
         {
-            Player p = GetPlayer();
-            BaseMonster bm = br.getMonster();
-            int atk = (int)bm.GetDefense() - p.getWeapon().getDamageValue();
-            bm.SetHealth((int)bm.GetHealth() - atk); 
+            Player player = GetPlayer();
+            BaseMonster baseMonster = br.getMonster();
+            int attack = (int)baseMonster.GetDefense() - player.getWeapon().getDamageValue();
+            baseMonster.SetHealth((int)baseMonster.GetHealth() - attack); 
             
-            return bm.GetName()+ " took "+atk+" damage.";
+            return baseMonster.GetName() + " took " + attack + " damage.";
         }
         
         return "There is nothing to attack.";
@@ -49,11 +49,11 @@ public class RoomCommand
     
     public String PickupItem()
     {
-        BaseRoom br = GetCurrentRoom();
+        BaseRoom baseRoom = GetCurrentRoom();
         
-        if(br.getItem() != null)
+        if(baseRoom.getItem() != null)
         {
-            return "You picked up "+br.getItem().getName()+" "+br.getItem().getDescription();
+            return "You picked up " + baseRoom.getItem().getName() + " " + baseRoom.getItem().getDescription();
         }
         
         return "There is nothing to pickup";
@@ -65,7 +65,7 @@ public class RoomCommand
         
         if(id == 0)
         {
-            GuiViewDungeonOne.Instance().outputResponseStatus("There is no room");
+            GuiViewDungeonOne.Instance().outputResponseStatus("There is no room, read the last posted story text again to figure out ways to go.");
             return false;
         }
         
@@ -89,60 +89,49 @@ public class RoomCommand
     
     private void GoToRoom(int id)
     {
-        BaseRoom room = DungeonController.Instance().getDungeonOne().getRooms().get(id);
+        BaseRoom room = DungeonController.Instance().getDungeonOne().getRooms().get(id-1);
         GetPlayer().SetRoom(room);
-        
     }
     
     
-    public String GoNorth()
+    public void GoNorth()
     {
-        if(isThereARoom(GetCurrentRoom().getNorthRoom()))
+        if (isThereARoom(GetCurrentRoom().getNorthRoom()))
         {
             GoToRoom(GetCurrentRoom().getNorthRoom());
-            return "Going north ";
-            
+            GuiViewDungeonOne.Instance().outputStoryText("You took the north door, and entered " + GetPlayer().getCurrentRoom().GetRoomName() );
+            GuiViewDungeonOne.Instance().outputStoryText(GetPlayer().getCurrentRoom().GetRoomDescription()); 
         }
-        
-        return null;
-     // DungeonController.instance.getDungeonOne().getRooms().get(0)
-        
     }
     
-    public String GoSouth()
+    public void GoSouth()
     {
         if(isThereARoom(GetCurrentRoom().getSouthRoom()))
         {
             GoToRoom(GetCurrentRoom().getSouthRoom());
-            
-            return "Going south ";
+            GuiViewDungeonOne.Instance().outputStoryText("You took the south door, and entered " + GetPlayer().getCurrentRoom().GetRoomName() );
+            GuiViewDungeonOne.Instance().outputStoryText(GetPlayer().getCurrentRoom().GetRoomDescription());
         }
-        
-        return null;
     }
     
-    public String GoEast()
+    public void GoEast()
     {
         if(isThereARoom(GetCurrentRoom().getEastRoom()))
         {
             GoToRoom(GetCurrentRoom().getEastRoom());
-            
-            return "Going east ";
+            GuiViewDungeonOne.Instance().outputStoryText("You took the east door, and entered " + GetPlayer().getCurrentRoom().GetRoomName() );
+            GuiViewDungeonOne.Instance().outputStoryText(GetPlayer().getCurrentRoom().GetRoomDescription());
         }
-        
-        return null;
     }
     
-    public String GoWest()
+    public void GoWest()
     {
         if(isThereARoom(GetCurrentRoom().getWestRoom()))
         {
             GoToRoom(GetCurrentRoom().getWestRoom());
-            
-            return "Going west";
+            GuiViewDungeonOne.Instance().outputStoryText("You took the west door, and entered " + GetPlayer().getCurrentRoom().GetRoomName() );
+            GuiViewDungeonOne.Instance().outputStoryText(GetPlayer().getCurrentRoom().GetRoomDescription());
         }
-        
-        return null;
     }
     
 }

@@ -3,18 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package singleuserdungeon.interfaces;
+package singleuserdungeon.control;
 
 /**
  *
  * @author scheldejonas
  */
-public interface IWeapon {
+interface ICommandController {
     
-    public String getName();
-    public String getDescription();
-    public int getDamageValue();
-    public int getLength();
-    public int getWeight();
+    public void Command(String commandString);
     
 }

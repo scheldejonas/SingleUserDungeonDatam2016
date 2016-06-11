@@ -21,9 +21,11 @@ public interface IGameController
     
     public void nextLevel(Player currentPlayer);
     
-    public boolean WriteTextToFile(String text);
+    public void WriteTextToFile(String text);
     
-    public String nextLineCommand(String text);
+    public void nextLineCommand(String text);
     
     public void outputHelpToStory();
+    
+    public void saveGame();
 }

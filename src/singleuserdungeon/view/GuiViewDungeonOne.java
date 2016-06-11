@@ -149,9 +149,12 @@ public class GuiViewDungeonOne extends javax.swing.JFrame {
         jLabel1.setText("Response");
         jPanelGameConsole.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, 20));
 
+        jLabelResponseStatus.setBackground(new java.awt.Color(0, 0, 0));
         jLabelResponseStatus.setFont(new java.awt.Font("Avenir Next", 0, 14)); // NOI18N
         jLabelResponseStatus.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelResponseStatus.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabelResponseStatus.setText("If you need help, then you would have to yield it.");
+        jLabelResponseStatus.setOpaque(true);
         jPanelGameConsole.add(jLabelResponseStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 530, 20));
 
         getContentPane().add(jPanelGameConsole, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 460));
@@ -260,13 +263,9 @@ public class GuiViewDungeonOne extends javax.swing.JFrame {
 
     private void jButtonAnswerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAnswerActionPerformed
         
-        String commandAnswer = GameController.Instance().nextLineCommand(jTextFieldInputAnswer.getText());
-        
-        outputStoryText(commandAnswer);
+        GameController.Instance().nextLineCommand(jTextFieldInputAnswer.getText());
         
         clearAnswerField();
-        
-        clearResponseStatus();
         
     }//GEN-LAST:event_jButtonAnswerActionPerformed
 
@@ -275,15 +274,7 @@ public class GuiViewDungeonOne extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldInputAnswerActionPerformed
 
     private void jButtonExportConsoleToFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExportConsoleToFileActionPerformed
-        boolean wasWritten = GameController.Instance().WriteTextToFile(jTextAreaConsole.getText());
-        if (wasWritten) {
-            String string = "Your story has been saved to the computer.";
-            outputResponseStatus(string);
-        }
-        else {
-            String string = "Your story is not saved, sorry, try again or contact us.";
-            outputResponseStatus(string);
-        }
+        GameController.Instance().WriteTextToFile(jTextAreaConsole.getText());
     }//GEN-LAST:event_jButtonExportConsoleToFileActionPerformed
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -334,7 +325,7 @@ public class GuiViewDungeonOne extends javax.swing.JFrame {
      * @param str 
      */
     public void outputStoryText(String str) {
-        jTextAreaConsole.append(str+"\n");
+        jTextAreaConsole.append(str+"\n\n");
     }
     
     /**
@@ -350,7 +341,6 @@ public class GuiViewDungeonOne extends javax.swing.JFrame {
     }
     
     public void outputResponseStatus(String text) {
-        
         jLabelResponseStatus.setText(text);
     }
 
