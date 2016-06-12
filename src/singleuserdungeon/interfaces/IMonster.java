@@ -11,11 +11,11 @@ package singleuserdungeon.interfaces;
  */
 public interface IMonster 
 {
-    public String GetName();
+    public String getName();
     
     public String getDescription();
     
-    public float GetHealth();
+    public float getHealth();
     
     public float GetAttack();
     

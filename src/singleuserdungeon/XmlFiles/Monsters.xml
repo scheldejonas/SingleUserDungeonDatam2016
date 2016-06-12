@@ -26,7 +26,7 @@
     </Monster>
     <Monster id="3"> //Zero index - Easy input in lists etc.
                 <name>Orger</name>
-                <description>?</description>
+                <description>Ugly wolve looking create is coming towards you with high speed and hits you on your chick.</description>
                 <health>10.0f</health>
                 <attack>5.0f</attack>
                 <defense>0.0f</defense>   

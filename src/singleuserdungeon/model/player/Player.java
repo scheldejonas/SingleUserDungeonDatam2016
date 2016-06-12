@@ -215,7 +215,8 @@ public class Player implements IPlayer,Serializable {
 
     public BaseItem getShield() {
         return this.shield;
-    }
+    }   
+
 
     public void takeAttack(BaseMonster monster) {
         

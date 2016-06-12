@@ -154,11 +154,12 @@ public class BaseRoom implements IRoom,Serializable {
         this.monster = monster;
     }
 
-    boolean isItemHere() {
+    @Override
+    public boolean isItemHere() {
         if (item != null) {
             this.isItemHere = true;
         }
-        return this.isItemHere();
+        return this.isItemHere;
     }
 
     

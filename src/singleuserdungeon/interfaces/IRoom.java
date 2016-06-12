@@ -34,5 +34,5 @@ public interface IRoom
     public BaseMonster getMonster();
     public void setItem(BaseItem item);
     public void setMonster(BaseMonster monster);
-    
+    public boolean isItemHere();
 }

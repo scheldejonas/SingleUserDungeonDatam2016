@@ -157,7 +157,7 @@
         <name>The floor covered as one big grill with lake running below</name>
         <location>18</location>
         <description>The water running as a lake is sounding from beneath your feet. Looking down you are standing on a huge fence grill working like the floor on top the river running below. But the water is to dark to see anything down there. There is openings to the north, west and south.</description>
-        <northRoomNumber>18</northRoomNumber>
+        <northRoomNumber>20</northRoomNumber>
         <eastRoomNumber>0</eastRoomNumber>
         <southRoomNumber>17</southRoomNumber>
         <westRoomNumber>19</westRoomNumber>
@@ -181,6 +181,3 @@
         <westRoomNumber>0</westRoomNumber>
     </Room>
 </RoomList>
-
-
-

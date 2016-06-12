@@ -34,13 +34,13 @@ public class BaseMonster implements IMonster,Serializable {
         xpMod = monsterXpMod;
     }
 
-    public void SetHealth(int health)
+    public void setHealth(int health)
     {
         this.health = health;
     }
     
     @Override
-    public String GetName() {
+    public String getName() {
         return this.name;
     }
     
@@ -50,7 +50,7 @@ public class BaseMonster implements IMonster,Serializable {
     }
 
     @Override
-    public float GetHealth() {
+    public float getHealth() {
         return this.health;
     }
 
@@ -76,5 +76,29 @@ public class BaseMonster implements IMonster,Serializable {
         Player p = DungeonController.Instance().getPlayer();
         p.setHitPoints(p.getHitPoints()-atk);
         GuiViewDungeonOne.Instance().outputStoryText(this.name +" attack you with "+atk);
+    }
+
+    public void takeAttack(Player player) {
+        
+        int attack = (int) (player.getWeapon().getDamageValue() + player.getWeapon().getDamageIncreaseValue() - this.GetDefense());
+        
+        this.setHealth((int)this.getHealth() - attack);
+        
+        if (this.getHealth() <= 0) {
+            GuiViewDungeonOne.Instance().outputStoryText(this.getName() + " took " + attack + " and died, from your blade.");
+            
+            if (DungeonController.Instance().getPlayer().getCurrentRoom().isItemHere()) {
+                DungeonController.Instance().getPlayer().addItem( DungeonController.Instance().getPlayer().getCurrentRoom().getItem() );
+                GuiViewDungeonOne.Instance().outputStoryText( "You just picked up " + DungeonController.Instance().getPlayer().getCurrentRoom().getItem().getName() + " and placed it in your backpack.");
+                GuiViewDungeonOne.Instance().outputStoryText( DungeonController.Instance().getPlayer().getCurrentRoom().getItem().getDescription() );
+            }
+        }
+        else {
+            GuiViewDungeonOne.Instance().outputStoryText(this.getName() + " took " + attack + " damage, from your blade and has " + this.getHealth() + " life left." );
+        }
+            
+        
+        
+        
     }
 }
