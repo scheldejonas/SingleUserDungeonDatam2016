@@ -43,12 +43,6 @@ public class BaseRoom implements IRoom,Serializable {
         this.item = item;
         this.monster = monster;
         this.isVisited = false;
-        if (monster != null) {
-            this.isMonsterHere = true;
-        }
-        if (item != null) {
-            this.isItemHere = true;
-        }
     }
 
     public BaseRoom(int locationNumber, String roomName, String roomDescription, int northRoomNumber, int eastRoomNumber, int southRoomNumber, int westRoomNumber) {
@@ -113,6 +107,9 @@ public class BaseRoom implements IRoom,Serializable {
         if (item.getName().equals("End Treasure Chest")) {
             this.isEndTreasureChest = true;
         }
+        else {
+            this.isEndTreasureChest = false;
+        }
         return this.isEndTreasureChest;
     }
 
@@ -136,6 +133,9 @@ public class BaseRoom implements IRoom,Serializable {
         if (monster != null) {
             this.isMonsterHere = true;
         }
+        else {
+            this.isMonsterHere = false;
+        }
         return this.isMonsterHere;
     }
 
@@ -158,6 +158,9 @@ public class BaseRoom implements IRoom,Serializable {
     public boolean isItemHere() {
         if (item != null) {
             this.isItemHere = true;
+        }
+        else {
+            this.isItemHere = false;
         }
         return this.isItemHere;
     }

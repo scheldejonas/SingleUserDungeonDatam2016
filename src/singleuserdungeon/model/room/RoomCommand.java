@@ -35,8 +35,11 @@ public class RoomCommand
             
             DungeonController.Instance().getPlayer().getCurrentRoom().getMonster().takeAttack(DungeonController.Instance().getPlayer());
             
-            if (DungeonController.Instance().getPlayer().getCurrentRoom().getMonster().getHealth() > 0) {
-                DungeonController.Instance().getPlayer().takeAttack( DungeonController.Instance().getPlayer().getCurrentRoom().getMonster());
+            if (DungeonController.Instance().getPlayer().getCurrentRoom().isMonsterHere()) {
+            
+                if (DungeonController.Instance().getPlayer().getCurrentRoom().getMonster().getHealth() > 0) {
+                    DungeonController.Instance().getPlayer().takeAttack( DungeonController.Instance().getPlayer().getCurrentRoom().getMonster());
+                }
             }
         }
         else {

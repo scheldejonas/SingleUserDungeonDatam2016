@@ -92,6 +92,7 @@ public class GuiViewDungeonOne extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         jButtonExportConsoleToFile = new javax.swing.JButton();
         jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
 
         jLabel2.setText("jLabel2");
 
@@ -201,10 +202,10 @@ public class GuiViewDungeonOne extends javax.swing.JFrame {
         jLabel11.setText("Help");
         jPanelCommandInfo.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, -1, -1));
 
-        jLabel12.setFont(new java.awt.Font("Avenir Next", 0, 13)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Avenir Next", 0, 10)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("Use + item name");
-        jPanelCommandInfo.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, -1));
+        jLabel12.setText("Ex.: use healing potion");
+        jPanelCommandInfo.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 237, -1, -1));
 
         jLabel13.setFont(new java.awt.Font("Avenir Next", 0, 13)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
@@ -257,12 +258,19 @@ public class GuiViewDungeonOne extends javax.swing.JFrame {
         jLabel20.setText("Quit");
         jPanelCommandInfo.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, -1, -1));
 
+        jLabel21.setFont(new java.awt.Font("Avenir Next", 0, 13)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel21.setText("Use <item name>");
+        jPanelCommandInfo.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, -1));
+
         getContentPane().add(jPanelCommandInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 0, 220, 460));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonAnswerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAnswerActionPerformed
+        
+        clearResponseStatus();
         
         GameController.Instance().nextLineCommand(jTextFieldInputAnswer.getText());
         
@@ -294,6 +302,7 @@ public class GuiViewDungeonOne extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

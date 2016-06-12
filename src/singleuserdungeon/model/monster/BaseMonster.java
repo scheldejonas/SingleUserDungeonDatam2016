@@ -85,15 +85,20 @@ public class BaseMonster implements IMonster,Serializable {
         this.setHealth((int)this.getHealth() - attack);
         
         if (this.getHealth() <= 0) {
+            
             GuiViewDungeonOne.Instance().outputStoryText(this.getName() + " took " + attack + " and died, from your blade.");
+            DungeonController.Instance().getDungeonOne().removeMonsterFromDungeon( DungeonController.Instance().getPlayer().getCurrentRoom().getMonster() );
             
             if (DungeonController.Instance().getPlayer().getCurrentRoom().isItemHere()) {
+                
                 DungeonController.Instance().getPlayer().addItem( DungeonController.Instance().getPlayer().getCurrentRoom().getItem() );
                 GuiViewDungeonOne.Instance().outputStoryText( "You just picked up " + DungeonController.Instance().getPlayer().getCurrentRoom().getItem().getName() + " and placed it in your backpack.");
                 GuiViewDungeonOne.Instance().outputStoryText( DungeonController.Instance().getPlayer().getCurrentRoom().getItem().getDescription() );
+                DungeonController.Instance().getDungeonOne().removeItemFromDungeonRoom( DungeonController.Instance().getPlayer().getCurrentRoom().getItem() );
             }
         }
         else {
+            
             GuiViewDungeonOne.Instance().outputStoryText(this.getName() + " took " + attack + " damage, from your blade and has " + this.getHealth() + " life left." );
         }
             

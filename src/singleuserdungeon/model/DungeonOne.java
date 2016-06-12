@@ -143,5 +143,31 @@ public class DungeonOne implements IDungeon {
             indexNumber++;
         }
     }
+
+    public void removeItemFromDungeonRoom(BaseItem item) {
+        
+        for (BaseRoom room : rooms) {
+
+            if (room.getItem() != null) {
+                
+                if (room.getItem().equals(item)) {
+                    room.setItem(null);
+                }
+            }
+        }
+    }
+
+    public void removeMonsterFromDungeon(BaseMonster monster) {
+        
+        for (BaseRoom room : rooms) {
+            
+            if (room.getMonster() != null) {
+                
+                if (room.getMonster().equals(monster)) {
+                    room.setMonster(null);
+                }
+            }
+        }
+    }
     
 }
