@@ -18,17 +18,6 @@ import singleuserdungeon.view.GuiViewDungeonOne;
  */
 public class RoomCommand 
 {
-    private DungeonOne dungeon = null;
-    
-    private BaseRoom getRoom(int id)
-    {
-        if(dungeon != null)
-        {
-            dungeon =  DungeonController.Instance().getDungeonOne();
-        }
-        
-        return dungeon.getRooms().get(id);
-    }
     
     public void attackMonster() {
         
