@@ -153,13 +153,15 @@ public class Player implements IPlayer,Serializable {
     
     private void Use(String str)
     {
+        str = str.toLowerCase();
+        
         switch(str)
         {
-            case "Weapon poison potion":
+            case "weapon poison potion":
             {
                 this.weapon.SetDamageIncreaseValue(5);
             }
-            case "Healing Potion":
+            case "healing potion":
             {
                 setHitPoints(getHitPoints()+10);
                 RemoveItem("Healing Potion");
