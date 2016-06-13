@@ -6,7 +6,9 @@
 package singleuserdungeon.model.monster;
 
 import java.io.Serializable;
+import singleuserdungeon.control.CommandController;
 import singleuserdungeon.control.DungeonController;
+import singleuserdungeon.control.GameController;
 import singleuserdungeon.interfaces.IMonster;
 import singleuserdungeon.model.player.Player;
 import singleuserdungeon.view.GuiViewDungeonOne;
@@ -81,20 +83,13 @@ public class BaseMonster implements IMonster,Serializable {
     public void takeAttack(Player player) {
         
         int attack = (int) (player.getWeapon().getDamageValue() + player.getWeapon().getDamageIncreaseValue() - this.GetDefense());
-        
         this.setHealth((int)this.getHealth() - attack);
         
         if (this.getHealth() <= 0) {
-            
-            GuiViewDungeonOne.Instance().outputStoryText(this.getName() + " took " + attack + " and died, from your blade.");
+            GuiViewDungeonOne.Instance().outputStoryText(this.getName() + " took " + attack + " damage and died, from your blade.");
             DungeonController.Instance().getDungeonOne().removeMonsterFromDungeon( DungeonController.Instance().getPlayer().getCurrentRoom().getMonster() );
-            
             if (DungeonController.Instance().getPlayer().getCurrentRoom().isItemHere()) {
-                
-                DungeonController.Instance().getPlayer().addItem( DungeonController.Instance().getPlayer().getCurrentRoom().getItem() );
-                GuiViewDungeonOne.Instance().outputStoryText( "You just picked up " + DungeonController.Instance().getPlayer().getCurrentRoom().getItem().getName() + " and placed it in your backpack.");
-                GuiViewDungeonOne.Instance().outputStoryText( DungeonController.Instance().getPlayer().getCurrentRoom().getItem().getDescription() );
-                DungeonController.Instance().getDungeonOne().removeItemFromDungeonRoom( DungeonController.Instance().getPlayer().getCurrentRoom().getItem() );
+                CommandController.Instance().getRoomCommand().pickupItem();
             }
         }
         else {

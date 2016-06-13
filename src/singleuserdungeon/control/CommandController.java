@@ -17,13 +17,12 @@ public class CommandController implements ICommandController {
     
     private static CommandController instance;
     
-    private RoomCommand roomCommand = null;
+    private RoomCommand roomCommand;
     
     public static CommandController Instance() {
         if(instance == null)
         {
             instance = new CommandController();
-            
             instance.roomCommand = new RoomCommand();
         }
         
@@ -93,6 +92,10 @@ public class CommandController implements ICommandController {
             default:
                 GuiViewDungeonOne.Instance().outputResponseStatus("It is not possible to type anything else then commands to the right");
         }
+    }
+
+    public RoomCommand getRoomCommand() {
+        return roomCommand;
     }
     
 }

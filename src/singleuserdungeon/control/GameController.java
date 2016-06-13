@@ -48,7 +48,9 @@ public class GameController implements IGameController {
     public void endGame() {
         
         GuiViewDungeonOne.Instance().outputStoryText("The end.");
+        GuiViewDungeonOne.Instance().outputResponseStatus("From here, you are able to reset, load or quit the game");
         fileHandler.saveTextToFile(GuiViewDungeonOne.Instance().getLiveStory());
+        GuiViewDungeonOne.Instance().outputStoryText("This story above has been saved on your computer for later read for you or at a storytell crowd. Smile more and enjoy.");
     }
 
     @Override
